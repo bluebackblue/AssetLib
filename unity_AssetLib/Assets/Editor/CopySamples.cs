@@ -21,7 +21,7 @@ namespace Editor
             s_process = new System.Diagnostics.Process();
             {
                 s_process.StartInfo.FileName = UnityEngine.Application.dataPath + "/Editor/CopySamples.bat";
-                s_process.StartInfo.Arguments = "AssetTool";
+                s_process.StartInfo.Arguments = "AssetLib";
                 s_process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
                 s_process.StartInfo.UseShellExecute = true;
                 s_process.Exited += ExitProcess;

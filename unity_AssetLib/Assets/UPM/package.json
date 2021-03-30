@@ -14,8 +14,16 @@
   "dependencies": {},
   "samples": [
     {
-      "displayName": "Sample",
-      "path": "Samples~/Sample"
+      "displayName": "CreateAssetBundle",
+      "path": "Samples~/CreateAssetBundle"
+    },
+    {
+      "displayName": "CreatePackage",
+      "path": "Samples~/CreatePackage"
+    },
+    {
+      "displayName": "Directory",
+      "path": "Samples~/Directory"
     }
   ]
 }
