@@ -1,6 +1,6 @@
 # BlueBack.AssetLib
-テスト用ライブラリ
-* 速度計測と「UI.Text」での表示。
+アセット操作
+* プレハブの保存
 
 ## ライセンス
 MIT License

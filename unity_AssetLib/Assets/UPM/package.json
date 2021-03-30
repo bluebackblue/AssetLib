@@ -1,0 +1,21 @@
+﻿{
+  "name": "blueback.assetlib",
+  "displayName": "AssetLib",
+  "version": "0.0.1",
+  "unity": "2020.1",
+  "description": "アセット操作",
+  "author": {
+    "name": "BlueBack",
+    "url": "https://github.com/bluebackblue"
+  },
+  "keywords": [
+    ""
+  ],
+  "dependencies": {},
+  "samples": [
+    {
+      "displayName": "Sample",
+      "path": "Samples~/Sample"
+    }
+  ]
+}
