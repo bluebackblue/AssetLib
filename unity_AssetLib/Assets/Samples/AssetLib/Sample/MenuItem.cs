@@ -12,7 +12,7 @@ namespace Samples.AssetLib.Sample
 		[UnityEditor.MenuItem("サンプル/AssetLibSample/Reflash")]
 		private static void MenuItem_AssetLibSample_Reflash()
 		{
-			BlueBack.AssetLib.EditorTool.RefreshAssetDatabase();
+			BlueBack.AssetLib.RefreshAsset.Refresh();
 		}
 	}
 	#endif

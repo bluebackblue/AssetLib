@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief エディターツール。
+ * @brief アセットのリフレッシュ。
 */
 
 
@@ -11,16 +11,18 @@
 */
 namespace BlueBack.AssetLib
 {
-	/** EditorTool
+	/** RefreshAsset
 	*/
-	public class EditorTool
+	#if(UNITY_EDITOR)
+	public class RefreshAsset
 	{
-		/** RefreshAssetDatabase
+		/** Refresh
 		*/
-		public static void RefreshAssetDatabase()
+		public static void Refresh()
 		{
 			UnityEditor.AssetDatabase.Refresh();
 		}
 	}
+	#endif
 }
 

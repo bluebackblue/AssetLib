@@ -1,0 +1,56 @@
+
+
+/**
+ * Copyright (c) blueback
+ * Released under the MIT License
+ * @brief パッケージ作成。
+*/
+
+
+/** BlueBack.AssetLib
+*/
+namespace BlueBack.AssetLib
+{
+	/** CreatePackage
+	*/
+	#if(UNITY_EDITOR)
+	public class CreatePackage
+	{
+		/** パッケージ作成。
+
+			a_assets_path	: 「Assets」からの相対パス。
+			a_package_name	: パッケージ名。
+			a_exportoption	: エクスポートオプション。
+
+		*/
+		public static void CreatePackageFromAssetsPath(string a_assets_path,string a_package_name,UnityEditor.ExportPackageOptions a_exportoption)
+		{
+			UnityEditor.AssetDatabase.ExportPackage("Assets/" + a_assets_path,a_package_name,a_exportoption);
+		}
+
+		/** パッケージ作成。
+
+			a_assets_path	: 「Assets」からの相対パス。
+			a_package_name	: パッケージ名。
+			a_exportoption	: エクスポートオプション。
+
+		*/
+		public static bool TryCreatePackageFromAssetsPath(string a_assets_path,string a_package_name,UnityEditor.ExportPackageOptions a_exportoption)
+		{
+			bool t_result;
+
+			try{
+				CreatePackageFromAssetsPath(a_assets_path,a_package_name,a_exportoption);
+				t_result = true;
+			}catch(System.Exception /*t_exception*/){
+				DebugTool.Assert(false);
+
+				t_result = false;
+			}
+
+			return t_result;
+		}
+	}
+	#endif
+}
+
