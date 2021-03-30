@@ -41,14 +41,19 @@ namespace BlueBack.AssetLib
 		{
 			Result<UnityEngine.AssetBundleManifest> t_result;
 
+			#pragma warning disable 0168
 			try{
 				t_result.value = CreateAssetBundleToAssetsPath(a_assets_path,a_list,a_buildoption,a_buildtarget);
 				t_result.success = true;
-			}catch(System.Exception /*t_exception*/){
-				DebugTool.Assert(false);
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
 				t_result.success = false;
 				t_result.value = null;
 			}
+			#pragma warning restore
 
 			return t_result;
 		}

@@ -39,14 +39,18 @@ namespace BlueBack.AssetLib
 		{
 			bool t_result;
 
+			#pragma warning disable 0168
 			try{
 				CreatePackageFromAssetsPath(a_assets_path,a_package_name,a_exportoption);
 				t_result = true;
-			}catch(System.Exception /*t_exception*/){
-				DebugTool.Assert(false);
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
 
 				t_result = false;
 			}
+			#pragma warning restore
 
 			return t_result;
 		}

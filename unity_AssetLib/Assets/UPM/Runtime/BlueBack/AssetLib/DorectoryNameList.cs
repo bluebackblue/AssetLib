@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib
 		{
 			System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
 			{
-				string[] t_fullpath_list = System.IO.Directory.GetDirectories(UnityEngine.Application.dataPath + "/" + a_assets_path,"*",System.IO.SearchOption.TopDirectoryOnly);
+				string[] t_fullpath_list = System.IO.Directory.GetDirectories(UnityEngine.Application.dataPath + '/' + a_assets_path,"*",System.IO.SearchOption.TopDirectoryOnly);
 				for(int ii=0;ii<t_fullpath_list.Length;ii++){
 					string t_name = System.IO.Path.GetFileName(t_fullpath_list[ii]);
 					if(t_name.Length > 0){
@@ -44,18 +44,26 @@ namespace BlueBack.AssetLib
 		{
 			Result<System.Collections.Generic.List<string>> t_result;
 
+			#pragma warning disable 0168
 			try{
 				t_result.value = CreateOnlyTopDirectoryNameListFromAssetsPath(a_assets_path);
 				t_result.success = true;
-			}catch(System.IO.IOException /*t_exception*/){
-				DebugTool.Assert(false);
+			}catch(System.IO.IOException t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
 				t_result.value = null;
 				t_result.success = false;
-			}catch(System.Exception /*t_exception*/){
-				DebugTool.Assert(false);
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
 				t_result.value = null;
 				t_result.success = false;
 			}
+			#pragma warning restore
 
 			return t_result;
 		}
@@ -70,17 +78,37 @@ namespace BlueBack.AssetLib
 			System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
 			System.Collections.Generic.List<string> t_work = new System.Collections.Generic.List<string>();
 
-			t_list.Add(a_assets_path);
-			t_work.Add(a_assets_path);
+			{
+				if(a_assets_path.Length > 0){
+					if((a_assets_path[a_assets_path.Length - 1] != '/')&&(a_assets_path[a_assets_path.Length - 1] != '\\')){
+						t_work.Add(a_assets_path + '/');
+					}else{
+						t_work.Add(a_assets_path);
+					}
+				}else{
+					t_work.Add("");
+				}
+			}
 
 			while(t_work.Count > 0){
 				string t_path = t_work[t_work.Count - 1];
 				t_work.RemoveAt(t_work.Count - 1);
 				System.Collections.Generic.List<string> t_directory_name_list = CreateOnlyTopDirectoryNameListFromAssetsPath(t_path);
 				for(int ii=0;ii<t_directory_name_list.Count;ii++){
-					string t_new_path = t_path + "/" + t_directory_name_list[ii];
+					string t_new_path = t_path + t_directory_name_list[ii];
 					t_list.Add(t_new_path);
-					t_work.Add(t_new_path);
+
+					{
+						if(t_new_path.Length > 0){
+							if((t_new_path[t_new_path.Length - 1] != '/')&&(t_new_path[t_new_path.Length - 1] != '\\')){
+								t_work.Add(t_new_path + '/');
+							}else{
+								t_work.Add(t_new_path);
+							}
+						}else{
+							t_work.Add("/");
+						}
+					}
 				}
 			}
 
@@ -96,18 +124,26 @@ namespace BlueBack.AssetLib
 		{
 			Result<System.Collections.Generic.List<string>> t_result;
 
+			#pragma warning disable 0168
 			try{
 				t_result.value = CreateAllDirectoryNameListFromAssetsPath(a_assets_path);
 				t_result.success = true;
-			}catch(System.IO.IOException /*t_exception*/){
-				DebugTool.Assert(false);
+			}catch(System.IO.IOException t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
 				t_result.value = null;
 				t_result.success = false;
-			}catch(System.Exception /*t_exception*/){
-				DebugTool.Assert(false);
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
 				t_result.value = null;
 				t_result.success = false;
 			}
+			#pragma warning restore
 
 			return t_result;
 		}

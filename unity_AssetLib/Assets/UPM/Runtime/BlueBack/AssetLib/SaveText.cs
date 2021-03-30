@@ -42,18 +42,26 @@ namespace BlueBack.AssetLib
 		{
 			bool t_result;
 
+			#pragma warning disable 0168
 			try{
 				SaveUtf8TextToAssetsPath(a_text,a_assets_path_with_extention,a_bom);
 				t_result = true;
-			}catch(System.IO.IOException /*t_exception*/){
+			}catch(System.IO.IOException t_exception){
 				//ＩＯエラー。
-				DebugTool.Assert(false);
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
 				t_result = false;
-			}catch(System.Exception /*t_exception*/){
+			}catch(System.Exception t_exception){
 				//エラー。
-				DebugTool.Assert(false);
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
 				t_result = false;
 			}
+			#pragma warning restore
 
 			return t_result;
 		}

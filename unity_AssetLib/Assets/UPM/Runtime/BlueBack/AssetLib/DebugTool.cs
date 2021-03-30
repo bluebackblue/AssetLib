@@ -18,10 +18,10 @@ namespace BlueBack.AssetLib
 		/** Assert
 		*/
 		#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
-		public static void Assert(bool a_flag)
+		public static void Assert(bool a_flag,System.Exception a_exception = null)
 		{
 			if(a_flag != true){
-				Config.ERRORPROC();
+				Config.ERRORPROC(a_exception);
 			}
 		}
 		#endif
