@@ -9,7 +9,7 @@ namespace Samples.AssetLib.CreateAssetBundle.Editor
 	#if(UNITY_EDITOR)
 	public class MenuItem
 	{
-		[UnityEditor.MenuItem("サンプル/AssetLib/CreateAssetBundle")]
+		[UnityEditor.MenuItem("サンプル/AssetLib/CreateAssetBundle/CreateAssetBundleToAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_CreateAssetBundle()
 		{
 			BlueBack.AssetLib.SaveText.SaveUtf8TextToAssetsPath("xxxDATAxxx","Samples/AssetLib/data.txt",true);

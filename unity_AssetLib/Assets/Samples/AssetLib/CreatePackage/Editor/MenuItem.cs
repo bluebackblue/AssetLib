@@ -9,7 +9,7 @@ namespace Samples.AssetLib.CreatePackage.Editor
 	#if(UNITY_EDITOR)
 	public class MenuItem
 	{
-		[UnityEditor.MenuItem("サンプル/AssetLib/Directory/CreatePackage")]
+		[UnityEditor.MenuItem("サンプル/AssetLib/CreatePackage/CreatePackageFromAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_Directory_CreatePackage()
 		{
 			BlueBack.AssetLib.CreatePackage.CreatePackageFromAssetsPath("Samples/AssetLib","sample.unitypackage",UnityEditor.ExportPackageOptions.Recurse);
