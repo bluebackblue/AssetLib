@@ -17,8 +17,8 @@ namespace BlueBack.AssetLib
 	{
 		/** バイナリファイル書き込み。
 
-			a_binary						: バイナリー。
-			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
+			a_binary							: バイナリー。
+			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。
 
 		*/
 		public static void SaveBinaryToAssetsPath(byte[] a_binary,string a_assets_path_with_extention)

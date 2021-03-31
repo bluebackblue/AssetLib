@@ -9,11 +9,16 @@ namespace Samples.AssetLib.CreateAssetBundle.Editor
 	#if(UNITY_EDITOR)
 	public class MenuItem
 	{
-		[UnityEditor.MenuItem("サンプル/AssetLib/CreateAssetBundle")]
-		private static void MenuItem_Sample_AssetLib_CreateAssetBundle()
+		/** アセットバンドル作成。
+		*/
+		[UnityEditor.MenuItem("サンプル/AssetLib/CreateAssetBundle/CreateAssetBundleToAssetsPath")]
+		private static void MenuItem_Sample_AssetLib_CreateAssetBundle_CreateAssetBundleToAssetsPath()
 		{
-			BlueBack.AssetLib.SaveText.SaveUtf8TextToAssetsPath("xxxDATAxxx","Samples/AssetLib/data.txt",true);
-			BlueBack.AssetLib.RefreshAsset.Refresh();
+			//アセットバンドル化する元データを作成。
+			{
+				BlueBack.AssetLib.SaveText.SaveUtf8TextToAssetsPath("xxxDATAxxx","Samples/AssetLib/data.txt",true);
+				BlueBack.AssetLib.RefreshAsset.Refresh();
+			}
 
 			UnityEditor.AssetBundleBuild[] t_list = new UnityEditor.AssetBundleBuild[]{
 				new UnityEditor.AssetBundleBuild(){

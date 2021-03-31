@@ -77,30 +77,32 @@ namespace BlueBack.AssetLib
 		{
 			System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
 			{
+				string t_assets_path = a_assets_path.Replace('/','\\');
+
 				{
 					string t_path;
-					if(a_assets_path.Length > 0){
-						if((a_assets_path[a_assets_path.Length - 1] != '/')&&(a_assets_path[a_assets_path.Length - 1] != '\\')){
-							t_path = a_assets_path + '/';
+					if(t_assets_path.Length > 0){
+						if(t_assets_path[t_assets_path.Length - 1] != '\\'){
+							t_path = t_assets_path + '\\';
 						}else{
-							t_path = a_assets_path;
+							t_path = t_assets_path;
 						}
 					}else{
 						t_path = "";
 					}
 
-					System.Collections.Generic.List<string> t_file_name_list = CreateOnlyTopFileNameListFromAssetsPath(a_assets_path);
+					System.Collections.Generic.List<string> t_file_name_list = CreateOnlyTopFileNameListFromAssetsPath(t_assets_path);
 					for(int ii=0;ii<t_file_name_list.Count;ii++){
 						string t_new_path = t_path + t_file_name_list[ii];
 						t_list.Add(t_new_path);
 					}
 				}
 
-				System.Collections.Generic.List<string> t_directory_list = DorectoryNameList.CreateAllDirectoryNameListFromAssetsPath(a_assets_path);
+				System.Collections.Generic.List<string> t_directory_list = DorectoryNameList.CreateAllDirectoryNameListFromAssetsPath(t_assets_path);
 				foreach(string t_path in t_directory_list){
 					System.Collections.Generic.List<string> t_file_name_list = CreateOnlyTopFileNameListFromAssetsPath(t_path);
 					for(int ii=0;ii<t_file_name_list.Count;ii++){
-						string t_new_path = t_path + '/' + t_file_name_list[ii];
+						string t_new_path = t_path + '\\' + t_file_name_list[ii];
 						t_list.Add(t_new_path);
 					}
 				}

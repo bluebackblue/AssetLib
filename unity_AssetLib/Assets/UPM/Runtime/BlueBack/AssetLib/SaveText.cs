@@ -18,7 +18,7 @@ namespace BlueBack.AssetLib
 		/** テキストファイル書き込み。
 
 			a_text							: テキスト。
-			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
+			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。
 			a_bom							: BOM。
 
 		*/

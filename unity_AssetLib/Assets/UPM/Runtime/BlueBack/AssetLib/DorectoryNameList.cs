@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib
 		{
 			System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
 			{
-				string[] t_fullpath_list = System.IO.Directory.GetDirectories(UnityEngine.Application.dataPath + '/' + a_assets_path,"*",System.IO.SearchOption.TopDirectoryOnly);
+				string[] t_fullpath_list = System.IO.Directory.GetDirectories(UnityEngine.Application.dataPath + '\\' + a_assets_path,"*",System.IO.SearchOption.TopDirectoryOnly);
 				for(int ii=0;ii<t_fullpath_list.Length;ii++){
 					string t_name = System.IO.Path.GetFileName(t_fullpath_list[ii]);
 					if(t_name.Length > 0){
@@ -80,10 +80,11 @@ namespace BlueBack.AssetLib
 
 			{
 				if(a_assets_path.Length > 0){
-					if((a_assets_path[a_assets_path.Length - 1] != '/')&&(a_assets_path[a_assets_path.Length - 1] != '\\')){
-						t_work.Add(a_assets_path + '/');
+					string t_assets_path = a_assets_path.Replace('/','\\');
+					if(t_assets_path[t_assets_path.Length - 1] != '\\'){
+						t_work.Add(t_assets_path + '\\');
 					}else{
-						t_work.Add(a_assets_path);
+						t_work.Add(t_assets_path);
 					}
 				}else{
 					t_work.Add("");
@@ -100,13 +101,13 @@ namespace BlueBack.AssetLib
 
 					{
 						if(t_new_path.Length > 0){
-							if((t_new_path[t_new_path.Length - 1] != '/')&&(t_new_path[t_new_path.Length - 1] != '\\')){
-								t_work.Add(t_new_path + '/');
+							if(t_new_path[t_new_path.Length - 1] != '\\'){
+								t_work.Add(t_new_path + '\\');
 							}else{
 								t_work.Add(t_new_path);
 							}
 						}else{
-							t_work.Add("/");
+							t_work.Add("\\");
 						}
 					}
 				}
