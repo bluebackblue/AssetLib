@@ -22,7 +22,7 @@ namespace BlueBack.AssetLib
 		*/
 		public static void CreateDirectoryToAssetsPath(string a_assets_path)
 		{
-			System.IO.Directory.CreateDirectory(UnityEngine.Application.dataPath + "/" + a_assets_path);
+			System.IO.Directory.CreateDirectory(UnityEngine.Application.dataPath + '/' + a_assets_path);
 		}
 
 		/** ディレクトリ作成。
@@ -36,12 +36,8 @@ namespace BlueBack.AssetLib
 
 			#pragma warning disable 0168
 			try{
-				if(System.IO.Directory.Exists(UnityEngine.Application.dataPath + "/" + a_assets_path) == false){
-					CreateDirectoryToAssetsPath(a_assets_path);
-					t_result = true;
-				}else{
-					t_result = false;
-				}
+				CreateDirectoryToAssetsPath(a_assets_path);
+				t_result = true;
 			}catch(System.IO.IOException t_exception){
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
 				DebugTool.Assert(false,t_exception);

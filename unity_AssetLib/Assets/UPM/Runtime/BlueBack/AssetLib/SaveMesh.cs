@@ -13,7 +13,6 @@ namespace BlueBack.AssetLib
 {
 	/** SaveMesh
 	*/
-	#if(UNITY_EDITOR)
 	public class SaveMesh
 	{
 		/** メッシュセーブ。
@@ -22,12 +21,13 @@ namespace BlueBack.AssetLib
 			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。
 
 		*/
-		public static void SaveAsMeshToAssetsPath(UnityEngine.Mesh a_mesh,string a_assets_path)
+		#if(UNITY_EDITOR)
+		public static void SaveAsMeshToAssetsPath(UnityEngine.Mesh a_mesh,string a_assets_path_with_extention)
 		{
 			UnityEngine.Mesh t_new_mesh = UnityEngine.Object.Instantiate<UnityEngine.Mesh>(a_mesh);
-			UnityEditor.AssetDatabase.CreateAsset(t_new_mesh,"Assets/" + a_assets_path);
+			UnityEditor.AssetDatabase.CreateAsset(t_new_mesh,"Assets/" + a_assets_path_with_extention);
 		}
+		#endif
 	}
-	#endif
 }
 

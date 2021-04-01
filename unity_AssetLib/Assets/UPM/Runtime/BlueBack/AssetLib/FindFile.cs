@@ -11,6 +11,8 @@
 */
 namespace BlueBack.AssetLib
 {
+	/** FindFile
+	*/
 	public class FindFile
 	{
 		/** ファイル検索。

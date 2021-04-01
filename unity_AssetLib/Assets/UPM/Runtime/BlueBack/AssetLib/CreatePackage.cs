@@ -13,28 +13,30 @@ namespace BlueBack.AssetLib
 {
 	/** CreatePackage
 	*/
-	#if(UNITY_EDITOR)
 	public class CreatePackage
 	{
 		/** パッケージ作成。
 
-			a_assets_path	: 「Assets」からの相対パス。
+			a_assets_path	: パッケージ化するパス。「Assets」からの相対パス。
 			a_package_name	: パッケージ名。
 			a_exportoption	: エクスポートオプション。
 
 		*/
+		#if(UNITY_EDITOR)
 		public static void CreatePackageFromAssetsPath(string a_assets_path,string a_package_name,UnityEditor.ExportPackageOptions a_exportoption)
 		{
 			UnityEditor.AssetDatabase.ExportPackage("Assets/" + a_assets_path,a_package_name,a_exportoption);
 		}
+		#endif
 
 		/** パッケージ作成。
 
-			a_assets_path	: 「Assets」からの相対パス。
+			a_assets_path	: パッケージ化するパス。「Assets」からの相対パス。
 			a_package_name	: パッケージ名。
 			a_exportoption	: エクスポートオプション。
 
 		*/
+		#if(UNITY_EDITOR)
 		public static bool TryCreatePackageFromAssetsPath(string a_assets_path,string a_package_name,UnityEditor.ExportPackageOptions a_exportoption)
 		{
 			bool t_result;
@@ -47,14 +49,13 @@ namespace BlueBack.AssetLib
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
-
 				t_result = false;
 			}
 			#pragma warning restore
 
 			return t_result;
 		}
+		#endif
 	}
-	#endif
 }
 

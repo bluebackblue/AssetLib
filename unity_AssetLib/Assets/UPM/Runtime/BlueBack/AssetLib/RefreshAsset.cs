@@ -13,16 +13,16 @@ namespace BlueBack.AssetLib
 {
 	/** RefreshAsset
 	*/
-	#if(UNITY_EDITOR)
 	public class RefreshAsset
 	{
 		/** アセットリフレッシュ
 		*/
+		#if(UNITY_EDITOR)
 		public static void Refresh()
 		{
 			UnityEditor.AssetDatabase.Refresh();
 		}
+		#endif
 	}
-	#endif
 }
 

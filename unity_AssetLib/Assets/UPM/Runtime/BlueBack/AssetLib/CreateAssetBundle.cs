@@ -13,7 +13,7 @@ namespace BlueBack.AssetLib
 {
 	/** CreateAssetBundle
 	*/
-	#if(UNITY_EDITOR)
+	
 	public class CreateAssetBundle
 	{
 		/** アセットバンドル作成。
@@ -24,10 +24,12 @@ namespace BlueBack.AssetLib
 			a_buildtarget	: ビルドターゲット。
 
 		*/
+		#if(UNITY_EDITOR)
 		public static UnityEngine.AssetBundleManifest CreateAssetBundleToAssetsPath(string a_assets_path,UnityEditor.AssetBundleBuild[] a_list,UnityEditor.BuildAssetBundleOptions a_buildoption,UnityEditor.BuildTarget a_buildtarget)
 		{
 			return UnityEditor.BuildPipeline.BuildAssetBundles("Assets/" + a_assets_path,a_list,a_buildoption,a_buildtarget);
 		}
+		#endif
 
 		/** アセットバンドル作成。
 
@@ -37,6 +39,7 @@ namespace BlueBack.AssetLib
 			a_buildtarget	: ビルドターゲット。
 
 		*/
+		#if(UNITY_EDITOR)
 		public static Result<UnityEngine.AssetBundleManifest> TryCreateAssetBundleToAssetsPath(string a_assets_path,UnityEditor.AssetBundleBuild[] a_list,UnityEditor.BuildAssetBundleOptions a_buildoption,UnityEditor.BuildTarget a_buildtarget)
 		{
 			Result<UnityEngine.AssetBundleManifest> t_result;
@@ -57,7 +60,7 @@ namespace BlueBack.AssetLib
 
 			return t_result;
 		}
+		#endif
 	}
-	#endif
 }
 

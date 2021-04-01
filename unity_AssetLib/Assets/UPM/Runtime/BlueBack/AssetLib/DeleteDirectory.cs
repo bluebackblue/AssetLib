@@ -22,7 +22,7 @@ namespace BlueBack.AssetLib
 		*/
 		public static void DeleteDirectoryFromAssetsPath(string a_assets_path)
 		{
-			System.IO.Directory.Delete(UnityEngine.Application.dataPath + "/" + a_assets_path,true);
+			System.IO.Directory.Delete(UnityEngine.Application.dataPath + '/' + a_assets_path,true);
 		}
 
 		/** ディレクトリ削除。
@@ -36,12 +36,8 @@ namespace BlueBack.AssetLib
 
 			#pragma warning disable 0168
 			try{
-				if(System.IO.Directory.Exists(UnityEngine.Application.dataPath + "/" + a_assets_path) == false){
-					System.IO.Directory.Delete(UnityEngine.Application.dataPath + "/" + a_assets_path,true);
-					t_result = true;
-				}else{
-					t_result = false;
-				}
+				DeleteDirectoryFromAssetsPath(a_assets_path);
+				t_result = true;
 			}catch(System.IO.IOException t_exception){
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
 				DebugTool.Assert(false,t_exception);
