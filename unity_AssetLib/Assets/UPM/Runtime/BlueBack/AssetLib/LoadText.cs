@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief テキストのロード。
+ * @brief テキストロード。
 */
 
 
@@ -15,7 +15,7 @@ namespace BlueBack.AssetLib
 	*/
 	public class LoadText
 	{
-		/** テキストファイル読み込み。
+		/** テキストロード。
 
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 
@@ -29,7 +29,7 @@ namespace BlueBack.AssetLib
 			}
 		}
 
-		/** テキストファイル読み込み。
+		/** テキストロード。
 
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 

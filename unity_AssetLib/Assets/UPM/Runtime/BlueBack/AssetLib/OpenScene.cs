@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief シーンを開く。
+ * @brief シーンオープン。
 */
 
 
@@ -16,7 +16,7 @@ namespace BlueBack.AssetLib
 	#if(UNITY_EDITOR)
 	public class OpenScene
 	{
-		/** シーンを開く。
+		/** シーンオープン。
 
 			a_assets_path	: 「Assets」からの相対パス。
 

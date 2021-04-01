@@ -25,6 +25,15 @@ namespace BlueBack.AssetLib
 			}
 		}
 		#endif
+
+		/** EditorLog
+		*/
+		#if(UNITY_EDITOR)
+		public static void EditorLog(string a_text)
+		{
+			UnityEngine.Debug.Log(a_text);
+		}
+		#endif
 	}
 }
 

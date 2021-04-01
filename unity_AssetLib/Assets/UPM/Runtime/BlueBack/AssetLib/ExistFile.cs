@@ -22,7 +22,7 @@ namespace BlueBack.AssetLib
 		*/
 		public static bool IsExistFileFromAssetsPath(string a_assets_path_with_extention)
 		{
-			return System.IO.File.Exists(UnityEngine.Application.dataPath + "/" + a_assets_path_with_extention);
+			return System.IO.File.Exists(UnityEngine.Application.dataPath + '/' + a_assets_path_with_extention);
 		}
 	}
 }

@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief プレハブのセーブ。
+ * @brief プレハブセーブ。
 */
 
 
@@ -15,10 +15,10 @@ namespace BlueBack.AssetLib
 	*/
 	public class SavePrefab
 	{
-		/** SavePrefabToAssetsPath
+		/** プレハブセーブ
 
-			a_mesh			: メッシュ。
-			a_assets_path	: 「Assets」からの相対バス。拡張子付き。
+			a_prefab							: プレハブ。
+			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。
 
 		*/
 		#if(UNITY_EDITOR)

@@ -13,10 +13,11 @@ namespace BlueBack.AssetLib
 {
 	public class FindFile
 	{
-		/** FindFileListFromAssetsPath
+		/** ファイル検索。
 
-			a_assets_path	: 「Assets」からの相対パス。
-			a_regex_param	: 正規表現。
+			a_assets_path		: 「Assets」からの相対パス。
+			a_directory_regex	: ディレクトリの正規表現。例（.*）
+			a_file_regex			: ファイル名の正規表現。例（^xxx.xxx$）
 
 		*/
 		public static System.Collections.Generic.List<string> FindFileListFromAssetsPath(string a_assets_path,string a_directory_regex,string a_file_regex)
@@ -37,10 +38,11 @@ namespace BlueBack.AssetLib
 			return t_result;
 		}
 
-		/** FindFileFistFromAssetsPath
+		/** ファイル検索。
 
-			a_assets_path	: 「Assets」からの相対パス。
-			a_regex_param	: 正規表現。
+			a_assets_path		: 「Assets」からの相対パス。
+			a_directory_regex	: ディレクトリの正規表現。例（.*）
+			a_file_regex			: ファイル名の正規表現。例（^xxx.xxx$）
 
 		*/
 		public static string FindFileFistFromAssetsPath(string a_assets_path,string a_directory_regex,string a_file_regex)

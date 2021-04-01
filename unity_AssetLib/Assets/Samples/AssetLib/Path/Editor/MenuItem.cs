@@ -23,8 +23,8 @@ namespace Samples.AssetLib.Path.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Path/DeleteDirectoryFromAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_Path_DeleteDirectoryFromAssetsPath()
 		{
-			BlueBack.AssetLib.DeleteDirectory.DeleteDirectoryFromAssetsPath("Samples/AssetLib/NewDirectory");
-			BlueBack.AssetLib.DeleteFile.DeleteFileFromAssetsPath("Samples/AssetLib/NewDirectory.meta");
+			BlueBack.AssetLib.DeleteDirectory.TryDeleteDirectoryFromAssetsPath("Samples/AssetLib/NewDirectory");
+			BlueBack.AssetLib.DeleteFile.TryDeleteFileFromAssetsPath("Samples/AssetLib/NewDirectory.meta");
 			BlueBack.AssetLib.RefreshAsset.Refresh();
 		}
 

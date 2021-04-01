@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief アセットのロード。
+ * @brief アセットロード。
 */
 
 
@@ -16,7 +16,7 @@ namespace BlueBack.AssetLib
 	#if(UNITY_EDITOR)
 	public class LoadAsset
 	{
-		/** 全アセットをロード。
+		/** 全アセットロード。
 
 			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
 
@@ -26,7 +26,7 @@ namespace BlueBack.AssetLib
 			return UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/" + a_assets_path_with_extention);
 		}
 
-		/** 全指定アセットをロード。
+		/** 全指定アセットロード。
 
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 
@@ -49,7 +49,7 @@ namespace BlueBack.AssetLib
 			return t_list;
 		}
 
-		/** アセットをロード。
+		/** アセットロード。
 
 			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
 

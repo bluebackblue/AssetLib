@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib
 		{
 			System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
 			{
-				string[] t_fullpath_list = System.IO.Directory.GetFiles(UnityEngine.Application.dataPath + "/" + a_assets_path,"*",System.IO.SearchOption.TopDirectoryOnly);
+				string[] t_fullpath_list = System.IO.Directory.GetFiles(UnityEngine.Application.dataPath + '/' + a_assets_path,"*",System.IO.SearchOption.TopDirectoryOnly);
 				for(int ii=0;ii<t_fullpath_list.Length;ii++){
 					string t_name = System.IO.Path.GetFileName(t_fullpath_list[ii]);
 					if(t_name.Length > 0){

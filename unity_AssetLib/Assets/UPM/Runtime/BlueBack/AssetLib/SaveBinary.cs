@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief バイナリーのセーブ。
+ * @brief バイナリセーブ。
 */
 
 
@@ -15,7 +15,7 @@ namespace BlueBack.AssetLib
 	*/
 	public class SavelBinary
 	{
-		/** バイナリファイル書き込み。
+		/** バイナリセーブ。
 
 			a_binary							: バイナリー。
 			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。

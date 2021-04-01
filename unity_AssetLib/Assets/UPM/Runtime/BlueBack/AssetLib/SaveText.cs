@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief テキストのセーブ。
+ * @brief テキストセーブ。
 */
 
 
@@ -15,7 +15,7 @@ namespace BlueBack.AssetLib
 	*/
 	public class SaveText
 	{
-		/** テキストファイル書き込み。
+		/** テキストセーブ。
 
 			a_text							: テキスト。
 			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。
@@ -31,10 +31,10 @@ namespace BlueBack.AssetLib
 			}
 		}
 
-		/** テキストファイル書き込み。
+		/** テキストセーブ。
 
 			a_text							: テキスト。
-			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
+			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。
 			a_bom							: BOM。
 
 		*/
