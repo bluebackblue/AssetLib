@@ -1,7 +1,7 @@
-{
+﻿{
   "name": "blueback.assetlib",
   "displayName": "AssetLib",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "unity": "2020.1",
   "description": "アセット操作",
   "author": {
@@ -32,6 +32,10 @@
     {
       "displayName": "Asset",
       "path": "Samples~/Asset"
+    },
+    {
+      "displayName": "Script",
+      "path": "Samples~/Script"
     }
   ]
 }
