@@ -56,8 +56,8 @@ namespace Samples.AssetLib.Path.Editor
 		private static void MenuItem_Sample_AssetLib_Path_ExistFile()
 		{
 			{
-				bool t_isexist = BlueBack.AssetLib.ExistFile.IsExistFileFromAssetsPath("Editor.meta");
-				UnityEngine.Debug.Log("Editor.meta : " + t_isexist.ToString());
+				bool t_isexist = BlueBack.AssetLib.ExistFile.IsExistFileFromAssetsPath("Samples.meta");
+				UnityEngine.Debug.Log("Samples.meta : " + t_isexist.ToString());
 			}
 
 			{

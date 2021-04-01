@@ -101,7 +101,8 @@ namespace Samples.AssetLib.Asset.Editor
 			BlueBack.AssetLib.RefreshAsset.Refresh();
 		}
 
-
+		/** メッシュのセーブ。
+		*/
 		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/SaveMeshToAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_Asset_SaveMeshToAssetsPath()
 		{
