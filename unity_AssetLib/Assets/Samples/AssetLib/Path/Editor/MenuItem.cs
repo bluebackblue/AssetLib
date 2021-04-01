@@ -23,8 +23,8 @@ namespace Samples.AssetLib.Path.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Path/DeleteDirectoryFromAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_Path_DeleteDirectoryFromAssetsPath()
 		{
-			BlueBack.AssetLib.DeleteDirectory.TryDeleteDirectoryFromAssetsPath("Samples/AssetLib/NewDirectory");
-			BlueBack.AssetLib.DeleteFile.TryDeleteFileFromAssetsPath("Samples/AssetLib/NewDirectory.meta");
+			BlueBack.AssetLib.DeleteDirectory.DeleteDirectoryFromAssetsPath("Samples/AssetLib/NewDirectory");
+			BlueBack.AssetLib.DeleteFile.DeleteFileFromAssetsPath("Samples/AssetLib/NewDirectory.meta");
 			BlueBack.AssetLib.RefreshAsset.Refresh();
 		}
 
@@ -71,7 +71,7 @@ namespace Samples.AssetLib.Path.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Path/FindFile")]
 		private static void MenuItem_Sample_AssetLib_Path_FindFile()
 		{
-			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.FindFile.FindFileListFromAssetsPath("",".*Create.*","^MenuItem\\.cs$");
+			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.FindFile.FindFileListFromAssetsPath("",".*Lib.*","^MenuItem\\.cs$");
 			for(int ii=0;ii<t_list.Count;ii++){
 				UnityEngine.Debug.Log(t_list[ii]);
 			}
