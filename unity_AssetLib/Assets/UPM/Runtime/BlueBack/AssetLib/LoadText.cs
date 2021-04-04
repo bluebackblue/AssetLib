@@ -22,11 +22,8 @@ namespace BlueBack.AssetLib
 		*/
 		public static string LoadTextFromAssetsPath(string a_assets_path_with_extention)
 		{
-			using(System.IO.StreamReader t_stream = new System.IO.StreamReader(UnityEngine.Application.dataPath + "/" + a_assets_path_with_extention)){
-				string t_result = t_stream.ReadToEnd();
-				t_stream.Close();
-				return t_result;
-			}
+			byte[] t_data = LoadBinary.LoadBinaryFromAssetsPath(a_assets_path_with_extention);
+			return EncodeCheck.GetEncoding(t_data).GetString(t_data);
 		}
 
 		/** テキストロード。

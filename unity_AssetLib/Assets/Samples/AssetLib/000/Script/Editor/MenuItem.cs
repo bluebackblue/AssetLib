@@ -9,11 +9,10 @@ namespace Samples.AssetLib.Script.Editor
 	#if(UNITY_EDITOR)
 	public class MenuItem
 	{
-
 		/** 「Enum.cs」を作成。
 		*/
 		[UnityEditor.MenuItem("サンプル/AssetLib/Script/CreateEnumToAssetsPath")]
-		private static void MenuItem_Sample_AssetLib_Script_OpenSceneFromAssetsPath()
+		private static void MenuItem_CreateEnumToAssetsPath()
 		{
 			System.Collections.Generic.List<BlueBack.AssetLib.SaveEnumItem> t_list = new System.Collections.Generic.List<BlueBack.AssetLib.SaveEnumItem>();
 			{
