@@ -36,6 +36,10 @@
     {
       "displayName": "Script",
       "path": "Samples~/Script"
+    },
+    {
+      "displayName": "EncodeCheck",
+      "path": "Samples~/EncodeCheck"
     }
   ]
 }
