@@ -7,6 +7,8 @@
 * ディレクトリの作成、削除
 * ファイル名、ディレクトリ名の列挙、ファイル検索
 * シーンを開く
+* テキストのエンコード判別
+* CSファイルのUTF8コンバート
 
 ## ライセンス
 MIT License
@@ -17,7 +19,7 @@ Unity 2020.2.4f1
 
 ## URL
 ### 最新
-* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.4
+* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.5
 ### 開発
 * https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM
 
