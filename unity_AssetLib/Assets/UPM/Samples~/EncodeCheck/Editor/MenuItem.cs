@@ -9,9 +9,9 @@ namespace Samples.AssetLib.EncodeCheck.Editor
 	#if(UNITY_EDITOR)
 	public class MenuItem
 	{
-		/** エンコード。
+		/** 繧ｨ繝ｳ繧ｳ繝ｼ繝峨�
 		*/
-		[UnityEditor.MenuItem("サンプル/AssetLib/Script/EncodeCheck")]
+		[UnityEditor.MenuItem("繧ｵ繝ｳ繝励Ν/AssetLib/Script/EncodeCheck")]
 		private static void MenuItem_EncodeCheck()
 		{
 			string[] t_namelist = new string[]{
