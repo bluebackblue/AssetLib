@@ -31,7 +31,7 @@ namespace Samples.AssetLib.Asset.Editor
 		{
 			//バイナリのセーブ。
 			{
-				BlueBack.AssetLib.SavelBinary.SaveBinaryToAssetsPath(new byte[]{0x01,0x02,0x03},"Samples/AssetLib/binary.dat");
+				BlueBack.AssetLib.SaveBinary.SaveBinaryToAssetsPath(new byte[]{0x01,0x02,0x03},"Samples/AssetLib/binary.dat");
 				BlueBack.AssetLib.RefreshAsset.Refresh();
 			}
 
@@ -48,13 +48,11 @@ namespace Samples.AssetLib.Asset.Editor
 		{
 			//プレハブのセーブ。
 			{
-				UnityEngine.GameObject t_prefab = new UnityEngine.GameObject("temp");
-				{
-					t_prefab.AddComponent<A_MonoBehaviour>().value = 11;
-					t_prefab.AddComponent<B_MonoBehaviour>().value = 22;
-					BlueBack.AssetLib.SavePrefab.SavePrefabToAssetsPath(t_prefab,"Samples/AssetLib/ab.prefab");
+				BlueBack.AssetLib.Result<UnityEngine.GameObject> t_prefab = BlueBack.AssetLib.SavePrefab.CreatePrefabToAssetsPath("Samples/AssetLib/ab.prefab");
+				if(t_prefab.value != null){
+					t_prefab.value.AddComponent<A_MonoBehaviour>().value = 11;
+					t_prefab.value.AddComponent<B_MonoBehaviour>().value = 22;
 				}
-				UnityEngine.GameObject.DestroyImmediate(t_prefab);
 				BlueBack.AssetLib.RefreshAsset.Refresh();
 			}
 
