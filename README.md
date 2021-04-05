@@ -14,12 +14,17 @@
 MIT License
 * https://github.com/bluebackblue/AssetLib/blob/main/LICENSE
 
+## 外部依存 / 使用ライセンス等
+
+### サンプルのみ
+* https://github.com/bluebackblue/AssetLib
+
 ## 動作確認
 Unity 2020.2.4f1
 
 ## URL
 ### 最新
-* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.5
+* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.6
 ### 開発
 * https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM
 
