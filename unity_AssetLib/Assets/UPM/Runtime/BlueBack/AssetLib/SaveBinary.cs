@@ -11,9 +11,9 @@
 */
 namespace BlueBack.AssetLib
 {
-	/** SavelBinary
+	/** SaveBinary
 	*/
-	public class SavelBinary
+	public class SaveBinary
 	{
 		/** バイナリセーブ。
 
