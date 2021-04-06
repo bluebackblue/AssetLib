@@ -31,13 +31,13 @@ namespace BlueBack.AssetLib.Editor
 			case LineFeedOption.LF:
 				{
 					t_text = a_text.Replace("\r\n","\n");
-					t_text = a_text.Replace("\r","\n");
+					t_text = t_text.Replace("\r","\n");
 				}break;
 			case LineFeedOption.CRLF:
 				{
 					t_text = a_text.Replace("\r\n","\n");
-					t_text = a_text.Replace("\r","\n");
-					t_text = a_text.Replace("\n","\r\n");
+					t_text = t_text.Replace("\r","\n");
+					t_text = t_text.Replace("\n","\r\n");
 				}break;
 			case LineFeedOption.None:
 			default:
