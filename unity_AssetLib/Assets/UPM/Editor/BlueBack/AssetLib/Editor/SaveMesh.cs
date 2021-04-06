@@ -7,9 +7,10 @@
 */
 
 
-/** BlueBack.AssetLib
+/** BlueBack.AssetLib.Editor
 */
-namespace BlueBack.AssetLib
+#if(UNITY_EDITOR)
+namespace BlueBack.AssetLib.Editor
 {
 	/** SaveMesh
 	*/
@@ -18,7 +19,7 @@ namespace BlueBack.AssetLib
 		/** メッシュセーブ。
 
 			a_mesh							: メッシュ。
-			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。
+			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 
 		*/
 		#if(UNITY_EDITOR)
@@ -30,4 +31,5 @@ namespace BlueBack.AssetLib
 		#endif
 	}
 }
+#endif
 

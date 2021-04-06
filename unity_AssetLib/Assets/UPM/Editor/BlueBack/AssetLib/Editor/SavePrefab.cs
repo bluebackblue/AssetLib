@@ -7,9 +7,10 @@
 */
 
 
-/** BlueBack.AssetLib
+/** BlueBack.AssetLib.Editor
 */
-namespace BlueBack.AssetLib
+#if(UNITY_EDITOR)
+namespace BlueBack.AssetLib.Editor
 {
 	/** SavePrefab
 	*/
@@ -21,7 +22,6 @@ namespace BlueBack.AssetLib
 			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。
 
 		*/
-		#if(UNITY_EDITOR)
 		public static Result<UnityEngine.GameObject> SavePrefabToAssetsPath(UnityEngine.GameObject a_gameobject,string a_assets_path_with_extention)
 		{
 			Result<UnityEngine.GameObject> t_result;
@@ -29,7 +29,6 @@ namespace BlueBack.AssetLib
 
 			return t_result;
 		}
-		#endif
 
 		/** プレハブセーブ
 
@@ -37,7 +36,6 @@ namespace BlueBack.AssetLib
 			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。
 
 		*/
-		#if(UNITY_EDITOR)
 		public static Result<UnityEngine.GameObject> SaveAsPrefabToAssetsPath(UnityEngine.GameObject a_gameobject,string a_assets_path_with_extention)
 		{
 			UnityEngine.GameObject t_temp = UnityEngine.GameObject.Instantiate(a_gameobject);
@@ -49,14 +47,12 @@ namespace BlueBack.AssetLib
 
 			return t_result;
 		}
-		#endif
 
 		/** プレハブセーブ
 
 			a_assets_path_with_extention		: 「Assets」からの相対バス。拡張子付き。
 
 		*/
-		#if(UNITY_EDITOR)
 		public static Result<UnityEngine.GameObject> CreatePrefabToAssetsPath(string a_assets_path_with_extention)
 		{
 			UnityEngine.GameObject t_gameobject = new UnityEngine.GameObject("temp");
@@ -66,7 +62,7 @@ namespace BlueBack.AssetLib
 
 			return t_result;
 		}
-		#endif
 	}
 }
+#endif
 

@@ -7,9 +7,10 @@
 */
 
 
-/** BlueBack.AssetLib
+/** BlueBack.AssetLib.Editor
 */
-namespace BlueBack.AssetLib
+#if(UNITY_EDITOR)
+namespace BlueBack.AssetLib.Editor
 {
 	/** RefreshAsset
 	*/
@@ -17,12 +18,11 @@ namespace BlueBack.AssetLib
 	{
 		/** アセットリフレッシュ
 		*/
-		#if(UNITY_EDITOR)
 		public static void Refresh()
 		{
 			UnityEditor.AssetDatabase.Refresh();
 		}
-		#endif
 	}
 }
+#endif
 

@@ -7,9 +7,10 @@
 */
 
 
-/** BlueBack.AssetLib
+/** BlueBack.AssetLib.Editor
 */
-namespace BlueBack.AssetLib
+#if(UNITY_EDITOR)
+namespace BlueBack.AssetLib.Editor
 {
 	/** LoadAsset
 	*/
@@ -20,19 +21,16 @@ namespace BlueBack.AssetLib
 			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
 
 		*/
-		#if(UNITY_EDITOR)
 		public static UnityEngine.Object[] LoadAllAssetsFromAssetsPath(string a_assets_path_with_extention)
 		{
 			return UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/" + a_assets_path_with_extention);
 		}
-		#endif
 
 		/** 全指定アセットロード。
 
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 
 		*/
-		#if(UNITY_EDITOR)
 		public static System.Collections.Generic.List<T> LoadAllSpecifiedAssetsFromAssetsPath<T>(string a_assets_path_with_extention)
 			where T : class
 		{
@@ -50,20 +48,18 @@ namespace BlueBack.AssetLib
 
 			return t_list;
 		}
-		#endif
 
 		/** アセットロード。
 
 			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
 
 		*/
-		#if(UNITY_EDITOR)
 		public static T LoadAssetFromAssetsPath<T>(string a_assets_path_with_extention)
 			where T : UnityEngine.Object
 		{
 			return UnityEditor.AssetDatabase.LoadAssetAtPath<T>("Assets/" + a_assets_path_with_extention);
 		}
-		#endif
 	}
 }
+#endif
 

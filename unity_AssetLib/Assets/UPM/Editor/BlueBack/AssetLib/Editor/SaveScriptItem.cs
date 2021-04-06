@@ -3,17 +3,18 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief ＥＮＵＭセーブ。
+ * @brief スクリプトセーブ。
 */
 
 
-/** BlueBack.AssetLib
+/** BlueBack.AssetLib.Editor
 */
-namespace BlueBack.AssetLib
+#if(UNITY_EDITOR)
+namespace BlueBack.AssetLib.Editor
 {
-	/** SaveEnumItem
+	/** SaveScriptItem
 	*/
-	public struct SaveEnumItem
+	public struct SaveScriptItem
 	{
 		/** value
 		*/
@@ -25,7 +26,7 @@ namespace BlueBack.AssetLib
 
 		/** constructor
 		*/
-		public SaveEnumItem(string a_value)
+		public SaveScriptItem(string a_value)
 		{
 			this.value = a_value;
 			this.comment = null;
@@ -33,7 +34,7 @@ namespace BlueBack.AssetLib
 
 		/** constructor
 		*/
-		public SaveEnumItem(string a_value,string a_comment)
+		public SaveScriptItem(string a_value,string a_comment)
 		{
 			this.value = a_value;
 			this.comment = a_comment;
@@ -41,7 +42,7 @@ namespace BlueBack.AssetLib
 
 		/** constructor
 		*/
-		public SaveEnumItem(string a_name,int a_value,string a_comment)
+		public SaveScriptItem(string a_name,int a_value,string a_comment)
 		{
 			this.value = string.Format("{0} = {1}",a_name,a_value);
 			this.comment = a_comment;
@@ -49,7 +50,7 @@ namespace BlueBack.AssetLib
 
 		/** constructor
 		*/
-		public SaveEnumItem(string a_name,System.Int64 a_value,string a_comment)
+		public SaveScriptItem(string a_name,System.Int64 a_value,string a_comment)
 		{
 			this.value = string.Format("{0} = {1}",a_name,a_value);
 			this.comment = a_comment;
@@ -57,11 +58,12 @@ namespace BlueBack.AssetLib
 
 		/** constructor
 		*/
-		public SaveEnumItem(string a_name,System.UInt64 a_value,string a_comment)
+		public SaveScriptItem(string a_name,System.UInt64 a_value,string a_comment)
 		{
 			this.value = string.Format("{0} = {1}",a_name,a_value);
 			this.comment = a_comment;
 		}
 	}
 }
+#endif
 

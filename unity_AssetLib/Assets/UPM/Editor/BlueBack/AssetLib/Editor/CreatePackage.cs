@@ -7,9 +7,10 @@
 */
 
 
-/** BlueBack.AssetLib
+/** BlueBack.AssetLib.Editor
 */
-namespace BlueBack.AssetLib
+#if(UNITY_EDITOR)
+namespace BlueBack.AssetLib.Editor
 {
 	/** CreatePackage
 	*/
@@ -22,12 +23,10 @@ namespace BlueBack.AssetLib
 			a_exportoption	: エクスポートオプション。
 
 		*/
-		#if(UNITY_EDITOR)
 		public static void CreatePackageFromAssetsPath(string a_assets_path,string a_package_name,UnityEditor.ExportPackageOptions a_exportoption)
 		{
 			UnityEditor.AssetDatabase.ExportPackage("Assets/" + a_assets_path,a_package_name,a_exportoption);
 		}
-		#endif
 
 		/** パッケージ作成。
 
@@ -36,7 +35,6 @@ namespace BlueBack.AssetLib
 			a_exportoption	: エクスポートオプション。
 
 		*/
-		#if(UNITY_EDITOR)
 		public static bool TryCreatePackageFromAssetsPath(string a_assets_path,string a_package_name,UnityEditor.ExportPackageOptions a_exportoption)
 		{
 			bool t_result;
@@ -55,7 +53,7 @@ namespace BlueBack.AssetLib
 
 			return t_result;
 		}
-		#endif
 	}
 }
+#endif
 

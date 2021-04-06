@@ -7,14 +7,14 @@
 */
 
 
-/** BlueBack.AssetLib.Editor
+/** BlueBack.AssetLib.Editor.MenuItem
 */
-namespace BlueBack.AssetLib.Editor
+#if(UNITY_EDITOR)
+namespace BlueBack.AssetLib.Editor.MenuItem
 {
-	/** MenuItem
+	/** ConvertToUtf8CsFile
 	*/
-	#if(UNITY_EDITOR)
-	public class MenuItem
+	public class ConvertToUtf8CsFile
 	{
 		/** UTF8のCSファイルにコンバートする。
 
@@ -28,13 +28,18 @@ namespace BlueBack.AssetLib.Editor
 			for(int ii=0;ii<t_list.Count;ii++){
 				UnityEngine.Debug.Log(t_list[ii]);
 				string t_path = t_list[ii];
-				string t_body = LoadText.LoadTextFromAssetsPath(t_list[ii]);
-				SaveText.SaveUtf8TextToAssetsPath(t_body,t_path,false);
+				string t_text = LoadText.LoadTextFromAssetsPath(t_list[ii]);
+
+				t_text = t_text.Replace("\r\n","\n");
+				t_text = t_text.Replace("\r","");
+
+				t_text = t_text.Replace("\n","\r\n");
+				SaveText.SaveUtf8TextToAssetsPath(t_text,t_path,false,LineFeedOption.CRLF);
 			}
 
 			RefreshAsset.Refresh();
 		}
 	}
-	#endif
 }
+#endif
 

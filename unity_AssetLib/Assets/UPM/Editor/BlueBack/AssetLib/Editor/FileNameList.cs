@@ -7,9 +7,10 @@
 */
 
 
-/** BlueBack.AssetLib
+/** BlueBack.AssetLib.Editor
 */
-namespace BlueBack.AssetLib
+#if(UNITY_EDITOR)
+namespace BlueBack.AssetLib.Editor
 {
 	/** FileNameList
 	*/
@@ -144,4 +145,5 @@ namespace BlueBack.AssetLib
 		}
 	}
 }
+#endif
 

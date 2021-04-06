@@ -7,9 +7,10 @@
 */
 
 
-/** BlueBack.AssetLib
+/** BlueBack.AssetLib.Editor
 */
-namespace BlueBack.AssetLib
+#if(UNITY_EDITOR)
+namespace BlueBack.AssetLib.Editor
 {
 	/** SaveAnimationClip
 	*/
@@ -17,8 +18,8 @@ namespace BlueBack.AssetLib
 	{
 		/** アニメーションクリップセーブ。
 
-			a_animation_clip					: アニメーションクリップ。
-			a_assets_path_with_extention		: 「Assets」からの相対バス。
+			a_animation_clip				: アニメーションクリップ。
+			a_assets_path_with_extention	: 「Assets」からの相対バス。
 			a_name							: 名前。
 
 		*/
@@ -32,4 +33,5 @@ namespace BlueBack.AssetLib
 		#endif
 	}
 }
+#endif
 
