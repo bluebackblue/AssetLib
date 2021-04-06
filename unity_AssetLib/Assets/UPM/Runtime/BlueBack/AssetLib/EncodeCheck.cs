@@ -46,7 +46,7 @@ namespace BlueBack.AssetLib
 				#endif
 
 				//other
-				return System.Text.Encoding.GetEncoding(1200);
+				return System.Text.Encoding.GetEncoding(65001);
 			}
 		}
 
@@ -198,7 +198,7 @@ namespace BlueBack.AssetLib
 						if((t_data2 & 0xC0) == 0x80){
 							if((t_data3 & 0xC0) == 0x80){
 								if((t_data4 & 0xC0) == 0x80){
-									ii += 2;
+									ii += 3;
 									continue;
 								}else{
 									return false;

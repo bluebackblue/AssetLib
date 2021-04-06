@@ -28,7 +28,7 @@ namespace BlueBack.AssetLib.Editor.MenuItem
 			for(int ii=0;ii<t_list.Count;ii++){
 				UnityEngine.Debug.Log(t_list[ii]);
 				string t_path = t_list[ii];
-				string t_text = LoadText.LoadTextFromAssetsPath(t_list[ii]);
+				string t_text = LoadText.LoadTextFromAssetsPath(t_list[ii],null);
 				SaveText.SaveUtf8TextToAssetsPath(t_text,t_path,Config.DEFAULT_BOM,Config.DEFAULT_LINEFEEDOPTION);
 			}
 

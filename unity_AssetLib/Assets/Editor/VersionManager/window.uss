@@ -1,0 +1,18 @@
+
+.blue
+{
+	font-size: 20px;
+	color: rgb(10, 10, 180);
+}
+
+#red
+{
+	font-size: 20px;
+	color: rgb(180, 10, 10);
+}
+
+#white
+{
+	font-size: 20px;
+	color: rgb(10, 10, 10);
+}

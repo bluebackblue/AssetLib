@@ -20,7 +20,7 @@ namespace Samples.AssetLib.Asset.Editor
 				BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 			}
 
-			string t_text = BlueBack.AssetLib.Editor.LoadText.TryLoadTextFromAssetsPath("Samples/AssetLib/xxx.txt");
+			string t_text = BlueBack.AssetLib.Editor.LoadText.TryLoadTextFromAssetsPath("Samples/AssetLib/xxx.txt",null);
 			UnityEngine.Debug.Log(t_text);
 		}
 

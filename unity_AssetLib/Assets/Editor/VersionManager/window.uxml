@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
+    xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
+
+  
+  <Box>
+    <Button class="button_reload" name="button_reload" text="button_reload" />
+  </Box>
+
+  <Box>
+    <Label text=" "/>
+    <Label text=" "/>
+    <Label text=" "/>
+  </Box>
+
+  <Box>
+    <Button class="button_remote" name="button_remote" text="button_remote" />
+    <Label class="label_remote"  text="label_remote"/>
+  </Box>
+    
+    <Label text="xxxxxxxxxxxx"/>
+  <Box>
+    <Toggle name="aaaa" label="aaaa" value="false" />
+    <Toggle name="bbbb" label="bbbb" value="false" />
+    <Toggle name="cccc" label="cccc" value="true"/>
+  </Box>
+  <Box>
+    <Button class="blue" name="blue" text="Blue" />
+    <Button name="ok" text="Red" />
+    <Button name="white" text="White" />
+  </Box>
+</UXML>
