@@ -12,11 +12,11 @@ namespace Samples.AssetLib.Asset.Editor
 		/** テキストのロード。
 		*/
 		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/LoadTextFromAssetsPath")]
-		private static void MenuItem_Sample_AssetLib_Asset_LoadTextFromAssetsPath()
+		private static void MenuItem_LoadTextFromAssetsPath()
 		{
 			//テキストの保存。
 			{
-				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath("xxxBBBxxx","Samples/AssetLib/xxx.txt",false,BlueBack.AssetLib.LineFeedOption.CRLF);
+				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath("xxxBBBxxx","Samples/AssetLib/xxx.txt",BlueBack.AssetLib.Config.DEFAULT_BOM,BlueBack.AssetLib.Config.DEFAULT_LINEFEEDOPTION);
 				BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 			}
 
@@ -27,7 +27,7 @@ namespace Samples.AssetLib.Asset.Editor
 		/** バイナリのロード。
 		*/
 		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/LoadBinaryFromAssetsPath")]
-		private static void MenuItem_Sample_AssetLib_Asset_LoadBinaryFromAssetsPath()
+		private static void MenuItem_LoadBinaryFromAssetsPath()
 		{
 			//バイナリのセーブ。
 			{
@@ -44,7 +44,7 @@ namespace Samples.AssetLib.Asset.Editor
 		/** アセットのロード。
 		*/
 		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/LoadAllAssetsFromAssetsPath")]
-		private static void MenuItem_Sample_AssetLib_Asset_LoadAllAssetsFromAssetsPath()
+		private static void MenuItem_LoadAllAssetsFromAssetsPath()
 		{
 			//プレハブのセーブ。
 			{
@@ -90,7 +90,7 @@ namespace Samples.AssetLib.Asset.Editor
 		/** アニメーションクリップのセーブ。
 		*/
 		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/SaveAsAnimationClipToAssetsPath")]
-		private static void MenuItem_Sample_AssetLib_Asset_SaveAsAnimationClipToAssetsPath()
+		private static void MenuItem_SaveAsAnimationClipToAssetsPath()
 		{
 			UnityEngine.AnimationClip t_animationclip = new UnityEngine.AnimationClip();
 			t_animationclip.wrapMode = UnityEngine.WrapMode.Loop;
@@ -102,13 +102,36 @@ namespace Samples.AssetLib.Asset.Editor
 		/** メッシュのセーブ。
 		*/
 		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/SaveMeshToAssetsPath")]
-		private static void MenuItem_Sample_AssetLib_Asset_SaveMeshToAssetsPath()
+		private static void MenuItem_SaveMeshToAssetsPath()
 		{
 			UnityEngine.Mesh t_mesh = new UnityEngine.Mesh();
 			t_mesh.vertices = new UnityEngine.Vector3[]{new UnityEngine.Vector3(0,0,0),new UnityEngine.Vector3(1,0,0),new UnityEngine.Vector3(0,1,0)};
 			t_mesh.triangles = new int[]{0,1,2};
 
 			BlueBack.AssetLib.Editor.SaveMesh.SaveAsMeshToAssetsPath(t_mesh,"Samples/AssetLib/mesh.mesh");
+		}
+
+		/** メッシュのセーブ。
+		*/
+		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/SaveAsMeshToAssetsPath")]
+		private static void MenuItem_SaveAsMeshToAssetsPath()
+		{
+			UnityEngine.Mesh t_mesh = new UnityEngine.Mesh();
+			t_mesh.vertices = new UnityEngine.Vector3[]{new UnityEngine.Vector3(0,0,0),new UnityEngine.Vector3(1,0,0),new UnityEngine.Vector3(0,1,0)};
+			t_mesh.triangles = new int[]{0,1,2};
+
+			BlueBack.AssetLib.Editor.SaveMesh.SaveAsMeshToAssetsPath(t_mesh,"Samples/AssetLib/mesh.mesh");
+		}
+
+		/** ダウンロード。
+		*/
+		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/Download")]
+		private static void MenuItem_Download()
+		{
+			byte[] t_data = BlueBack.AssetLib.Editor.LoadBinary.TryLoadBinaryFromUrl("https://raw.githubusercontent.com/bluebackblue/AssetLib/main/unity_AssetLib/Assets/UPM/package.json",null);
+			string t_text = BlueBack.AssetLib.EncodeCheck.GetEncoding(t_data).GetString(t_data);
+
+			UnityEngine.Debug.Log(t_text);
 		}
 	}
 	#endif

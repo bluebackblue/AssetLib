@@ -14,28 +14,28 @@ namespace Samples.AssetLib.Script.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Script/CreateEnumToAssetsPath")]
 		private static void MenuItem_CreateEnumToAssetsPath()
 		{
-			System.Collections.Generic.List<BlueBack.AssetLib.SaveEnumItem> t_list = new System.Collections.Generic.List<BlueBack.AssetLib.SaveEnumItem>();
+			System.Collections.Generic.List<BlueBack.AssetLib.Editor.SaveScriptItem> t_list = new System.Collections.Generic.List<BlueBack.AssetLib.Editor.SaveScriptItem>();
 			{
-				t_list.Add(new BlueBack.AssetLib.SaveEnumItem("TypeA","タイプＡ"));
-				t_list.Add(new BlueBack.AssetLib.SaveEnumItem("TypeB","タイプＢ"));
-				t_list.Add(new BlueBack.AssetLib.SaveEnumItem("TypeC","タイプＣ"));
-				t_list.Add(new BlueBack.AssetLib.SaveEnumItem("None",-1,"なし"));
+				t_list.Add(new BlueBack.AssetLib.Editor.SaveScriptItem("TypeA","タイプＡ"));
+				t_list.Add(new BlueBack.AssetLib.Editor.SaveScriptItem("TypeB","タイプＢ"));
+				t_list.Add(new BlueBack.AssetLib.Editor.SaveScriptItem("TypeC","タイプＣ"));
+				t_list.Add(new BlueBack.AssetLib.Editor.SaveScriptItem("None",-1,"なし"));
 			}
 
 			string[] t_template_header = new string[]{
 				"",
 				"",
-				"/** 自動生成",
+				"/** <<file_comment>>",
 				"*/",
 				"",
 				"",
-				"/** Namespace",
+				"/** <<namespace_comment>>",
 				"*/",
-				"namespace Namespace",
+				"namespace <<namespace_name>>",
 				"{",
-				"	/** Enum",
+				"	/** <<enum_comment>>",
 				"	*/",
-				"	public enum Enum",
+				"	public enum <<enum_name>>",
 				"	{",
 			};
 
@@ -58,7 +58,18 @@ namespace Samples.AssetLib.Script.Editor
 				"",
 			};
 
-			BlueBack.AssetLib.SaveEnum.SaveEnumToAssetsPath(t_list,"Samples/AssetLib/Enum.cs",t_template_header,t_template_loop,t_template_loopend,t_template_footer);
+			System.Collections.Generic.Dictionary<string,string> t_replace_list = new System.Collections.Generic.Dictionary<string,string>();
+			{
+				t_replace_list.Add("<<file_comment>>","自動生成");
+
+				t_replace_list.Add("<<namespace_comment>>","TestNameSpace");
+				t_replace_list.Add("<<namespace_name>>","TestNameSpace");
+
+				t_replace_list.Add("<<enum_comment>>","TestEnum");
+				t_replace_list.Add("<<enum_name>>","TestEnum");
+			}
+
+			BlueBack.AssetLib.Editor.SaveScript.SaveScriptToAssetsPath(t_list,"Samples/AssetLib/TestEnum.cs",t_template_header,t_template_loop,t_template_loopend,t_template_footer,t_replace_list,BlueBack.AssetLib.Config.DEFAULT_BOM,BlueBack.AssetLib.Config.DEFAULT_LINEFEEDOPTION);
 		}
 	}
 	#endif

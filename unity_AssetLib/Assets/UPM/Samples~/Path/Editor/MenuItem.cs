@@ -14,8 +14,8 @@ namespace Samples.AssetLib.Path.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Path/CreateDirectoryToAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_Path_CreateDirectoryToAssetsPath()
 		{
-			BlueBack.AssetLib.CreateDirectory.CreateDirectoryToAssetsPath("Samples/AssetLib/NewDirectory/xxx");
-			BlueBack.AssetLib.RefreshAsset.Refresh();
+			BlueBack.AssetLib.Editor.CreateDirectory.CreateDirectoryToAssetsPath("Samples/AssetLib/NewDirectory/xxx");
+			BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 		}
 
 		/** ディレクトリ削除。
@@ -23,9 +23,9 @@ namespace Samples.AssetLib.Path.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Path/DeleteDirectoryFromAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_Path_DeleteDirectoryFromAssetsPath()
 		{
-			BlueBack.AssetLib.DeleteDirectory.DeleteDirectoryFromAssetsPath("Samples/AssetLib/NewDirectory");
-			BlueBack.AssetLib.DeleteFile.DeleteFileFromAssetsPath("Samples/AssetLib/NewDirectory.meta");
-			BlueBack.AssetLib.RefreshAsset.Refresh();
+			BlueBack.AssetLib.Editor.DeleteDirectory.DeleteDirectoryFromAssetsPath("Samples/AssetLib/NewDirectory");
+			BlueBack.AssetLib.Editor.DeleteFile.DeleteFileFromAssetsPath("Samples/AssetLib/NewDirectory.meta");
+			BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 		}
 
 		/** ディレクトリ名を列挙。
@@ -33,7 +33,7 @@ namespace Samples.AssetLib.Path.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Path/CreateAllDirectoryNameListFromAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_Path_CreateAllDirectoryNameListFromAssetsPath()
 		{
-			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.DorectoryNameList.CreateAllDirectoryNameListFromAssetsPath("");
+			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.Editor.DorectoryNameList.CreateAllDirectoryNameListFromAssetsPath("");
 			for(int ii=0;ii<t_list.Count;ii++){
 				UnityEngine.Debug.Log(t_list[ii]);
 			}
@@ -44,7 +44,7 @@ namespace Samples.AssetLib.Path.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Path/CreateAllFileNameListFromAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_Path_CreateAllFileNameListFromAssetsPath()
 		{
-			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.FileNameList.CreateAllFileNameListFromAssetsPath("");
+			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.Editor.FileNameList.CreateAllFileNameListFromAssetsPath("");
 			for(int ii=0;ii<t_list.Count;ii++){
 				UnityEngine.Debug.Log(t_list[ii]);
 			}
@@ -56,12 +56,12 @@ namespace Samples.AssetLib.Path.Editor
 		private static void MenuItem_Sample_AssetLib_Path_ExistFile()
 		{
 			{
-				bool t_isexist = BlueBack.AssetLib.ExistFile.IsExistFileFromAssetsPath("Samples.meta");
+				bool t_isexist = BlueBack.AssetLib.Editor.ExistFile.IsExistFileFromAssetsPath("Samples.meta");
 				UnityEngine.Debug.Log("Samples.meta : " + t_isexist.ToString());
 			}
 
 			{
-				bool t_isexist = BlueBack.AssetLib.ExistFile.IsExistFileFromAssetsPath("xxxx.xxx");
+				bool t_isexist = BlueBack.AssetLib.Editor.ExistFile.IsExistFileFromAssetsPath("xxxx.xxx");
 				UnityEngine.Debug.Log("xxxx.xxx : " + t_isexist.ToString());
 			}
 		}
@@ -71,7 +71,7 @@ namespace Samples.AssetLib.Path.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Path/FindFile")]
 		private static void MenuItem_Sample_AssetLib_Path_FindFile()
 		{
-			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.FindFile.FindFileListFromAssetsPath("",".*Lib.*","^MenuItem\\.cs$");
+			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.Editor.FindFile.FindFileListFromAssetsPath("",".*Lib.*","^MenuItem\\.cs$");
 			for(int ii=0;ii<t_list.Count;ii++){
 				UnityEngine.Debug.Log(t_list[ii]);
 			}

@@ -29,12 +29,7 @@ namespace BlueBack.AssetLib.Editor.MenuItem
 				UnityEngine.Debug.Log(t_list[ii]);
 				string t_path = t_list[ii];
 				string t_text = LoadText.LoadTextFromAssetsPath(t_list[ii]);
-
-				t_text = t_text.Replace("\r\n","\n");
-				t_text = t_text.Replace("\r","");
-
-				t_text = t_text.Replace("\n","\r\n");
-				SaveText.SaveUtf8TextToAssetsPath(t_text,t_path,false,LineFeedOption.CRLF);
+				SaveText.SaveUtf8TextToAssetsPath(t_text,t_path,Config.DEFAULT_BOM,Config.DEFAULT_LINEFEEDOPTION);
 			}
 
 			RefreshAsset.Refresh();

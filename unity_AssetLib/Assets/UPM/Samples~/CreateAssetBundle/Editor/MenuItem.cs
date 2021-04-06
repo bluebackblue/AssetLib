@@ -16,8 +16,8 @@ namespace Samples.AssetLib.CreateAssetBundle.Editor
 		{
 			//アセットバンドル化する元データを作成。
 			{
-				BlueBack.AssetLib.SaveText.SaveUtf8TextToAssetsPath("xxxDATAxxx","Samples/AssetLib/data.txt",true);
-				BlueBack.AssetLib.RefreshAsset.Refresh();
+				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath("xxxDATAxxx","Samples/AssetLib/data.txt",BlueBack.AssetLib.Config.DEFAULT_BOM,BlueBack.AssetLib.Config.DEFAULT_LINEFEEDOPTION);
+				BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 			}
 
 			UnityEditor.AssetBundleBuild[] t_list = new UnityEditor.AssetBundleBuild[]{
@@ -33,8 +33,8 @@ namespace Samples.AssetLib.CreateAssetBundle.Editor
 				}	
 			};
 
-			BlueBack.AssetLib.CreateAssetBundle.CreateAssetBundleToAssetsPath("Samples/AssetLib",t_list,UnityEditor.BuildAssetBundleOptions.None,UnityEditor.EditorUserBuildSettings.activeBuildTarget);
-			BlueBack.AssetLib.RefreshAsset.Refresh();
+			BlueBack.AssetLib.Editor.CreateAssetBundle.CreateAssetBundleToAssetsPath("Samples/AssetLib",t_list,UnityEditor.BuildAssetBundleOptions.None,UnityEditor.EditorUserBuildSettings.activeBuildTarget);
+			BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 		}
 	}
 	#endif
