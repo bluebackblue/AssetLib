@@ -5,31 +5,63 @@
     xsi:noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd"
     xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
 
-  
-  <Box>
-    <Button class="button_reload" name="button_reload" text="button_reload" />
-  </Box>
 
+  <!-- リロード -->
   <Box>
-    <Label text=" "/>
+    <Button name="reload" text="ReLoad" />
+    <Label name="error" class="red" text=" "/>
     <Label text=" "/>
     <Label text=" "/>
   </Box>
 
+  <!-- 更新 -->
   <Box>
-    <Button class="button_remote" name="button_remote" text="button_remote" />
-    <Label class="label_remote"  text="label_remote"/>
-  </Box>
+    <Button name="update" text="Update" />
+
+    <!-- ステータス -->
+    <Box class="row">
+      <Label class="way2" text="github" />
+      <Label name="status_github_version" class="way2" text="0.0.0" />
+    </Box>
     
-    <Label text="xxxxxxxxxxxx"/>
-  <Box>
-    <Toggle name="aaaa" label="aaaa" value="false" />
-    <Toggle name="bbbb" label="bbbb" value="false" />
-    <Toggle name="cccc" label="cccc" value="true"/>
+    <Box class="row">
+      <Label class="way2" text="readme" />
+      <Label name="status_readme_version" class="way2" text="0.0.0" />
+    </Box>
+    
+    <Box class="row">
+      <Label class="way2" text="package.json" />
+      <Label name="status_package_version" class="way2" text="0.0.0" />
+    </Box>
   </Box>
+
+
   <Box>
-    <Button class="blue" name="blue" text="Blue" />
-    <Button name="ok" text="Red" />
-    <Button name="white" text="White" />
+    <Label text=" "/>
+    <Label text=" "/>
+    <Label text=" "/>
+
+    <Label text="README.md"/>
+    <Box class="row">
+      <Button class="way3" name="button_readme_0" text="0.0.9" />
+      <Button class="way3" name="button_readme_1" text="0.0.10" />
+      <Button class="way3" name="button_readme_2" text="0.0.11" />
+    </Box>
   </Box>
+
+  <Box>
+    <Label text=" "/>
+    <Label text=" "/>
+    <Label text=" "/>
+
+    <Label text="package.json"/>
+    <Box class="row">
+      <Button class="way3" name="button_package_0" text="0.0.9" />
+      <Button class="way3" name="button_package_1" text="0.0.10" />
+      <Button class="way3" name="button_package_2" text="0.0.11" />
+    </Box>
+  </Box>
+
+
+  <TextField class="textfield_lasttag" name="textfield_lasttag"></TextField>
 </UXML>

@@ -25,13 +25,19 @@ namespace BlueBack.AssetLib.Editor
 		public static string LoadTextFromAssetsPath(string a_assets_path_with_extention,System.Text.Encoding a_encoding)
 		{
 			byte[] t_data = LoadBinary.LoadBinaryFromAssetsPath(a_assets_path_with_extention);
+			int t_offset;
 
-			System.Text.Encoding t_encoding = a_encoding;
-			if(t_encoding == null){
-				t_encoding = EncodeCheck.GetEncoding(t_data);
+			System.Text.Encoding t_encoding;
+			if(a_encoding == null){
+				EncodeCheck.Result t_result = EncodeCheck.GetEncoding(t_data);
+				t_encoding = t_result.encoding;
+				t_offset = t_result.bomsize;
+			}else{
+				t_encoding = a_encoding;
+				t_offset = 0;
 			}
 
-			return t_encoding.GetString(t_data);
+			return t_encoding.GetString(t_data,t_offset,t_data.Length - t_offset);
 		}
 
 		/** テキストロード。
@@ -44,13 +50,19 @@ namespace BlueBack.AssetLib.Editor
 		public static string LoadTextFromUrl(string a_url,System.Collections.Generic.List<UnityEngine.Networking.IMultipartFormSection> a_post,System.Text.Encoding a_encoding)
 		{
 			byte[] t_data = LoadBinary.TryLoadBinaryFromUrl(a_url,a_post);
+			int t_offset;
 
-			System.Text.Encoding t_encoding = a_encoding;
-			if(t_encoding == null){
-				t_encoding = EncodeCheck.GetEncoding(t_data);
+			System.Text.Encoding t_encoding;
+			if(a_encoding == null){
+				EncodeCheck.Result t_result = EncodeCheck.GetEncoding(t_data);
+				t_encoding = t_result.encoding;
+				t_offset = t_result.bomsize;
+			}else{
+				t_encoding = a_encoding;
+				t_offset = 0;
 			}
 
-			return t_encoding.GetString(t_data);
+			return t_encoding.GetString(t_data,t_offset,t_data.Length - t_offset);
 		}
 
 		/** テキストロード。

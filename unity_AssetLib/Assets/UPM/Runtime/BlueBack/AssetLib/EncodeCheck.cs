@@ -15,38 +15,78 @@ namespace BlueBack.AssetLib
 	*/
 	public class EncodeCheck
 	{
+		/** Result
+		*/
+		public struct Result
+		{
+			public bool success;
+			public System.Text.Encoding encoding;
+			public int bomsize;
+		}
+
 		/** GetEncoding
 		*/
-		public static System.Text.Encoding GetEncoding(byte[] a_data)
+		public static Result GetEncoding(byte[] a_data)
 		{
 			if(IsUtf8Bom(a_data) == true){
 				//utf-8:bom
-				return System.Text.Encoding.GetEncoding(65001);
+				return new Result(){
+					success = true,
+					encoding = System.Text.Encoding.GetEncoding(65001),
+					bomsize = 3,
+				};
 			}else if(IsUtf16LeBom(a_data) == true){
 				//utf-16:le:bom
-				return System.Text.Encoding.GetEncoding(1200);
+				return new Result(){
+					success = true,
+					encoding = System.Text.Encoding.GetEncoding(1200),
+					bomsize = 2,
+				};
 			}else if(IsUtf16BeBom(a_data) == true){
 				//utf-16:be:bom
-				return System.Text.Encoding.GetEncoding(1201);
+				return new Result(){
+					success = true,
+					encoding = System.Text.Encoding.GetEncoding(1201),
+					bomsize = 2,
+				};
 			}else if(IsUtf32LeBom(a_data) == true){
 				//utf-32:le:bom
-				return System.Text.Encoding.GetEncoding(12000);
+				return new Result(){
+					success = true,
+					encoding = System.Text.Encoding.GetEncoding(12000),
+					bomsize = 2,
+				};
 			}else if(IsUtf32BeBom(a_data) == true){
 				//utf-32:be:bom
-				return System.Text.Encoding.GetEncoding(12001);
+				return new Result(){
+					success = true,
+					encoding = System.Text.Encoding.GetEncoding(12001),
+					bomsize = 2,
+				};
 			}else if(IsUtf8(a_data) == true){
 				//utf-8
-				return System.Text.Encoding.GetEncoding(65001);
+				return new Result(){
+					success = true,
+					encoding = System.Text.Encoding.GetEncoding(65001),
+					bomsize = 2,
+				};
 			}else if(IsSjis(a_data) == true){
 				//sjis
-				return System.Text.Encoding.GetEncoding(932);
+				return new Result(){
+					success = true,
+					encoding = System.Text.Encoding.GetEncoding(932),
+					bomsize = 2,
+				};
 			}else{
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
 				DebugTool.Assert(false);
 				#endif
 
-				//other
-				return System.Text.Encoding.GetEncoding(65001);
+				return new Result(){
+					success = false,
+					encoding = System.Text.Encoding.GetEncoding(65001),
+					bomsize = 0,
+				};
 			}
 		}
 

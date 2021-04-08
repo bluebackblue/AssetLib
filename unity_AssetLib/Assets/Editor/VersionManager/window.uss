@@ -1,18 +1,33 @@
 
-.blue
+Button
 {
 	font-size: 20px;
-	color: rgb(10, 10, 180);
+	color: rgb(255,255,255);
 }
 
-#red
+Label
 {
 	font-size: 20px;
-	color: rgb(180, 10, 10);
+	color: rgb(255,255,255);
 }
 
-#white
+.row
 {
-	font-size: 20px;
-	color: rgb(10, 10, 10);
+	flex-direction: row 
 }
+
+.way3
+{
+	width: 33%;
+}
+
+.way2
+{
+	width: 50%;
+}
+
+.red
+{
+	color: rgb(200,128,128);
+}
+
