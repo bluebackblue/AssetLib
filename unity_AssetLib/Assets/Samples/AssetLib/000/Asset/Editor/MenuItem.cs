@@ -129,7 +129,7 @@ namespace Samples.AssetLib.Asset.Editor
 		private static void MenuItem_Download()
 		{
 			byte[] t_data = BlueBack.AssetLib.Editor.LoadBinary.TryLoadBinaryFromUrl("https://raw.githubusercontent.com/bluebackblue/AssetLib/main/unity_AssetLib/Assets/UPM/package.json",null);
-			string t_text = BlueBack.AssetLib.EncodeCheck.GetEncoding(t_data).GetString(t_data);
+			string t_text = BlueBack.AssetLib.EncodeCheck.GetEncoding(t_data).encoding.GetString(t_data);
 
 			UnityEngine.Debug.Log(t_text);
 		}

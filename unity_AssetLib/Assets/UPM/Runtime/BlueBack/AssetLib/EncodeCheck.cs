@@ -54,28 +54,28 @@ namespace BlueBack.AssetLib
 				return new Result(){
 					success = true,
 					encoding = System.Text.Encoding.GetEncoding(12000),
-					bomsize = 2,
+					bomsize = 4,
 				};
 			}else if(IsUtf32BeBom(a_data) == true){
 				//utf-32:be:bom
 				return new Result(){
 					success = true,
 					encoding = System.Text.Encoding.GetEncoding(12001),
-					bomsize = 2,
+					bomsize = 4,
 				};
 			}else if(IsUtf8(a_data) == true){
 				//utf-8
 				return new Result(){
 					success = true,
 					encoding = System.Text.Encoding.GetEncoding(65001),
-					bomsize = 2,
+					bomsize = 0,
 				};
 			}else if(IsSjis(a_data) == true){
 				//sjis
 				return new Result(){
 					success = true,
 					encoding = System.Text.Encoding.GetEncoding(932),
-					bomsize = 2,
+					bomsize = 0,
 				};
 			}else{
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
