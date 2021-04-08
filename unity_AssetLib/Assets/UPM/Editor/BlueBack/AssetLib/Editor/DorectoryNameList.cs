@@ -12,9 +12,9 @@
 #if(UNITY_EDITOR)
 namespace BlueBack.AssetLib.Editor
 {
-	/** DorectoryNameList
+	/** DirectoryNameList
 	*/
-	public class DorectoryNameList
+	public class DirectoryNameList
 	{
 		/** 直下のディレクトリ名を列挙。
 

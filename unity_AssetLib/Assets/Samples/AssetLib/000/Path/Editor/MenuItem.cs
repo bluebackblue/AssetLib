@@ -33,7 +33,7 @@ namespace Samples.AssetLib.Path.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Path/CreateAllDirectoryNameListFromAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_Path_CreateAllDirectoryNameListFromAssetsPath()
 		{
-			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.Editor.DorectoryNameList.CreateAllDirectoryNameListFromAssetsPath("");
+			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.Editor.DirectoryNameList.CreateAllDirectoryNameListFromAssetsPath("");
 			for(int ii=0;ii<t_list.Count;ii++){
 				UnityEngine.Debug.Log(t_list[ii]);
 			}

@@ -26,6 +26,10 @@ namespace Editor.VersionManager
 		*/
 		private string error;
 
+		/** packagejson
+		*/
+		private PackageJson packagejson;
+
 		/** github_version
 		*/
 		private int github_version_0;
@@ -67,6 +71,9 @@ namespace Editor.VersionManager
 			this.package_version_0 = 0;
 			this.package_version_1 = 0;
 			this.package_version_2 = 0;
+
+			//packagejson
+			this.packagejson = new PackageJson();
 		}
 
 		/** OnEnable
@@ -221,6 +228,8 @@ namespace Editor.VersionManager
 			this.package_version_0 = 0;
 			this.package_version_1 = 0;
 			this.package_version_2 = 0;
+
+			this.packagejson.Save();
 
 			//github
 			{

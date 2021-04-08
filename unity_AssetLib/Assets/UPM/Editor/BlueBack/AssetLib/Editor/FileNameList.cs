@@ -99,7 +99,7 @@ namespace BlueBack.AssetLib.Editor
 					}
 				}
 
-				System.Collections.Generic.List<string> t_directory_list = DorectoryNameList.CreateAllDirectoryNameListFromAssetsPath(t_assets_path);
+				System.Collections.Generic.List<string> t_directory_list = DirectoryNameList.CreateAllDirectoryNameListFromAssetsPath(t_assets_path);
 				foreach(string t_path in t_directory_list){
 					System.Collections.Generic.List<string> t_file_name_list = CreateOnlyTopFileNameListFromAssetsPath(t_path);
 					for(int ii=0;ii<t_file_name_list.Count;ii++){
