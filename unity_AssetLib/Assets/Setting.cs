@@ -76,7 +76,7 @@ public class Setting
 			return new string[]{
 				"## ライセンス",
 				"MIT License",
-				"* https://github.com/bluebackblue/AssetLib/blob/main/LICENSE",
+				"* https://github.com/bluebackblue/" + PACKAGE_NAME + "/blob/main/LICENSE",
 			};
 		},
 
