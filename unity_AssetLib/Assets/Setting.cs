@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief Ý’èB
+ * @brief è¨­å®šã€‚
 */
 
 
@@ -25,7 +25,7 @@ public class Setting
 
 	/** PACKAGEJSON
 	*/
-	public const string PACKAGEJSON_DISCRIPTION = "ƒAƒZƒbƒg‘€ì";
+	public const string PACKAGEJSON_DISCRIPTION = "ã‚¢ã‚»ãƒƒãƒˆæ“ä½œ";
 
 	/** PACKAGEJSON
 	*/
@@ -55,84 +55,84 @@ public class Setting
 	*/
 	public static readonly ReadmeMd_StringCreator_Type[] READMEMD_STRINGCREATOR = new ReadmeMd_StringCreator_Type[]{
 
-		/** ŠT—vB
+		/** æ¦‚è¦ã€‚
 		*/
 		(in ReadmeMd_StringCreator_Argument a_argument) => {
 			return new string[]{
 				"# " + AUTHOR_NAME + "." + PACKAGE_NAME,
-				"ƒAƒZƒbƒg‘€ì",
-				"* ƒpƒbƒP[ƒW‚Ìì¬",
-				"* ƒAƒZƒbƒgƒoƒ“ƒhƒ‹‚Ìì¬",
-				"* ƒvƒŒƒnƒuAƒAƒZƒbƒgAƒeƒLƒXƒg‚ÌƒZ[ƒuƒ[ƒh",
-				"* ƒeƒLƒXƒg‚ÌƒGƒ“ƒR[ƒhƒfƒR[ƒh",
-				"* ƒfƒBƒŒƒNƒgƒŠ‚Ìì¬Aíœ",
-				"* ƒtƒ@ƒCƒ‹–¼AƒfƒBƒŒƒNƒgƒŠ–¼‚Ì—ñ‹“AŒŸõ",
+				"ã‚¢ã‚»ãƒƒãƒˆæ“ä½œ",
+				"* ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã®ä½œæˆ",
+				"* ã‚¢ã‚»ãƒƒãƒˆãƒãƒ³ãƒ‰ãƒ«ã®ä½œæˆ",
+				"* ãƒ—ãƒ¬ãƒãƒ–ã€ã‚¢ã‚»ãƒƒãƒˆã€ãƒ†ã‚­ã‚¹ãƒˆã®ã‚»ãƒ¼ãƒ–ãƒ­ãƒ¼ãƒ‰",
+				"* ãƒ†ã‚­ã‚¹ãƒˆã®ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‰ãƒ‡ã‚³ãƒ¼ãƒ‰",
+				"* ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ä½œæˆã€å‰Šé™¤",
+				"* ãƒ•ã‚¡ã‚¤ãƒ«åã€ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªåã®åˆ—æŒ™ã€æ¤œç´¢",
 			};
 		},
 
-		/** ƒ‰ƒCƒZƒ“ƒXB
+		/** ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã€‚
 		*/
 		(in ReadmeMd_StringCreator_Argument a_argument) => {
 			return new string[]{
-				"## ƒ‰ƒCƒZƒ“ƒX",
+				"## ãƒ©ã‚¤ã‚»ãƒ³ã‚¹",
 				"MIT License",
 				"* https://github.com/bluebackblue/AssetLib/blob/main/LICENSE",
 			};
 		},
 
-		/** ˆË‘¶B
+		/** ä¾å­˜ã€‚
 		*/
 		(in ReadmeMd_StringCreator_Argument a_argument) => {
 			return new string[]{
-				"## ŠO•”ˆË‘¶ / Žg—pƒ‰ƒCƒZƒ“ƒX“™",
-				"### ƒTƒ“ƒvƒ‹‚Ì‚Ý",
+				"## å¤–éƒ¨ä¾å­˜ / ä½¿ç”¨ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ç­‰",
+				"### ã‚µãƒ³ãƒ—ãƒ«ã®ã¿",
 				"* https://github.com/bluebackblue/AssetLib",
 			};
 		},
 
-		/** “®ìŠm”FB
+		/** å‹•ä½œç¢ºèªã€‚
 		*/
 		(in ReadmeMd_StringCreator_Argument a_argument) => {
 			return new string[]{
-				"## “®ìŠm”F",
+				"## å‹•ä½œç¢ºèª",
 				"Unity " + UnityEngine.Application.unityVersion,
 			};
 		},
 
-		/** UPMB
+		/** UPMã€‚
 		*/
 		(in ReadmeMd_StringCreator_Argument a_argument) => {
 			return new string[]{
 				"## UPM",
-				"### ÅV",
+				"### æœ€æ–°",
 				"* https://github.com/bluebackblue/" + PACKAGE_NAME + ".git?path=unity_" + PACKAGE_NAME + "/Assets/UPM#" + a_argument.version,
-				"### ŠJ”­",
+				"### é–‹ç™º",
 				"* https://github.com/bluebackblue/" + PACKAGE_NAME + ".git?path=unity_" + PACKAGE_NAME + "/Assets/UPM",
 			};
 		},
 
-		/** ƒCƒ“ƒXƒg[ƒ‹B 
+		/** ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã€‚ 
 		*/
 		(in ReadmeMd_StringCreator_Argument a_argument) => {
 			return new string[]{
-				"## Unity‚Ö‚Ì’Ç‰Á•û–@",
-				"* Unity‹N“®",
-				"* ƒƒjƒ…[‘I‘ðFuWindow->Package Managerv",
-				"* ƒ{ƒ^ƒ“‘I‘ðFu¶ã‚Ì{ƒ{ƒ^ƒ“v",
-				"* ƒŠƒXƒg‘I‘ðFuAdd package from git URL...v",
-				"* ã‹LUPM‚ÌURL‚ð’Ç‰Áu https://github.com/``/UPM#ƒo[ƒWƒ‡ƒ“ v",
-				"### ’",
-				"GitƒNƒ‰ƒCƒAƒ“ƒg‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚é•K—v‚ª‚ ‚éB",
+				"## Unityã¸ã®è¿½åŠ æ–¹æ³•",
+				"* Unityèµ·å‹•",
+				"* ãƒ¡ãƒ‹ãƒ¥ãƒ¼é¸æŠžï¼šã€ŒWindow->Package Managerã€",
+				"* ãƒœã‚¿ãƒ³é¸æŠžï¼šã€Œå·¦ä¸Šã®ï¼‹ãƒœã‚¿ãƒ³ã€",
+				"* ãƒªã‚¹ãƒˆé¸æŠžï¼šã€ŒAdd package from git URL...ã€",
+				"* ä¸Šè¨˜UPMã®URLã‚’è¿½åŠ ã€Œ https://github.com/ï½žï½ž/UPM#ãƒãƒ¼ã‚¸ãƒ§ãƒ³ ã€",
+				"### æ³¨",
+				"Gitã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãŒã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ã‚‹å¿…è¦ãŒã‚ã‚‹ã€‚",
 				"* https://docs.unity3d.com/ja/current/Manual/upm-git.html",
 				"* https://git-scm.com/",
 			};
 		},
 
-		/** —áB
+		/** ä¾‹ã€‚
 		*/
 		(in ReadmeMd_StringCreator_Argument a_argument) => {
 			return new string[]{
-				"## —á",
+				"## ä¾‹",
 				"```",
 				"```",
 			};
