@@ -70,6 +70,9 @@ namespace Editor.VersionManager
 			this.readmemd = null;
 
 			UnityEditor.Compilation.CompilationPipeline.compilationFinished += OnCompilationFinished;
+
+			//タイトル。
+			this.titleContent.text = "VersionManager";
 		}
 
 		/** コンパイル完了。
@@ -105,10 +108,6 @@ namespace Editor.VersionManager
 			}
 			UnityEngine.UIElements.VisualElement t_root_element = t_visualtree.CloneTree();
 			t_root.Add(t_root_element);
-
-			//USSのロード。
-			UnityEngine.UIElements.StyleSheet t_stylesheet = BlueBack.AssetLib.Editor.LoadAsset.LoadAssetFromAssetsPath<UnityEngine.UIElements.StyleSheet>("Editor/VersionManager/window.uss");
-			t_root.styleSheets.Add(t_stylesheet);
 
 			//エラー。
 			{

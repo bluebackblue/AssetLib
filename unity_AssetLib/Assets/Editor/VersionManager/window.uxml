@@ -6,6 +6,8 @@
     xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
 
 
+  <Style src="window.uss" />
+
   <!-- リロード -->
   <Box>
     <Button name="reload" text="ReLoad" />
@@ -41,9 +43,9 @@
       <Label class="way3" name="label_readme" text="---" />
     </Box>
     <Box class="row">
-      <Button class="way3" name="button_readme_0" text="0.0.9" />
-      <Button class="way3" name="button_readme_1" text="0.0.10" />
-      <Button class="way3" name="button_readme_2" text="0.0.11" />
+      <Button class="way3" name="button_readme_0" text="---" />
+      <Button class="way3" name="button_readme_1" text="---" />
+      <Button class="way3" name="button_readme_2" text="---" />
     </Box>
   </Box>
 
@@ -58,15 +60,9 @@
       <Label class="way3" name="label_package" text="---" />
     </Box>
     <Box class="row">
-      <Button class="way3" name="button_package_0" text="0.0.9" />
-      <Button class="way3" name="button_package_1" text="0.0.10" />
-      <Button class="way3" name="button_package_2" text="0.0.11" />
+      <Button class="way3" name="button_package_0" text="---" />
+      <Button class="way3" name="button_package_1" text="---" />
+      <Button class="way3" name="button_package_2" text="---" />
     </Box>
   </Box>
-
-
-
-  
-  
-  <TextField class="textfield_lasttag" name="textfield_lasttag"></TextField>
 </UXML>
