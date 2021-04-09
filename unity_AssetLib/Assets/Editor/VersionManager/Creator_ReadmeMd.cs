@@ -24,8 +24,7 @@ namespace Editor.VersionManager
 				string t_text = BlueBack.AssetLib.Editor.LoadText.LoadTextFromAssetsPath("../../README.md",System.Text.Encoding.GetEncoding("utf-8"));
 				string[] t_text_list = t_text.Split(new char[]{'\r','\n'});
 
-				string t_library_name = "AssetLib";
-				string t_url = ("https://github.com/bluebackblue/" + t_library_name + ".git?path=unity_" + t_library_name + "/Assets/UPM").Replace(":","\\:").Replace("/","\\/").Replace(".","\\.").Replace("?","\\?").Replace("=","\\=");
+				string t_url = ("https://github.com/bluebackblue/" + Setting.PACKAGE_NAME + ".git?path=unity_" + Setting.PACKAGE_NAME + "/Assets/UPM").Replace(":","\\:").Replace("/","\\/").Replace(".","\\.").Replace("?","\\?").Replace("=","\\=");
 
 				System.Text.RegularExpressions.Regex t_regex = new System.Text.RegularExpressions.Regex("\\* " + t_url + "\\#" + "(?<version>.*)");
 				foreach(string t_text_line in t_text_list){

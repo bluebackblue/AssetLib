@@ -15,13 +15,6 @@ namespace Editor.VersionManager
 		{
 		}
 
-		/** GetVersion
-		*/
-		public string GetVersion()
-		{
-			return BlueBack.AssetLib.Version.packageversion;
-		}
-
 		/** Item
 		*/
 		private struct Item

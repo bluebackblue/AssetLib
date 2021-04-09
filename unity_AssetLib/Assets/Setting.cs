@@ -33,6 +33,13 @@ public class Setting
 		"asset"
 	};
 
+	/** GetPackageVersion
+	*/
+	public static string GetPackageVersion()
+	{
+		return BlueBack.AssetLib.Version.packageversion;
+	}
+
 	/** ReadmeMd_StringCreator_Argument
 	*/
 	public struct ReadmeMd_StringCreator_Argument

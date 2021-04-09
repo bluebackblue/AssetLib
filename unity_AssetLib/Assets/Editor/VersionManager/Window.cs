@@ -225,12 +225,12 @@ namespace Editor.VersionManager
 
 			//「package.json」。
 			{
-				UnityEngine.Debug.Log("package.json : " + this.packagejson.GetVersion());
+				UnityEngine.Debug.Log("package.json : " + Setting.GetPackageVersion());
 
 				{
 					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"label_package");
 					if(t_label != null){
-						t_label.text = this.packagejson.GetVersion();
+						t_label.text = Setting.GetPackageVersion();
 					}
 				}
 
@@ -264,7 +264,7 @@ namespace Editor.VersionManager
 						}
 
 						t_button.text = t_version;
-						if(t_version == this.packagejson.GetVersion()){
+						if(t_version == Setting.GetPackageVersion()){
 							t_button.AddToClassList("red");
 						}
 
