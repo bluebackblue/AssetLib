@@ -10,38 +10,36 @@
   <Box>
     <Button name="reload" text="ReLoad" />
     <Label name="error" class="red" text=" "/>
-    <Label text=" "/>
-    <Label text=" "/>
   </Box>
-
-  <!-- 更新 -->
+  
+  <!-- サンプルコピー -->
   <Box>
-    <Button name="update" text="Update" />
-
-    <!-- ステータス -->
-    <Box class="row">
-      <Label class="way2" text="github" />
-      <Label name="status_github_version" class="way2" text="0.0.0" />
-    </Box>
-    
-    <Box class="row">
-      <Label class="way2" text="readme" />
-      <Label name="status_readme_version" class="way2" text="0.0.0" />
-    </Box>
-    
-    <Box class="row">
-      <Label class="way2" text="package.json" />
-      <Label name="status_package_version" class="way2" text="0.0.0" />
-    </Box>
+    <Button name="samplecopy" text="SampleCopy" />
   </Box>
 
-
+  <!-- server.tag -->
   <Box>
     <Label text=" "/>
     <Label text=" "/>
     <Label text=" "/>
 
-    <Label text="README.md"/>
+    <Box class="row">
+      <Label class="way3" text="server.tag" />
+      <Label class="way3" name="label_server" text="---" />
+    </Box>
+    <Button name="button_server" text="---" />
+  </Box>
+
+  <!-- readme.md -->
+  <Box>
+    <Label text=" "/>
+    <Label text=" "/>
+    <Label text=" "/>
+
+    <Box class="row">
+      <Label class="way3" text="README.md"/>
+      <Label class="way3" name="label_readme" text="---" />
+    </Box>
     <Box class="row">
       <Button class="way3" name="button_readme_0" text="0.0.9" />
       <Button class="way3" name="button_readme_1" text="0.0.10" />
@@ -49,12 +47,16 @@
     </Box>
   </Box>
 
+  <!-- package.json -->
   <Box>
     <Label text=" "/>
     <Label text=" "/>
     <Label text=" "/>
 
-    <Label text="package.json"/>
+    <Box class="row">
+      <Label class="way3" text="package.json"/>
+      <Label class="way3" name="label_package" text="---" />
+    </Box>
     <Box class="row">
       <Button class="way3" name="button_package_0" text="0.0.9" />
       <Button class="way3" name="button_package_1" text="0.0.10" />
@@ -63,5 +65,8 @@
   </Box>
 
 
+
+  
+  
   <TextField class="textfield_lasttag" name="textfield_lasttag"></TextField>
 </UXML>

@@ -28,6 +28,6 @@ Label
 
 .red
 {
-	color: rgb(200,128,128);
+	color: rgb(222,66,66);
 }
 

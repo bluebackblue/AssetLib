@@ -2,6 +2,7 @@
 
 /** Editor.VersionManager
 */
+#if(UNITY_EDITOR)
 namespace Editor.VersionManager
 {
 	/** Window
@@ -14,7 +15,7 @@ namespace Editor.VersionManager
 
 		/** 開く。
 		*/
-		public static void Open()
+		public static void OpenWindow()
 		{
 			Window t_window = (Window)UnityEditor.EditorWindow.GetWindow(typeof(Window));
 			if(t_window != null){
@@ -22,64 +23,78 @@ namespace Editor.VersionManager
 			}
 		}
 
+		/** 閉じる。
+		*/
+		public static void CloseWindow()
+		{
+			if(s_window != null){
+				s_window.Close();
+				s_window = null;
+			}
+		}
+
 		/** error
 		*/
 		private string error;
 
+		/** serverjson
+		*/
+		private Creator_ServerJson serverjson;
+
 		/** packagejson
 		*/
-		private PackageJson packagejson;
+		private Creator_PackageJson packagejson;
 
-		/** github_version
+		/** readmemd
 		*/
-		private int github_version_0;
-		private int github_version_1;
-		private int github_version_2;
-
-		/** readme_version
-		*/
-		private int readme_version_0;
-		private int readme_version_1;
-		private int readme_version_2;
-
-		/** package_version
-		*/
-		private int package_version_0;
-		private int package_version_1;
-		private int package_version_2;
+		private Creator_ReadmeMd readmemd;
 
 		/** constructor
 		*/
 		public Window()
 		{
+			UnityEngine.Debug.Log("Window : constructor");
+
 			s_window = this;
 
 			//error
 			this.error = "";
 
-			//github_version
-			this.github_version_0 = 0;
-			this.github_version_1 = 0;
-			this.github_version_2 = 0;
-
-			//readme_version
-			this.readme_version_0 = 0;
-			this.readme_version_1 = 0;
-			this.readme_version_2 = 0;
-
-			//package_version
-			this.package_version_0 = 0;
-			this.package_version_1 = 0;
-			this.package_version_2 = 0;
+			//serverjson
+			this.serverjson = null;
 
 			//packagejson
-			this.packagejson = new PackageJson();
+			this.packagejson = null;
+
+			//readmemd
+			this.readmemd = null;
+
+			UnityEditor.Compilation.CompilationPipeline.compilationFinished += OnCompilationFinished;
+		}
+
+		/** コンパイル完了。
+		*/
+		private void OnCompilationFinished(System.Object a_object)
+		{
+			UnityEngine.Debug.Log("Window : OnCompilationFinished");
 		}
 
 		/** OnEnable
 		*/
 		private void OnEnable()
 		{
+			UnityEngine.Debug.Log("Window : OnEnable");
+
+			//serverjson
+			this.serverjson = new Creator_ServerJson();
+
+			//packagejson
+			this.packagejson = new Creator_PackageJson();
+
+			//readmemd
+			this.readmemd = new Creator_ReadmeMd();
+
+			//ルート。
 			UnityEngine.UIElements.VisualElement t_root = this.rootVisualElement;
 			t_root.Clear();
 
@@ -112,199 +127,159 @@ namespace Editor.VersionManager
 				if(t_button != null){
 					t_button.clickable.clicked += () => {
 						UnityEngine.Debug.Log("Reload");
-						this.CallBack_Reload();
 						this.OnEnable();
 					};
 				}
 			}
 
-			//更新ボタン。
+			//サンプルコピー。
 			{
-				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"update");
+				UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"samplecopy");
 				if(t_button != null){
 					t_button.clickable.clicked += () => {
-						UnityEngine.Debug.Log("Update");
-						this.CallBack_Update();
+						UnityEngine.Debug.Log("SampleCopy");
+						SampleCopy.Copy();
 						this.OnEnable();
 					};
 				}
 			}
 
-			//ステータス。
+			//「server.tag」。
 			{
-				//github
+				UnityEngine.Debug.Log("server.tag : " + this.serverjson.status.lasttag);
+
 				{
-					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"status_github_version");
+					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"label_server");
 					if(t_label != null){
-						t_label.text = string.Format("{0}.{1}.{2}",this.github_version_0,this.github_version_1,this.github_version_2);
+						t_label.text = this.serverjson.status.time;
 					}
+
 				}
 
-				//readme
 				{
-					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"status_readme_version");
-					if(t_label != null){
-						t_label.text = string.Format("{0}.{1}.{2}",this.readme_version_0,this.readme_version_1,this.readme_version_2);
-					}
-				}
+					UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"button_server");
+					if(t_button != null){
+						t_button.text = this.serverjson.status.lasttag;
+						t_button.AddToClassList("red");
 
-				//package
-				{
-					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"status_package_version");
-					if(t_label != null){
-						t_label.text = string.Format("{0}.{1}.{2}",this.package_version_0,this.package_version_1,this.package_version_2);
+						t_button.clickable.clicked += () => {
+							UnityEngine.Debug.Log("Download");
+							this.serverjson.Download();
+							this.OnEnable();
+						};
+
 					}
 				}
 			}
 
-			//バージョンボタン。リードミー。
+			//「readme.md」。
 			{
+				{
+					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"label_readme");
+					if(t_label != null){
+						t_label.text = this.readmemd.version;
+					}
+				}
+
 				for(int ii=0;ii<3;ii++){
 					UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"button_readme_" + ii.ToString());
 					if(t_button != null){
-						t_button.text = string.Format("{0}.{1}.{2}",this.readme_version_0,this.readme_version_1,this.readme_version_2 + ii - 1);
-						if(ii==1){
+
+						string[] t_version_split = this.serverjson.status.lasttag.Split('.');
+						int t_version_split_item2 = int.Parse(t_version_split[2]);
+
+						string t_version;
+
+						switch(ii){
+						case 0:
+							{
+								t_version = string.Format("{0}.{1}.{2}",t_version_split[0],t_version_split[1],t_version_split_item2 - 1);
+							}break;
+						case 1:
+							{
+								t_version = string.Format("{0}.{1}.{2}",t_version_split[0],t_version_split[1],t_version_split_item2);
+							}break;
+						case 2:
+							{
+								t_version = string.Format("{0}.{1}.{2}",t_version_split[0],t_version_split[1],t_version_split_item2 + 1);
+							}break;
+						default:
+							{
+								t_version = "";
+								UnityEngine.Debug.Assert(false);
+							}break;
+						}
+
+						t_button.text = t_version;
+						if(t_version == this.readmemd.version){
 							t_button.AddToClassList("red");
 						}
+
+						//「package.json」作成。
+						t_button.clickable.clicked += () => {
+							this.readmemd.SaveReadmeMd(t_version);
+							this.OnEnable();
+						};
 					}
 				}
 			}
 
-			//バージョンボタン。パッケージ。
+			//「package.json」。
 			{
+				UnityEngine.Debug.Log("package.json : " + this.packagejson.GetVersion());
+
+				{
+					UnityEngine.UIElements.Label t_label = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Label>(t_root,"label_package");
+					if(t_label != null){
+						t_label.text = this.packagejson.GetVersion();
+					}
+				}
+
 				for(int ii=0;ii<3;ii++){
 					UnityEngine.UIElements.Button t_button = UnityEngine.UIElements.UQueryExtensions.Q<UnityEngine.UIElements.Button>(t_root,"button_package_" + ii.ToString());
 					if(t_button != null){
-						t_button.text = string.Format("{0}.{1}.{2}",this.readme_version_0,this.readme_version_1,this.readme_version_2 + ii - 1);
-						if(ii==1){
+
+						string[] t_version_split = this.serverjson.status.lasttag.Split('.');
+						int t_version_split_item2 = int.Parse(t_version_split[2]);
+
+						string t_version;
+
+						switch(ii){
+						case 0:
+							{
+								t_version = string.Format("{0}.{1}.{2}",t_version_split[0],t_version_split[1],t_version_split_item2 - 1);
+							}break;
+						case 1:
+							{
+								t_version = string.Format("{0}.{1}.{2}",t_version_split[0],t_version_split[1],t_version_split_item2);
+							}break;
+						case 2:
+							{
+								t_version = string.Format("{0}.{1}.{2}",t_version_split[0],t_version_split[1],t_version_split_item2 + 1);
+							}break;
+						default:
+							{
+								t_version = "";
+								UnityEngine.Debug.Assert(false);
+							}break;
+						}
+
+						t_button.text = t_version;
+						if(t_version == this.packagejson.GetVersion()){
 							t_button.AddToClassList("red");
 						}
+
+						//「package.json」作成。
+						t_button.clickable.clicked += () => {
+							this.packagejson.SavePackageJson(t_version);
+							this.packagejson.SaveVersionCs(t_version);
+							this.OnEnable();
+						};
 					}
-				}
-			}
-		}
-
-		/** CallBack_Reload
-		*/
-		private void CallBack_Reload()
-		{
-			//error
-			this.error = "";
-
-			//github_version
-			this.github_version_0 = 0;
-			this.github_version_1 = 0;
-			this.github_version_2 = 0;
-
-			//readme_version
-			this.readme_version_0 = 0;
-			this.readme_version_1 = 0;
-			this.readme_version_2 = 0;
-
-			//package_version
-			this.package_version_0 = 0;
-			this.package_version_1 = 0;
-			this.package_version_2 = 0;
-		}
-
-		/** CallBack_Update
-		*/
-		private void CallBack_Update()
-		{
-			//error
-			this.error = "";
-
-			//github_version
-			this.github_version_0 = 0;
-			this.github_version_1 = 0;
-			this.github_version_2 = 0;
-
-			//readme_version
-			this.readme_version_0 = 0;
-			this.readme_version_1 = 0;
-			this.readme_version_2 = 0;
-
-			//package_version
-			this.package_version_0 = 0;
-			this.package_version_1 = 0;
-			this.package_version_2 = 0;
-
-			this.packagejson.Save();
-
-			//github
-			{
-				/*
-				try{
-					string t_jsonstring = BlueBack.AssetLib.Editor.LoadText.TryLoadTextFromUrl("https://api.github.com/repos/bluebackblue/AssetLib/releases/latest",null,System.Text.Encoding.GetEncoding("utf-8"));
-					t_jsonstring = BlueBack.JsonItem.Normalize.Convert(t_jsonstring);
-					BlueBack.JsonItem.JsonItem t_jsonitem = new BlueBack.JsonItem.JsonItem(t_jsonstring);
-					string t_version_string = t_jsonitem.GetItem("name").GetStringData();
-					string[] t_version_string_list = t_version_string.Split('.');
-					this.github_version_0 = int.Parse(t_version_string_list[0]);
-					this.github_version_1 = int.Parse(t_version_string_list[1]);
-					this.github_version_2 = int.Parse(t_version_string_list[2]);
-				}catch(System.Exception t_exception){
-					this.error = t_exception.Message;
-				}
-				*/
-			}
-
-			//readme
-			{
-				try{
-					string t_version_string = null;
-					{
-						string t_text = BlueBack.AssetLib.Editor.LoadText.LoadTextFromAssetsPath("../../README.md",System.Text.Encoding.GetEncoding("utf-8"));
-						string[] t_text_list = t_text.Split(new char[]{'\r','\n'});
-
-						string t_library_name = "AssetLib";
-						string t_url = ("https://github.com/bluebackblue/" + t_library_name + ".git?path=unity_" + t_library_name + "/Assets/UPM").Replace(":","\\:").Replace("/","\\/").Replace(".","\\.").Replace("?","\\?").Replace("=","\\=");
-
-						System.Text.RegularExpressions.Regex t_regex = new System.Text.RegularExpressions.Regex("\\* " + t_url + "\\#" + "(?<version>.*)");
-						foreach(string t_text_line in t_text_list){
-							System.Text.RegularExpressions.Match t_match = t_regex.Match(t_text_line);
-							if(t_match.Success == true){
-								System.Text.RegularExpressions.GroupCollection t_group_collection = t_match.Groups;
-								foreach(System.Text.RegularExpressions.Group t_group in t_group_collection){
-									if(t_group.Success == true){
-										if(t_group.Name == "version"){
-											t_version_string = t_group.Value;
-										}
-									}
-								}
-							}
-						}
-					}
-
-					string[] t_version_string_list = t_version_string.Split('.');
-					this.readme_version_0 = int.Parse(t_version_string_list[0]);
-					this.readme_version_1 = int.Parse(t_version_string_list[1]);
-					this.readme_version_2 = int.Parse(t_version_string_list[2]);
-
-				}catch(System.Exception t_exception){
-					UnityEngine.Debug.Log(t_exception.Message);
-					this.error = t_exception.Message;
-				}
-			}
-
-			//package
-			{
-				try{
-					string t_jsonstring = BlueBack.AssetLib.Editor.LoadText.LoadTextFromAssetsPath("UPM/package.json",null);
-					t_jsonstring = BlueBack.JsonItem.Normalize.Convert(t_jsonstring);
-					BlueBack.JsonItem.JsonItem t_jsonitem = new BlueBack.JsonItem.JsonItem(t_jsonstring);
-
-					string t_version_string = t_jsonitem.GetItem("version").GetStringData();
-					string[] t_version_string_list = t_version_string.Split('.');
-					this.package_version_0 = int.Parse(t_version_string_list[0]);
-					this.package_version_1 = int.Parse(t_version_string_list[1]);
-					this.package_version_2 = int.Parse(t_version_string_list[2]);
-				}catch(System.Exception t_exception){
-					UnityEngine.Debug.Log(t_exception.Message);
-					this.error = t_exception.Message;
 				}
 			}
 		}
 	}
 }
+#endif
 

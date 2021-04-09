@@ -1,26 +1,25 @@
 
 
-/** Editor
+/** Editor.VersionManager
 */
 #if(UNITY_EDITOR)
-namespace Editor
+namespace Editor.VersionManager
 {
-    /** CopySamples
+    /** SampleCopy
     */
-    public class CopySamples
+    public class SampleCopy
     {
         /** s_process
         */
         private static System.Diagnostics.Process s_process = null;
 
-        /** MenuItem_Tool_CopySamples
+        /** Copy
         */
-        [UnityEditor.MenuItem("ツール/CopySamples")]
-        private static void MenuItem_Tool_CopySamples()
+        public static void Copy()
         {
             s_process = new System.Diagnostics.Process();
             {
-                s_process.StartInfo.FileName = UnityEngine.Application.dataPath + "/Editor/CopySamples.bat";
+                s_process.StartInfo.FileName = UnityEngine.Application.dataPath + "/Editor/VersionManager/SampleCopy.bat";
                 s_process.StartInfo.Arguments = "AssetLib";
                 s_process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
                 s_process.StartInfo.UseShellExecute = true;

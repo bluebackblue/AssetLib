@@ -1,30 +1,26 @@
 # BlueBack.AssetLib
 アセット操作
-* プレハブ、アニメーションクリップ、メッシュ、ソースコードのセーブ
-* アセットのロード
-* アセットバンドルの作成
 * パッケージの作成
+* アセットバンドルの作成
+* プレハブ、アセット、テキストのセーブロード
+* テキストのエンコードデコード
 * ディレクトリの作成、削除
-* ファイル名、ディレクトリ名の列挙、ファイル検索
-* シーンを開く
-* テキストのエンコード判別
-* CSファイルのUTF8コンバート
+* ファイル名、ディレクトリ名の列挙、検索
 
 ## ライセンス
 MIT License
 * https://github.com/bluebackblue/AssetLib/blob/main/LICENSE
 
 ## 外部依存 / 使用ライセンス等
-
 ### サンプルのみ
 * https://github.com/bluebackblue/AssetLib
 
 ## 動作確認
-Unity 2020.2.4f1
+Unity 2020.2.0b14
 
-## URL
+## UPM
 ### 最新
-* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.10
+* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.11
 ### 開発
 * https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM
 
@@ -33,15 +29,13 @@ Unity 2020.2.4f1
 * メニュー選択：「Window->Package Manager」
 * ボタン選択：「左上の＋ボタン」
 * リスト選択：「Add package from git URL...」
-* 上記のURLを追加「 https://github.com/～～/UPM#バージョン 」
-
+* 上記UPMのURLを追加「 https://github.com/～～/UPM#バージョン 」
 ### 注
 Gitクライアントがインストールされている必要がある。
 * https://docs.unity3d.com/ja/current/Manual/upm-git.html
 * https://git-scm.com/
 
-## サンプル
-
+## 例
 ```
 ```
 
