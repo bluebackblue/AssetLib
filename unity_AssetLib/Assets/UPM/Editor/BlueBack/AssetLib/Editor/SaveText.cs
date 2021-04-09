@@ -21,6 +21,7 @@ namespace BlueBack.AssetLib.Editor
 			a_text							: テキスト。
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 			a_bom							: BOM。
+			a_linefeed_option				: 改行コード。
 
 		*/
 		public static void SaveUtf8TextToAssetsPath(string a_text,string a_assets_path_with_extention,bool a_bom,LineFeedOption a_linefeed_option)
@@ -58,6 +59,7 @@ namespace BlueBack.AssetLib.Editor
 			a_text							: テキスト。
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 			a_bom							: BOM。
+			a_linefeed_option				: 改行コード。
 
 		*/
 		public static bool TrySaveUtf8TextToAssetsPath(string a_text,string a_assets_path_with_extention,bool a_bom,LineFeedOption a_linefeed_option)
