@@ -108,6 +108,7 @@ public class Setting
 		(in ReadmeMd_StringCreator_Argument a_argument) => {
 			return new string[]{
 				"## 外部依存 / 使用ライセンス等",
+				//"* " + AUTHOR_URL + "/" + "AssetLib",
 				//"### サンプルのみ",
 				//"* " + AUTHOR_URL + "/" + "AssetLib",
 			};
