@@ -37,7 +37,7 @@ namespace BlueBack.AssetLib.Editor
 			a_linefeed_option				: 改行コード。
 
 		*/
-		public static void SaveScriptToAssetsPath(System.Collections.Generic.List<SaveScriptItem> a_list,string a_assets_path_with_extention,string[] a_template_header,string[] a_template_loop,string[] a_template_loopend,string[] a_template_footer,System.Collections.Generic.Dictionary<string,string> a_replace_list,bool a_bom,LineFeedOption a_linefeed_option)
+		public static string SaveScriptToAssetsPath(System.Collections.Generic.List<SaveScriptItem> a_list,string a_assets_path_with_extention,string[] a_template_header,string[] a_template_loop,string[] a_template_loopend,string[] a_template_footer,System.Collections.Generic.Dictionary<string,string> a_replace_list,bool a_bom,LineFeedOption a_linefeed_option)
 		{
 			System.Text.StringBuilder t_stringbuilder = new System.Text.StringBuilder();
 
@@ -92,6 +92,8 @@ namespace BlueBack.AssetLib.Editor
 
 			BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath(t_text,a_assets_path_with_extention,a_bom,a_linefeed_option);
 			BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
+
+			return t_text;
 		}
 	}
 }
