@@ -69,7 +69,7 @@ namespace Samples.AssetLib.Script.Editor
 				t_replace_list.Add("<<enum_name>>","TestEnum");
 			}
 
-			BlueBack.AssetLib.Editor.SaveScript.SaveScriptToAssetsPath(t_list,"Samples/AssetLib/TestEnum.cs",t_template_header,t_template_loop,t_template_loopend,t_template_footer,t_replace_list,BlueBack.AssetLib.Config.DEFAULT_BOM,BlueBack.AssetLib.Config.DEFAULT_LINEFEEDOPTION);
+			BlueBack.AssetLib.Editor.SaveScript.SaveScriptToAssetsPath(t_list,"Samples/AssetLib/TestEnum.cs",t_template_header,t_template_loop,t_template_loopend,t_template_footer,t_replace_list,false,BlueBack.AssetLib.LineFeedOption.CRLF);
 		}
 	}
 	#endif

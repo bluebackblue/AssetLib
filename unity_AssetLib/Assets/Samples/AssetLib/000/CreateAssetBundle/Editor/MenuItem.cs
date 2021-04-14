@@ -16,7 +16,7 @@ namespace Samples.AssetLib.CreateAssetBundle.Editor
 		{
 			//アセットバンドル化する元データを作成。
 			{
-				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath("xxxDATAxxx","Samples/AssetLib/data.txt",BlueBack.AssetLib.Config.DEFAULT_BOM,BlueBack.AssetLib.Config.DEFAULT_LINEFEEDOPTION);
+				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath("xxxDATAxxx","Samples/AssetLib/data.txt",false,BlueBack.AssetLib.LineFeedOption.CRLF);
 				BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 			}
 

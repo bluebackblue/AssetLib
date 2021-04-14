@@ -16,7 +16,7 @@ namespace Samples.AssetLib.Asset.Editor
 		{
 			//テキストの保存。
 			{
-				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath("xxxBBBxxx","Samples/AssetLib/xxx.txt",BlueBack.AssetLib.Config.DEFAULT_BOM,BlueBack.AssetLib.Config.DEFAULT_LINEFEEDOPTION);
+				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath("xxxBBBxxx\nxxxBBBxxx","Samples/AssetLib/xxx.txt",true,BlueBack.AssetLib.LineFeedOption.LF);
 				BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 			}
 
