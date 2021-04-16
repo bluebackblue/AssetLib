@@ -6,6 +6,7 @@
 * テキストのエンコードデコード
 * ディレクトリの作成、削除
 * ファイル名、ディレクトリ名の列挙、検索
+* STLのセーブロード
 
 ## ライセンス
 MIT License
@@ -18,7 +19,7 @@ Unity 2020.2.0b14
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.16
+* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.17
 ### 開発
 * https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM
 

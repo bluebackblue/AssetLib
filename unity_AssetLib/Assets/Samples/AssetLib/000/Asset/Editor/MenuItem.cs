@@ -123,6 +123,18 @@ namespace Samples.AssetLib.Asset.Editor
 			BlueBack.AssetLib.Editor.SaveMesh.SaveAsMeshToAssetsPath(t_mesh,"Samples/AssetLib/mesh.mesh");
 		}
 
+		/** メッシュのセーブ。
+		*/
+		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/SaveAsStlMeshToAssetsPath")]
+		private static void MenuItem_CreateStl()
+		{
+			string t_path = BlueBack.AssetLib.Editor.FindFile.FindFileFistFromAssetsPath("Samples/AssetLib",".*","^cylinder\\.mesh$");
+			UnityEngine.Mesh t_mesh = BlueBack.AssetLib.Editor.LoadMesh.LoadMeshFromAssetsPath(t_path);
+			BlueBack.AssetLib.Editor.SaveMesh.SaveAsStlMeshToAssetsPath(t_mesh,"Samples/AssetLib/cylinder.stl",new UnityEngine.Vector3(100.0f,100.0f,100.0f));
+			BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
+		}
+
+
 		/** ダウンロード。
 		*/
 		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/Download")]

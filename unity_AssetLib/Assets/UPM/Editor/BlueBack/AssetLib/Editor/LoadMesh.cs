@@ -35,21 +35,6 @@ namespace BlueBack.AssetLib.Editor
 		{
 			byte[] t_binary = BlueBack.AssetLib.Editor.LoadBinary.LoadBinaryFromAssetsPath(a_assets_path_with_extention);
 
-			/*
-			{
-				if(t_binary.Length >= 80){
-					byte[] t_byte80 = new byte[80];
-					System.Array.Copy(t_binary,0,t_byte80,0,t_byte80.Length);
-					//System.Text.Encoding.GetEncoding("utf-8").GetString(t_byte80);
-				}else{
-					#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
-					DebugTool.Assert(false,"fromat_error");
-					#endif
-					return null;
-				}
-			}
-			*/
-
 			byte[] t_byte4 = new byte[4];
 
 			//総数。
@@ -84,6 +69,7 @@ namespace BlueBack.AssetLib.Editor
 					for(int ii=0;ii<t_count;ii++){
 						int t_offset = 84 + ii * 50;
 						
+						//nomal
 						{
 							System.Array.Copy(t_binary,t_offset,t_byte4,0,t_byte4.Length);
 							float t_x = System.BitConverter.ToSingle(t_byte4,0);
@@ -102,6 +88,7 @@ namespace BlueBack.AssetLib.Editor
 							t_nomal_list.Add(new UnityEngine.Vector3(t_x,t_y,t_z));
 						}
 
+						//vertex
 						for(int jj=0;jj<3;jj++){
 							System.Array.Copy(t_binary,t_offset,t_byte4,0,t_byte4.Length);
 							float t_x = System.BitConverter.ToSingle(t_byte4,0);

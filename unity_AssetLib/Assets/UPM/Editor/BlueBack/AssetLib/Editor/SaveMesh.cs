@@ -34,10 +34,15 @@ namespace BlueBack.AssetLib.Editor
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 
 		*/
-		public static void SaveAsStlMeshToAssetsPath(UnityEngine.Mesh a_mesh,string a_assets_path_with_extention)
+		public static void SaveAsStlMeshToAssetsPath(UnityEngine.Mesh a_mesh,string a_assets_path_with_extention,UnityEngine.Vector3 a_scale)
 		{
+			//頂点、法線、インデックス。
+			UnityEngine.Vector3[] t_vertex_list = a_mesh.vertices;
+			UnityEngine.Vector3[] t_normal_list = a_mesh.normals;
+			int[] t_index_list = a_mesh.triangles;
+
 			//総数。
-			System.UInt32 t_count = (System.UInt32)(a_mesh.triangles.Length / 3);
+			System.UInt32 t_count = (System.UInt32)(t_index_list.Length / 3);
 
 			//バイナリ。
 			byte[] t_binary = new byte[80 + 4 + t_count * 50];
@@ -68,7 +73,7 @@ namespace BlueBack.AssetLib.Editor
 			for(int ii=0;ii<t_count;ii++){
 				int t_offset = 84 + ii * 50;
 
-				UnityEngine.Vector3 t_normal = (a_mesh.normals[ii * 3 + 0] + a_mesh.normals[ii * 3 + 1] + a_mesh.normals[ii * 3 + 2]).normalized;
+				UnityEngine.Vector3 t_normal = (t_normal_list[t_index_list[ii * 3 + 0]] + t_normal_list[t_index_list[ii * 3 + 1]] + t_normal_list[t_index_list[ii * 3 + 2]]).normalized;
 
 				//nomal_x
 				{
@@ -125,7 +130,7 @@ namespace BlueBack.AssetLib.Editor
 				for(int jj=0;jj<3;jj++){
 					//x
 					{
-						byte[] t_byte4 = System.BitConverter.GetBytes(a_mesh.vertices[ii * 3 + jj].x);
+						byte[] t_byte4 = System.BitConverter.GetBytes(t_vertex_list[t_index_list[ii * 3 + jj]].x * a_scale.x);
 						if(t_byte4.Length == 4){
 							t_binary[t_offset + 0] = t_byte4[0];
 							t_binary[t_offset + 1] = t_byte4[1];
@@ -142,7 +147,7 @@ namespace BlueBack.AssetLib.Editor
 
 					//y
 					{
-						byte[] t_byte4 = System.BitConverter.GetBytes(a_mesh.vertices[ii * 3 + jj].y);
+						byte[] t_byte4 = System.BitConverter.GetBytes(t_vertex_list[t_index_list[ii * 3 + jj]].y * a_scale.y);
 						if(t_byte4.Length == 4){
 							t_binary[t_offset + 0] = t_byte4[0];
 							t_binary[t_offset + 1] = t_byte4[1];
@@ -159,7 +164,7 @@ namespace BlueBack.AssetLib.Editor
 
 					//z
 					{
-						byte[] t_byte4 = System.BitConverter.GetBytes(a_mesh.vertices[ii * 3 + jj].z);
+						byte[] t_byte4 = System.BitConverter.GetBytes(t_vertex_list[t_index_list[ii * 3 + jj]].z * a_scale.z);
 						if(t_byte4.Length == 4){
 							t_binary[t_offset + 0] = t_byte4[0];
 							t_binary[t_offset + 1] = t_byte4[1];
