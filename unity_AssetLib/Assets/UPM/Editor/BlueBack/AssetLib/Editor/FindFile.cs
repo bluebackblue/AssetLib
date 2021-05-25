@@ -45,7 +45,7 @@ namespace BlueBack.AssetLib.Editor
 
 			a_assets_path		: 「Assets」からの相対パス。
 			a_directory_regex	: ディレクトリの正規表現。例（.*）
-			a_file_regex		: ファイル名の正規表現。例（^xxx.xxx$）
+			a_file_regex			: ファイル名の正規表現。例（^xxx.xxx$）
 
 		*/
 		public static string FindFileFistFromAssetsPath(string a_assets_path,string a_directory_regex,string a_file_regex)

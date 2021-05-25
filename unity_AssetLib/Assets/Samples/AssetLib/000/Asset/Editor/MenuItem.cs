@@ -134,6 +134,21 @@ namespace Samples.AssetLib.Asset.Editor
 			BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 		}
 
+		/** ＰＮＧのセーブ。
+		*/
+		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/SaveAsPngTexture2DToAssetsPath")]
+		private static void MenuItem_CreatePng()
+		{
+			UnityEngine.Texture2D t_texture = new UnityEngine.Texture2D(16,16);
+			for(int xx=0;xx<t_texture.width;xx++){
+				for(int yy=0;yy<t_texture.height;yy++){
+					t_texture.SetPixel(xx,yy,new UnityEngine.Color(1.0f,0.0f,0.0f,1.0f));
+				}
+			}
+			BlueBack.AssetLib.Editor.SaveTexture.SaveAsPngTexture2DToAssetsPath(t_texture,"Samples/AssetLib/red.png");
+			BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
+		}
+
 
 		/** ダウンロード。
 		*/
