@@ -18,19 +18,23 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** 値に置き換えるための文字列。
 		*/
-		public const string KEY_VALUE = "<<V>>";
+		public const string KEY_VALUE = "<<VALUE>>";
 
 		/** コメントに置き換えるための文字列。
 		*/
-		public const string KEY_COMMENT = "<<C>>";
+		public const string KEY_COMMENT = "<<COMMENT>>";
+
+		/** コメントに置き換えるための文字列。
+		*/
+		public const string KEY_COUNT = "<<COUNT>>";
 
 		/** スクリプトセーブ。
 
 			a_list							: リスト。
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 			a_template_header				: ヘッダー。
-			a_template_loop					: <<V>>を値、<<C>>をコメントに置き換る。アイテムの数だけ出力する。
-			a_template_loopend				: <<V>>を値、<<C>>をコメントに置き換る。最後のアイテムは「a_template_loop」ではなく「a_template_loopend」が使用される。
+			a_template_loop					: <<VALUE>> / <<COMMENT>> / <<COUNT>>を置き換える。アイテムの数だけ出力する。
+			a_template_loopend				: <<VALUE>> / <<COMMENT>> / <<COUNT>>を置き換える。最後のアイテムは「a_template_loop」ではなく「a_template_loopend」が使用される。
 			a_template_footer				: フッター。
 			a_replace_list					: 置き換えリスト。
 			a_bom							: BOM。
@@ -51,15 +55,15 @@ namespace BlueBack.AssetLib.Editor
 			if(a_list != null){
 				for(int ii = 0;ii < (a_list.Count-1);ii++){
 					foreach(string t_template in a_template_loop){
-						t_stringbuilder.Append(t_template.Replace(KEY_VALUE,a_list[ii].value).Replace(KEY_COMMENT,a_list[ii].comment));
+						t_stringbuilder.Append(t_template.Replace(KEY_VALUE,a_list[ii].value).Replace(KEY_COMMENT,a_list[ii].comment).Replace(KEY_COUNT,ii.ToString()));
 						t_stringbuilder.Append("\r\n");
 					}
 				}
 
-				if(a_list.Count > 1){
+				if(a_list.Count > 0){
 					int ii = a_list.Count - 1;
 					foreach(string t_template in a_template_loopend){
-						t_stringbuilder.Append(t_template.Replace(KEY_VALUE,a_list[ii].value).Replace(KEY_COMMENT,a_list[ii].comment));
+						t_stringbuilder.Append(t_template.Replace(KEY_VALUE,a_list[ii].value).Replace(KEY_COMMENT,a_list[ii].comment).Replace(KEY_COUNT,ii.ToString()));
 						t_stringbuilder.Append("\r\n");
 					}
 				}

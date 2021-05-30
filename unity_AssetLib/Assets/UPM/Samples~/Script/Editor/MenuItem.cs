@@ -40,16 +40,16 @@ namespace Samples.AssetLib.Script.Editor
 			};
 
 			string[] t_template_loop = new string[]{
-				"		/** <<C>>。",
+				"		/** <<COMMENT>>。",
 				"		*/",
-				"		<<V>>,",
+				"		<<VALUE>>,",
 				"",
 			};
 
 			string[] t_template_loopend = new string[]{
-				"		/** <<C>>。",
+				"		/** <<COMMENT>>。",
 				"		*/",
-				"		<<V>>,",
+				"		<<VALUE>>,",
 			};
 
 			string[] t_template_footer = new string[]{

@@ -27,7 +27,7 @@ namespace BlueBack.AssetLib.Editor
 			System.IO.FileInfo t_fileinfo = new System.IO.FileInfo(UnityEngine.Application.dataPath + "/" + a_assets_path_with_extention);
 
 			//開く。
-			using(System.IO.FileStream t_filestream = t_fileinfo.Open(System.IO.FileMode.Open,System.IO.FileAccess.Read,System.IO.FileShare.Read)){
+			using(System.IO.FileStream t_filestream = t_fileinfo.Open(System.IO.FileMode.Open,System.IO.FileAccess.Read,System.IO.FileShare.ReadWrite)){
 				byte[] t_result = new byte[t_filestream.Length];
 				int t_ret_read = t_filestream.Read(t_result,0,t_result.Length);
 				t_filestream.Close();
