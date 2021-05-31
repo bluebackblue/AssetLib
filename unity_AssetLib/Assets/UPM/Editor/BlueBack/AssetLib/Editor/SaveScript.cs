@@ -24,9 +24,13 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public const string KEY_COMMENT = "<<COMMENT>>";
 
-		/** コメントに置き換えるための文字列。
+		/** インデックスに置き換えるための文字列。
 		*/
-		public const string KEY_COUNT = "<<COUNT>>";
+		public const string KEY_INDEX = "<<INDEX>>";
+
+		/** REPLACENEST
+		*/
+		private const int REPLACENEST = 8;
 
 		/** スクリプトセーブ。
 
@@ -53,9 +57,9 @@ namespace BlueBack.AssetLib.Editor
 			}
 
 			if(a_list != null){
-				for(int ii = 0;ii < (a_list.Count-1);ii++){
+				for(int ii=0;ii<(a_list.Count-1);ii++){
 					foreach(string t_template in a_template_loop){
-						t_stringbuilder.Append(t_template.Replace(KEY_VALUE,a_list[ii].value).Replace(KEY_COMMENT,a_list[ii].comment).Replace(KEY_COUNT,ii.ToString()));
+						t_stringbuilder.Append(t_template.Replace(KEY_VALUE,a_list[ii].value).Replace(KEY_COMMENT,a_list[ii].comment).Replace(KEY_INDEX,ii.ToString()));
 						t_stringbuilder.Append("\r\n");
 					}
 				}
@@ -63,7 +67,7 @@ namespace BlueBack.AssetLib.Editor
 				if(a_list.Count > 0){
 					int ii = a_list.Count - 1;
 					foreach(string t_template in a_template_loopend){
-						t_stringbuilder.Append(t_template.Replace(KEY_VALUE,a_list[ii].value).Replace(KEY_COMMENT,a_list[ii].comment).Replace(KEY_COUNT,ii.ToString()));
+						t_stringbuilder.Append(t_template.Replace(KEY_VALUE,a_list[ii].value).Replace(KEY_COMMENT,a_list[ii].comment).Replace(KEY_INDEX,ii.ToString()));
 						t_stringbuilder.Append("\r\n");
 					}
 				}
@@ -78,9 +82,8 @@ namespace BlueBack.AssetLib.Editor
 
 			string t_text = t_stringbuilder.ToString();
 
-			for(int ii=0;ii<8;ii++){
+			for(int ii=0;ii<REPLACENEST;ii++){
 				bool t_change = false;
-
 				foreach(System.Collections.Generic.KeyValuePair<string,string> t_pair in a_replace_list){
 					string t_text_replace = t_text.Replace(t_pair.Key,t_pair.Value);
 					if(t_text != t_text_replace){
@@ -88,7 +91,6 @@ namespace BlueBack.AssetLib.Editor
 						t_change = true;
 					}
 				}
-
 				if(t_change == false){
 					break;
 				}

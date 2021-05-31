@@ -19,7 +19,7 @@ Unity 2020.2.0b14
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.19
+* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.20
 ### 開発
 * https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM
 
