@@ -19,7 +19,7 @@ Unity 2020.2.0b14
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.20
+* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.21
 ### 開発
 * https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM
 
@@ -33,8 +33,4 @@ Unity 2020.2.0b14
 Gitクライアントがインストールされている必要がある。
 * https://docs.unity3d.com/ja/current/Manual/upm-git.html
 * https://git-scm.com/
-
-## 例
-```
-```
 
