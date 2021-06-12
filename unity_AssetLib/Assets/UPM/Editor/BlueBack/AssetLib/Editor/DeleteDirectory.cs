@@ -39,6 +39,8 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				DeleteDirectoryFromAssetsPath(a_assets_path);
 				t_result = true;
+			}catch(System.IO.DirectoryNotFoundException t_exception){
+				t_result = false;
 			}catch(System.IO.IOException t_exception){
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
 				DebugTool.Assert(false,t_exception);

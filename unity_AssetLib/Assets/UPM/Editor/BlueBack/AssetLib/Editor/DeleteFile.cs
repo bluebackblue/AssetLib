@@ -39,6 +39,8 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				DeleteFileFromAssetsPath(a_assets_path_with_extention);
 				t_result = true;
+			}catch(System.IO.FileNotFoundException t_exception){
+				t_result = false;
 			}catch(System.IO.IOException t_exception){
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
 				DebugTool.Assert(false,t_exception);
