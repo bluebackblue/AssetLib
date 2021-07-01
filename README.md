@@ -15,11 +15,11 @@ MIT License
 ## 外部依存 / 使用ライセンス等
 
 ## 動作確認
-Unity 2020.2.0b14
+Unity 2021.1.11f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.22
+* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.23
 ### 開発
 * https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM
 
