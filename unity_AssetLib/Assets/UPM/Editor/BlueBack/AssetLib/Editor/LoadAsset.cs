@@ -59,6 +59,17 @@ namespace BlueBack.AssetLib.Editor
 		{
 			return UnityEditor.AssetDatabase.LoadAssetAtPath<T>("Assets/" + a_assets_path_with_extention);
 		}
+
+		/** アセットインポーターロード。
+
+			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
+
+		*/
+		public static T GetAssetImportaer<T>(string a_assets_path_with_extention)
+			where T : UnityEditor.AssetImporter
+		{
+			return UnityEditor.AssetImporter.GetAtPath("Assets/" + a_assets_path_with_extention) as T;
+		}
 	}
 }
 #endif

@@ -16,11 +16,24 @@ namespace BlueBack.AssetLib.Editor
 	*/
 	public class RefreshAsset
 	{
-		/** アセットリフレッシュ
+		/** アセットリフレッシュ。
+
+			何かしら変更があったアセットをすべてインポートします。
+
 		*/
 		public static void Refresh()
 		{
 			UnityEditor.AssetDatabase.Refresh();
+		}
+
+		/** アセットリフレッシュ。
+
+			アセットを強制的にロードして再シリアライズし、残っているデータ変更をディスクに送ります。
+
+		*/
+		public static void ForceReserializeAssets()
+		{
+			UnityEditor.AssetDatabase.ForceReserializeAssets();
 		}
 	}
 }
