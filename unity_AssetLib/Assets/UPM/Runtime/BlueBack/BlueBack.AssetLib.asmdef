@@ -1,6 +1,6 @@
 {
     "name": "BlueBack.AssetLib",
-    "rootNamespace": "",
+    "rootNamespace": "BlueBack.AssetLib",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
