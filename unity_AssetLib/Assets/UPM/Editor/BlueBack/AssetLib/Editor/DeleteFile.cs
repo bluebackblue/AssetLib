@@ -23,7 +23,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static void DeleteFileFromAssetsPath(string a_assets_path_with_extention)
 		{
-			System.IO.File.Delete(UnityEngine.Application.dataPath + '/' + a_assets_path_with_extention);
+			System.IO.File.Delete(AssetLib.GetApplicationDataPath() + '/' + a_assets_path_with_extention);
 		}
 
 		/** ファイル削除。

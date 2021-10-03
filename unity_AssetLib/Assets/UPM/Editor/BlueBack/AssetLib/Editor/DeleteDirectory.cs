@@ -23,7 +23,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static void DeleteDirectoryFromAssetsPath(string a_assets_path)
 		{
-			System.IO.Directory.Delete(UnityEngine.Application.dataPath + '/' + a_assets_path,true);
+			System.IO.Directory.Delete(AssetLib.GetApplicationDataPath() + '/' + a_assets_path,true);
 		}
 
 		/** ディレクトリ削除。

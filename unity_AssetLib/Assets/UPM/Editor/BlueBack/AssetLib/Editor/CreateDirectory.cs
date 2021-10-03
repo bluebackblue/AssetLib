@@ -23,7 +23,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static void CreateDirectoryToAssetsPath(string a_assets_path)
 		{
-			System.IO.Directory.CreateDirectory(UnityEngine.Application.dataPath + '/' + a_assets_path);
+			System.IO.Directory.CreateDirectory(AssetLib.GetApplicationDataPath() + '/' + a_assets_path);
 		}
 
 		/** ディレクトリ作成。

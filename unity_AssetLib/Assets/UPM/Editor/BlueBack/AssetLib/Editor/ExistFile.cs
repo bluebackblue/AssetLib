@@ -18,12 +18,12 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** ファイル存在チェック。
 
-			a_assets_path	: 「Assets」からの相対パス。拡張子付き。
+			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
 
 		*/
 		public static bool IsExistFileFromAssetsPath(string a_assets_path_with_extention)
 		{
-			return System.IO.File.Exists(UnityEngine.Application.dataPath + '/' + a_assets_path_with_extention);
+			return System.IO.File.Exists(AssetLib.GetApplicationDataPath() + '/' + a_assets_path_with_extention);
 		}
 	}
 }

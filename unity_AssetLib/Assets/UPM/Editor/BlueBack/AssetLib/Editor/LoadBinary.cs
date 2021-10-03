@@ -19,12 +19,33 @@ namespace BlueBack.AssetLib.Editor
 		/** バイナリロード。
 
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
+			a_buffer						: ロード先バッファ。
+
+			return							: 読み込んだサイズ。
+
+		*/
+		public static long LoadBinaryToBufferFromAssetsPath(string a_assets_path_with_extention,byte[] a_buffer)
+		{
+			//ファイルパス。
+			System.IO.FileInfo t_fileinfo = new System.IO.FileInfo(AssetLib.GetApplicationDataPath() + "/" + a_assets_path_with_extention);
+
+			//開く。
+			using(System.IO.FileStream t_filestream = t_fileinfo.Open(System.IO.FileMode.Open,System.IO.FileAccess.Read,System.IO.FileShare.ReadWrite)){
+				long t_result = t_filestream.Read(a_buffer,0,a_buffer.Length);
+				t_filestream.Close();
+				return t_result;
+			}
+		}
+
+		/** バイナリロード。
+
+			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 
 		*/
 		public static byte[] LoadBinaryFromAssetsPath(string a_assets_path_with_extention)
 		{
 			//ファイルパス。
-			System.IO.FileInfo t_fileinfo = new System.IO.FileInfo(UnityEngine.Application.dataPath + "/" + a_assets_path_with_extention);
+			System.IO.FileInfo t_fileinfo = new System.IO.FileInfo(AssetLib.GetApplicationDataPath() + "/" + a_assets_path_with_extention);
 
 			//開く。
 			using(System.IO.FileStream t_filestream = t_fileinfo.Open(System.IO.FileMode.Open,System.IO.FileAccess.Read,System.IO.FileShare.ReadWrite)){
@@ -81,6 +102,34 @@ namespace BlueBack.AssetLib.Editor
 					}
 				}
 			}
+		}
+
+		/** バイナリロード。
+
+			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
+			a_buffer						: ロード先バッファ。
+
+			return							: 読み込んだサイズ。
+			return == -1					: 読み込み失敗。
+
+		*/
+		public static long TryLoadBinaryToBufferFromAssetsPath(string a_assets_path_with_extention,byte[] a_buffer)
+		{
+			#pragma warning disable 0168
+			try{
+				return LoadBinaryToBufferFromAssetsPath(a_assets_path_with_extention,a_buffer);
+			}catch(System.IO.IOException t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+			}
+			#pragma warning restore
+
+			return -1;
 		}
 
 		/** バイナリロード。
