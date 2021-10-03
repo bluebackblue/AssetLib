@@ -18,6 +18,52 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** バイナリロード。
 
+			a_full_path_with_extention	: 絶対バス。拡張子付き。
+			a_buffer						: ロード先バッファ。
+
+			return							: 読み込んだサイズ。
+
+		*/
+		public static long LoadBinaryToBufferFromFullPath(string a_full_path_with_extention,byte[] a_buffer)
+		{
+			//ファイルパス。
+			System.IO.FileInfo t_fileinfo = new System.IO.FileInfo(a_full_path_with_extention);
+
+			//開く。
+			using(System.IO.FileStream t_filestream = t_fileinfo.Open(System.IO.FileMode.Open,System.IO.FileAccess.Read,System.IO.FileShare.ReadWrite)){
+				long t_result = t_filestream.Read(a_buffer,0,a_buffer.Length);
+				t_filestream.Close();
+				return t_result;
+			}
+		}
+
+		/** バイナリロード。
+
+			a_full_path_with_extention		: 絶対バス。拡張子付き。
+
+		*/
+		public static byte[] LoadBinaryFromFullPath(string a_full_path_with_extention)
+		{
+			//ファイルパス。
+			System.IO.FileInfo t_fileinfo = new System.IO.FileInfo(a_full_path_with_extention);
+
+			//開く。
+			using(System.IO.FileStream t_filestream = t_fileinfo.Open(System.IO.FileMode.Open,System.IO.FileAccess.Read,System.IO.FileShare.ReadWrite)){
+				byte[] t_result = new byte[t_filestream.Length];
+				int t_ret_read = t_filestream.Read(t_result,0,t_result.Length);
+				t_filestream.Close();
+
+				if(t_ret_read != t_result.Length){
+					return null;
+				}
+
+				return t_result;
+			}
+		}
+
+
+		/** バイナリロード。
+
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 			a_buffer						: ロード先バッファ。
 
@@ -102,6 +148,58 @@ namespace BlueBack.AssetLib.Editor
 					}
 				}
 			}
+		}
+
+		/** バイナリロード。
+
+			a_full_path_with_extention		: 絶対バス。拡張子付き。
+			a_buffer						: ロード先バッファ。
+
+			return							: 読み込んだサイズ。
+			return == -1					: 読み込み失敗。
+
+		*/
+		public static long TryLoadBinaryToBufferFromFullPath(string a_full_path_with_extention,byte[] a_buffer)
+		{
+			#pragma warning disable 0168
+			try{
+				return LoadBinaryToBufferFromFullPath(a_full_path_with_extention,a_buffer);
+			}catch(System.IO.IOException t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+			}
+			#pragma warning restore
+
+			return -1;
+		}
+
+		/** バイナリロード。
+
+			a_full_path_with_extention		: 絶対バス。拡張子付き。
+
+		*/
+		public static byte[] TryLoadBinaryFromFullPath(string a_full_path_with_extention)
+		{
+			#pragma warning disable 0168
+			try{
+				return LoadBinaryFromFullPath(a_full_path_with_extention);
+			}catch(System.IO.IOException t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+			}
+			#pragma warning restore
+
+			return null;
 		}
 
 		/** バイナリロード。

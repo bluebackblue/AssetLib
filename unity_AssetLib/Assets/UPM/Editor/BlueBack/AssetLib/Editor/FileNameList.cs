@@ -18,6 +18,26 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** 直下のファイル名を列挙。
 
+			a_full_path	: 絶対パス。
+
+		*/
+		public static System.Collections.Generic.List<string> CreateOnlyTopFileNameListFromFullPath(string a_full_path)
+		{
+			System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
+			{
+				string[] t_fullpath_list = System.IO.Directory.GetFiles(a_full_path,"*",System.IO.SearchOption.TopDirectoryOnly);
+				for(int ii=0;ii<t_fullpath_list.Length;ii++){
+					string t_name = System.IO.Path.GetFileName(t_fullpath_list[ii]);
+					if(t_name.Length > 0){
+						t_list.Add(t_name);
+					}
+				}
+			}
+			return t_list;
+		}
+
+		/** 直下のファイル名を列挙。
+
 			a_assets_path	: 「Assets」からの相対パス。
 
 		*/
@@ -36,37 +56,46 @@ namespace BlueBack.AssetLib.Editor
 			return t_list;
 		}
 
-		/** 直下のファイル名を列挙。
+		/** すべてのファイル名を列挙。
 
-			a_assets_path	: 「Assets」からの相対パス。
+			a_full_path	: 絶対パス。
 
 		*/
-		public static Result<System.Collections.Generic.List<string>> TryCreateOnlyTopFileNameListFromAssetsPath(string a_assets_path)
+		public static System.Collections.Generic.List<string> CreateAllFileNameListFromFullPath(string a_full_path)
 		{
-			Result<System.Collections.Generic.List<string>> t_result;
+			System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
+			{
+				string t_full_path = a_full_path.Replace('/','\\');
 
-			#pragma warning disable 0168
-			try{
-				t_result.value = CreateOnlyTopFileNameListFromAssetsPath(a_assets_path);
-				t_result.success = true;
-			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
-				DebugTool.Assert(false,t_exception);
-				#endif
+				{
+					string t_path;
+					if(t_full_path.Length > 0){
+						if(t_full_path[t_full_path.Length - 1] != '\\'){
+							t_path = t_full_path + '\\';
+						}else{
+							t_path = t_full_path;
+						}
+					}else{
+						t_path = "";
+					}
 
-				t_result.value = null;
-				t_result.success = false;
-			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
-				DebugTool.Assert(false,t_exception);
-				#endif
+					System.Collections.Generic.List<string> t_file_name_list = CreateOnlyTopFileNameListFromFullPath(t_full_path);
+					for(int ii=0;ii<t_file_name_list.Count;ii++){
+						string t_new_path = t_path + t_file_name_list[ii];
+						t_list.Add(t_new_path);
+					}
+				}
 
-				t_result.value = null;
-				t_result.success = false;
+				System.Collections.Generic.List<string> t_directory_list = DirectoryNameList.CreateAllDirectoryNameListFromFullPath(t_full_path);
+				foreach(string t_path in t_directory_list){
+					System.Collections.Generic.List<string> t_file_name_list = CreateOnlyTopFileNameListFromFullPath(t_path);
+					for(int ii=0;ii<t_file_name_list.Count;ii++){
+						string t_new_path = t_path + '\\' + t_file_name_list[ii];
+						t_list.Add(t_new_path);
+					}
+				}
 			}
-			#pragma warning restore
-
-			return t_result;
+			return t_list;
 		}
 
 		/** すべてのファイル名を列挙。
@@ -111,6 +140,105 @@ namespace BlueBack.AssetLib.Editor
 			return t_list;
 		}
 
+		/** 直下のファイル名を列挙。
+
+			a_full_path	: 絶対パス。
+
+		*/
+		public static Result<System.Collections.Generic.List<string>> TryCreateOnlyTopFileNameListFromFullPath(string a_full_path)
+		{
+			Result<System.Collections.Generic.List<string>> t_result;
+
+			#pragma warning disable 0168
+			try{
+				t_result.value = CreateOnlyTopFileNameListFromFullPath(a_full_path);
+				t_result.success = true;
+			}catch(System.IO.IOException t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
+				t_result.value = null;
+				t_result.success = false;
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
+				t_result.value = null;
+				t_result.success = false;
+			}
+			#pragma warning restore
+
+			return t_result;
+		}
+
+		/** 直下のファイル名を列挙。
+
+			a_assets_path	: 「Assets」からの相対パス。
+
+		*/
+		public static Result<System.Collections.Generic.List<string>> TryCreateOnlyTopFileNameListFromAssetsPath(string a_assets_path)
+		{
+			Result<System.Collections.Generic.List<string>> t_result;
+
+			#pragma warning disable 0168
+			try{
+				t_result.value = CreateOnlyTopFileNameListFromAssetsPath(a_assets_path);
+				t_result.success = true;
+			}catch(System.IO.IOException t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
+				t_result.value = null;
+				t_result.success = false;
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
+				t_result.value = null;
+				t_result.success = false;
+			}
+			#pragma warning restore
+
+			return t_result;
+		}
+
+		/** すべてのファイル名を列挙。
+
+			a_full_path	: 絶対パス。
+
+		*/
+		public static Result<System.Collections.Generic.List<string>> TryCreateAllFileNameListFromFullPath(string a_full_path)
+		{
+			Result<System.Collections.Generic.List<string>> t_result;
+
+			#pragma warning disable 0168
+			try{
+				t_result.value = CreateAllFileNameListFromFullPath(a_full_path);
+				t_result.success = true;
+			}catch(System.IO.IOException t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
+				t_result.value = null;
+				t_result.success = false;
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+
+				t_result.value = null;
+				t_result.success = false;
+			}
+			#pragma warning restore
+
+			return t_result;
+		}
+
 		/** すべてのファイル名を列挙。
 
 			a_assets_path	: 「Assets」からの相対パス。
@@ -122,7 +250,7 @@ namespace BlueBack.AssetLib.Editor
 
 			#pragma warning disable 0168
 			try{
-				t_result.value = CreateOnlyTopFileNameListFromAssetsPath(a_assets_path);
+				t_result.value = CreateAllFileNameListFromAssetsPath(a_assets_path);
 				t_result.success = true;
 			}catch(System.IO.IOException t_exception){
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
