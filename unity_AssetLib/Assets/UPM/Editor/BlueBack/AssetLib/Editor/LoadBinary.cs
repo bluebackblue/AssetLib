@@ -18,7 +18,7 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** バイナリロード。
 
-			a_full_path_with_extention	: 絶対バス。拡張子付き。
+			a_full_path_with_extention		: 絶対バス。拡張子付き。
 			a_buffer						: ロード先バッファ。
 
 			return							: 読み込んだサイズ。
@@ -72,15 +72,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static long LoadBinaryToBufferFromAssetsPath(string a_assets_path_with_extention,byte[] a_buffer)
 		{
-			//ファイルパス。
-			System.IO.FileInfo t_fileinfo = new System.IO.FileInfo(AssetLib.GetApplicationDataPath() + "/" + a_assets_path_with_extention);
-
-			//開く。
-			using(System.IO.FileStream t_filestream = t_fileinfo.Open(System.IO.FileMode.Open,System.IO.FileAccess.Read,System.IO.FileShare.ReadWrite)){
-				long t_result = t_filestream.Read(a_buffer,0,a_buffer.Length);
-				t_filestream.Close();
-				return t_result;
-			}
+			return LoadBinaryToBufferFromFullPath(AssetLib.GetApplicationDataPath() + "/" + a_assets_path_with_extention,a_buffer);
 		}
 
 		/** バイナリロード。
@@ -90,21 +82,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static byte[] LoadBinaryFromAssetsPath(string a_assets_path_with_extention)
 		{
-			//ファイルパス。
-			System.IO.FileInfo t_fileinfo = new System.IO.FileInfo(AssetLib.GetApplicationDataPath() + "/" + a_assets_path_with_extention);
-
-			//開く。
-			using(System.IO.FileStream t_filestream = t_fileinfo.Open(System.IO.FileMode.Open,System.IO.FileAccess.Read,System.IO.FileShare.ReadWrite)){
-				byte[] t_result = new byte[t_filestream.Length];
-				int t_ret_read = t_filestream.Read(t_result,0,t_result.Length);
-				t_filestream.Close();
-
-				if(t_ret_read != t_result.Length){
-					return null;
-				}
-
-				return t_result;
-			}
+			return LoadBinaryFromFullPath(AssetLib.GetApplicationDataPath() + "/" + a_assets_path_with_extention);
 		}
 
 		/** バイナリロード。

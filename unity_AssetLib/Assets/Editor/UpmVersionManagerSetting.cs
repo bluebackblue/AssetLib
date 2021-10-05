@@ -58,7 +58,7 @@ namespace Editor
 					/*
 					"## [0.0.0] - 0000-00-00",
 					"### Changes",
-					"- Init",
+					"- xxxxxx",
 					"",
 					*/
 
@@ -101,7 +101,7 @@ namespace Editor
 							"## 外部依存 / 使用ライセンス等",
 							//"* " + a_argument.param.author_url + "/" + "AssetLib",
 							//"### サンプルのみ",
-							//"* " + a_argument.param.author_url + "/" + "AssetLib",
+							//"* " + a_argument.param.author_url + "/" + "Xxxxx",
 						};
 					},
 

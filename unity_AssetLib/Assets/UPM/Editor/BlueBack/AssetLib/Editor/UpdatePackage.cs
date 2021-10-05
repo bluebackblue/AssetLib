@@ -14,6 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** UpdatePackage
 	*/
+	#if(!DEF_USER_BLUEBACK_ASSETLIB)
 	public class UpdatePackage
 	{
 		/** MenuItem_BlueBack_AssetLib_UpdatePackage
@@ -87,9 +88,8 @@ namespace BlueBack.AssetLib.Editor
 				return null;
 			}
 		}
-
-
 	}
+	#endif
 }
 #endif
 
