@@ -1,4 +1,4 @@
-	
+
 
 /**
  * Copyright (c) blueback
@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** UpdatePackage
 	*/
-	#if(!DEF_USER_BLUEBACK_ASSETLIB)
+	#if(!DEF_USER_BLUEBACK_UPMVERSIONMANAGER)
 	public class UpdatePackage
 	{
 		/** MenuItem_BlueBack_AssetLib_UpdatePackage
@@ -22,7 +22,7 @@ namespace BlueBack.AssetLib.Editor
 		[UnityEditor.MenuItem("BlueBack/AssetLib/UpdatePackage")]
 		public static void MenuItem_BlueBack_AssetLib_UpdatePackage()
 		{
-			string t_version = GetLastReleaseNameFromGitHub("bluebackblue","AssetLib");//TODO:自動生成。
+			string t_version = GetLastReleaseNameFromGitHub("bluebackblue",Version.packagename);
 			if(t_version == null){
 				DebugTool.EditorLogError("GetLastReleaseNameFromGitHub : connect error");
 			}else if(t_version.Length <= 0){
@@ -71,7 +71,7 @@ namespace BlueBack.AssetLib.Editor
 				byte[] t_binary = DownloadBinary("https://api.github.com/repos/" + a_auther + "/" + a_reposname + "/releases/latest");
 				if(t_binary != null){
 					string t_text = System.Text.Encoding.UTF8.GetString(t_binary,0,t_binary.Length);
-					System.Text.RegularExpressions.Match t_match = System.Text.RegularExpressions.Regex.Match(t_text,".*(?<name>\\\"name\\\")\\s*\\:\\s*\\\"(?<value>[a-zA-Z0-9_\\.]*)\\\".*");
+					System.Text.RegularExpressions.Match t_match = System.Text.RegularExpressions.Regex.Match(t_text,".*(?<name>\\\"tag_name\\\")\\s*\\:\\s*\\\"(?<value>[a-zA-Z0-9_\\.]*)\\\".*");
 					t_text = t_match.Groups["value"].Value;
 					if(t_text != null){
 						return t_text;

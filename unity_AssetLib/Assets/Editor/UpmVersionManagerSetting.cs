@@ -50,6 +50,19 @@ namespace Editor
 					"asset"
 				};
 
+				//packagejson_dependencies
+				t_param.packagejson_dependencies = new System.Collections.Generic.Dictionary<string,string>();
+
+				//asmdef_reference
+				t_param.asmdef_reference = new string[]{
+
+				};
+			
+				//editorasmdef_reference
+				t_param.editorasmdef_reference = new string[]{
+					"BlueBack.AssetLib",
+				};
+
 				//■changelog
 				t_param.changelog = new string[]{
 					"# Changelog",

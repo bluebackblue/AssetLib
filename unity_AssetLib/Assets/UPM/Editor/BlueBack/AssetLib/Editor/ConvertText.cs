@@ -46,6 +46,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static void TryConvertTextToUtf8FromAssetsPath(string a_assets_path,string a_directory_regex,string a_file_regex,bool a_bom,LineFeedOption a_linefeed_option)
 		{
+			#pragma warning disable 0168
 			try{
 				ConvertTextToUtf8FromAssetsPath(a_assets_path,a_directory_regex,a_file_regex,a_bom,a_linefeed_option);
 			}catch(System.Exception t_exception){
@@ -54,8 +55,8 @@ namespace BlueBack.AssetLib.Editor
 				DebugTool.Assert(false,t_exception);
 				#endif
 			}
+			#pragma warning restore
 		}
-
 	}
 }
 #endif
