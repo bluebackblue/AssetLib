@@ -66,9 +66,9 @@ namespace BlueBack.AssetLib.Editor
 
 		/** テキストロード。
 
-			a_url	: ファイルのＵＲＬ。
-			a_post	: POSTデータ。
-			a_encoding						: 文字列エンコード。
+			a_url						: ファイルのＵＲＬ。
+			a_post						: POSTデータ。
+			a_encoding					: 文字列エンコード。
 
 		*/
 		public static string LoadTextFromUrl(string a_url,System.Collections.Generic.List<UnityEngine.Networking.IMultipartFormSection> a_post,System.Text.Encoding a_encoding)
