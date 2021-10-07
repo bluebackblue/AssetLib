@@ -17,7 +17,7 @@ namespace BlueBack.AssetLib
 	{
 		/** VersionDefine
 		*/
-		public class VersionDefine
+		public struct VersionDefine
 		{
 			/** name
 			*/

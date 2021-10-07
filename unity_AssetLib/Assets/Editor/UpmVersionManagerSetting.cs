@@ -30,22 +30,25 @@ namespace Editor
 				//author_name
 				t_param.author_name = "BlueBack";
 
-				//author_url
-				t_param.author_url = "https://github.com/bluebackblue";
+				//git_url
+				t_param.git_url = "https://github.com/";
 
-				//■package_name
+				//git_author
+				t_param.git_author = "bluebackblue";
+
+				//package_name
 				t_param.package_name = "AssetLib";
 
-				//■getpackageversion
+				//getpackageversion
 				t_param.getpackageversion = BlueBack.AssetLib.Version.GetPackageVersion;
 
 				//packagejson_unity
 				t_param.packagejson_unity = "2020.1";
 
-				//■packagejson_discription
+				//packagejson_discription
 				t_param.packagejson_discription = "アセット操作";
 
-				//■packagejson_keyword
+				//packagejson_keyword
 				t_param.packagejson_keyword = new string[]{
 					"asset"
 				};
@@ -53,14 +56,44 @@ namespace Editor
 				//packagejson_dependencies
 				t_param.packagejson_dependencies = new System.Collections.Generic.Dictionary<string,string>();
 
-				//asmdef_reference
-				t_param.asmdef_reference = new string[]{
+				//asmdef_runtime
+				t_param.asmdef_runtime = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefItem{
+					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
+					},
+					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
+					},
+				};
 
+				//asmdef_editor
+				t_param.asmdef_editor = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefItem{
+					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
+						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
+							package_name = "BlueBack.AssetLib",
+							url = t_param.git_url + t_param.git_author + "/AssetLib",
+						},
+					},
+					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
+					},
 				};
 			
-				//editorasmdef_reference
-				t_param.editorasmdef_reference = new string[]{
-					"BlueBack.AssetLib",
+				//asmdef_sample
+				t_param.asmdef_sample = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefItem{
+					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
+						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
+							package_name = "BlueBack.AssetLib",
+							url = t_param.git_url + t_param.git_author + "/AssetLib",
+						},
+						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
+							package_name = "BlueBack.AssetLib.Editor",
+							url = t_param.git_url + t_param.git_author + "/AssetLib",
+						},
+						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
+							package_name = "BlueBack.JsonItem",
+							url = t_param.git_url + t_param.git_author + "/JsonItem",
+						},
+					},
+					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
+					},
 				};
 
 				//■changelog
@@ -104,18 +137,46 @@ namespace Editor
 						return new string[]{
 							"## ライセンス",
 							"MIT License",
-							"* " + a_argument.param.author_url + "/" + a_argument.param.package_name + "/blob/main/LICENSE",
+							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + a_argument.param.package_name + "/blob/main/LICENSE",
 						};
 					},
 
 					//依存。
 					(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {
-						return new string[]{
-							"## 外部依存 / 使用ライセンス等",
-							//"* " + a_argument.param.author_url + "/" + "AssetLib",
-							//"### サンプルのみ",
-							//"* " + a_argument.param.author_url + "/" + "Xxxxx",
-						};
+
+						System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
+						t_list.Add("## 外部依存 / 使用ライセンス等");
+
+						{
+							System.Collections.Generic.HashSet<string> t_url_list = new System.Collections.Generic.HashSet<string>();
+
+							//runtine
+							for(int ii=0;ii<a_argument.param.asmdef_runtime.reference_list.Length;ii++){
+								t_url_list.Add("* " + a_argument.param.asmdef_runtime.reference_list[ii].url);
+							}
+
+							//editor
+							for(int ii=0;ii<a_argument.param.asmdef_editor.reference_list.Length;ii++){
+								t_url_list.Add("* " + a_argument.param.asmdef_editor.reference_list[ii].url);
+							}
+
+							t_list.AddRange(t_url_list);
+						}
+
+						t_list.Add("### サンプルのみ");
+						
+						{
+							System.Collections.Generic.HashSet<string> t_url_list = new System.Collections.Generic.HashSet<string>();
+
+							//sample
+							for(int ii=0;ii<a_argument.param.asmdef_sample.reference_list.Length;ii++){
+								t_url_list.Add("* " + a_argument.param.asmdef_sample.reference_list[ii].url);
+							}
+
+							t_list.AddRange(t_url_list);
+						}
+
+						return t_list.ToArray();
 					},
 
 					//動作確認。
@@ -131,9 +192,9 @@ namespace Editor
 						return new string[]{
 							"## UPM",
 							"### 最新",
-							"* " + a_argument.param.author_url + "/" + a_argument.param.package_name + ".git?path=unity_" + a_argument.param.package_name + "/Assets/UPM#" + a_argument.version,
+							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + a_argument.param.package_name + ".git?path=unity_" + a_argument.param.package_name + "/Assets/UPM#" + a_argument.version,
 							"### 開発",
-							"* " + a_argument.param.author_url + "/" + a_argument.param.package_name + ".git?path=unity_" + a_argument.param.package_name + "/Assets/UPM",
+							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + a_argument.param.package_name + ".git?path=unity_" + a_argument.param.package_name + "/Assets/UPM",
 						};
 					},
 

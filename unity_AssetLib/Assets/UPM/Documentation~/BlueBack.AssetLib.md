@@ -13,13 +13,17 @@ MIT License
 * https://github.com/bluebackblue/AssetLib/blob/main/LICENSE
 
 ## 外部依存 / 使用ライセンス等
+* https://github.com/bluebackblue/AssetLib
+### サンプルのみ
+* https://github.com/bluebackblue/AssetLib
+* https://github.com/bluebackblue/JsonItem
 
 ## 動作確認
 Unity 2021.1.11f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.31
+* https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.32
 ### 開発
 * https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM
 

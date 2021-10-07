@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief パッケージ更新。
+ * @brief パッケージ更新。自動生成。
 */
 
 
@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** UpdatePackage
 	*/
-	#if(!DEF_USER_BLUEBACK_UPMVERSIONMANAGER)
+	#if(!DEF_USER_BLUEBACK_ASSETLIB)
 	public class UpdatePackage
 	{
 		/** MenuItem_BlueBack_AssetLib_UpdatePackage
