@@ -13,8 +13,10 @@ MIT License
 * https://github.com/bluebackblue/AssetLib/blob/main/LICENSE
 
 ## 外部依存 / 使用ライセンス等
+### ランタイム
+### エディター
 * https://github.com/bluebackblue/AssetLib
-### サンプルのみ
+### サンプル
 * https://github.com/bluebackblue/AssetLib
 * https://github.com/bluebackblue/JsonItem
 
