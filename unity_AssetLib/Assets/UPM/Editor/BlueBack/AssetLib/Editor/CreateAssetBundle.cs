@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** CreateAssetBundle
 	*/
-	public class CreateAssetBundle
+	public static class CreateAssetBundle
 	{
 		/** アセットバンドル作成。
 

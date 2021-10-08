@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** OpenScene
 	*/
-	public class OpenScene
+	public static class OpenScene
 	{
 		/** シーンオープン。
 

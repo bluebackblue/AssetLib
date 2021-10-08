@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** SaveAnimationClip
 	*/
-	public class SaveAnimationClip
+	public static class SaveAnimationClip
 	{
 		/** アニメーションクリップセーブ。
 

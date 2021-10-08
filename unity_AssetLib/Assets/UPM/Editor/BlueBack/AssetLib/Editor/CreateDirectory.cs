@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** CreateDirectory
 	*/
-	public class CreateDirectory
+	public static class CreateDirectory
 	{
 		/** ディレクトリ作成。
 

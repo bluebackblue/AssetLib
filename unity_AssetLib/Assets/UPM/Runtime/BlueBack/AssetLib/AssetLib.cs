@@ -13,7 +13,7 @@ namespace BlueBack.AssetLib
 {
 	/** AssetLib
 	*/
-	public class AssetLib
+	public static class AssetLib
 	{
 		/** application_data_path
 		*/

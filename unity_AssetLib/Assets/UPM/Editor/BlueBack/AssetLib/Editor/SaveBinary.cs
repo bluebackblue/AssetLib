@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** SaveBinary
 	*/
-	public class SaveBinary
+	public static class SaveBinary
 	{
 		/** バイナリセーブ。
 

@@ -15,7 +15,7 @@ namespace BlueBack.AssetLib.Editor
 	/** UpdatePackage
 	*/
 	#if(!DEF_USER_BLUEBACK_ASSETLIB)
-	public class UpdatePackage
+	public static class UpdatePackage
 	{
 		/** MenuItem_BlueBack_AssetLib_UpdatePackage
 		*/

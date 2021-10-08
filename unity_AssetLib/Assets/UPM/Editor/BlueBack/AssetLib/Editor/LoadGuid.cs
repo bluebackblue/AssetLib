@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** LoadGuid
 	*/
-	public class LoadGuid
+	public static class LoadGuid
 	{
 		/** ＧＵＩＤロード。
 		*/

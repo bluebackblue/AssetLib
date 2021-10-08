@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** SaveTexture
 	*/
-	public class SaveTexture
+	public static class SaveTexture
 	{
 		/** ＰＮＧとしてテクスチャーセーブ。
 

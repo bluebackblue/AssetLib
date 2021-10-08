@@ -13,7 +13,7 @@ namespace BlueBack.AssetLib
 {
 	/** EncodeCheck
 	*/
-	public class EncodeCheck
+	public static class EncodeCheck
 	{
 		/** Result
 		*/

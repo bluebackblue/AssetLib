@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** CreatePackage
 	*/
-	public class CreatePackage
+	public static class CreatePackage
 	{
 		/** パッケージ作成。
 

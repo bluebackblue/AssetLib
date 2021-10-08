@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** LoadBinary
 	*/
-	public class LoadBinary
+	public static class LoadBinary
 	{
 		/** バイナリロード。
 

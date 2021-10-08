@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** PackageList
 	*/
-	public class PackageList
+	public static class PackageList
 	{
 		/** 直下のディレクトリ名を列挙。
 

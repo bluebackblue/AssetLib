@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** FileNameList
 	*/
-	public class FileNameList
+	public static class FileNameList
 	{
 		/** 直下のファイル名を列挙。
 

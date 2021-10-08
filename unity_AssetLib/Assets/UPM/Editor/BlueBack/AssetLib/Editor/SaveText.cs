@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** SaveText
 	*/
-	public class SaveText
+	public static class SaveText
 	{
 		/** テキストセーブ。
 

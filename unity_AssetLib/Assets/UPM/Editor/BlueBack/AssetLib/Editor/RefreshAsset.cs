@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** RefreshAsset
 	*/
-	public class RefreshAsset
+	public static class RefreshAsset
 	{
 		/** アセットリフレッシュ。
 

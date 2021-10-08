@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** DeleteDirectory
 	*/
-	public class DeleteDirectory
+	public static class DeleteDirectory
 	{
 		/** ディレクトリ削除。
 

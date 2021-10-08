@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** LoadMesh
 	*/
-	public class LoadMesh
+	public static class LoadMesh
 	{
 		/** メッシュロード。
 

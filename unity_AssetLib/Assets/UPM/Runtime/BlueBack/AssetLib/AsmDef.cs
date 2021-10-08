@@ -13,7 +13,7 @@ namespace BlueBack.AssetLib
 {
 	/** Asmdef
 	*/
-	public class Asmdef
+	public struct Asmdef
 	{
 		/** VersionDefine
 		*/

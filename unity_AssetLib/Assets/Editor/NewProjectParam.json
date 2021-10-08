@@ -1,0 +1,23 @@
+{
+   "overview":[
+      "アセット操作",
+      "* パッケージの作成",
+      "* アセットバンドルの作成",
+      "* プレハブ、アセット、テキストのセーブロード",
+      "* テキストのエンコードデコード",
+      "* ディレクトリの作成、削除",
+      "* ファイル名、ディレクトリ名の列挙、検索",
+      "* STLのセーブロード",
+   ],
+   "keyword":[
+      "asset"
+   ],
+   "root_readmemd_path":"../../README.md",
+   "discription":"アセット操作",
+   "git_path":"unity_AssetLib/Assets/UPM",
+   "git_author":"bluebackblue",
+   "git_url":"https://github.com/",
+   "author_name":"BlueBack",
+   "need_unity_version":"2020.1",
+   "package_name":"AssetLib"
+}

@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** DeleteFile
 	*/
-	public class DeleteFile
+	public static class DeleteFile
 	{
 		/** ファイル削除。
 

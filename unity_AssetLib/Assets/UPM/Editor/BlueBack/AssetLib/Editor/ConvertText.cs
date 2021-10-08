@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** ConvertText
 	*/
-	public class ConvertText
+	public static class ConvertText
 	{
 		/** テキストコンバート。
 

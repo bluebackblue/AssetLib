@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** SaveMesh
 	*/
-	public class SaveMesh
+	public static class SaveMesh
 	{
 		/** メッシュセーブ。
 

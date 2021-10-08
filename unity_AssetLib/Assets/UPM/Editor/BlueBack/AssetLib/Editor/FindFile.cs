@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** FindFile
 	*/
-	public class FindFile
+	public static class FindFile
 	{
 		/** ファイル検索。
 

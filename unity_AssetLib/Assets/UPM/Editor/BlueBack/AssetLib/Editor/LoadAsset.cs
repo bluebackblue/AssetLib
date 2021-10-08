@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** LoadAsset
 	*/
-	public class LoadAsset
+	public static class LoadAsset
 	{
 		/** 全アセットロード。アセット。
 

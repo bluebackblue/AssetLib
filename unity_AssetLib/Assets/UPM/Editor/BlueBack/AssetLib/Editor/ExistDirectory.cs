@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** ExistDirectory
 	*/
-	public class ExistDirectory
+	public static class ExistDirectory
 	{
 		/** ディレクトリ存在チェック。
 

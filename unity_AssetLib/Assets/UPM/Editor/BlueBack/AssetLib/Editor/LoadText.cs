@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** LoadText
 	*/
-	public class LoadText
+	public static class LoadText
 	{
 		/** テキストロード。
 

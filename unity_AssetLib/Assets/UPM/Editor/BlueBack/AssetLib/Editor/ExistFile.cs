@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** ExistFile
 	*/
-	public class ExistFile
+	public static class ExistFile
 	{
 		/** ファイル存在チェック。
 

@@ -14,7 +14,7 @@ namespace BlueBack.AssetLib.Editor
 {
 	/** SavePrefab
 	*/
-	public class SavePrefab
+	public static class SavePrefab
 	{
 		/** プレハブセーブ
 
