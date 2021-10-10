@@ -164,7 +164,7 @@ namespace Samples.AssetLib.Asset.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/Download")]
 		private static void MenuItem_Download()
 		{
-			byte[] t_data = BlueBack.AssetLib.Editor.LoadBinary.TryLoadBinaryFromUrl("https://raw.githubusercontent.com/bluebackblue/AssetLib/main/unity_AssetLib/Assets/UPM/package.json",null);
+			byte[] t_data = BlueBack.AssetLib.Editor.LoadBinary.TryLoadBinaryFromUrl("https://raw.githubusercontent.com/bluebackblue/AssetLib/main/BlueBackAssetLib/Assets/UPM/package.json",null);
 			string t_text = BlueBack.AssetLib.EncodeCheck.GetEncoding(t_data).encoding.GetString(t_data);
 
 			UnityEngine.Debug.Log(t_text);

@@ -25,7 +25,7 @@ Unity 2021.1.11f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/AssetLib.git?path=BlueBackAssetLib/Assets/UPM#0.0.36
+* https://github.com/bluebackblue/AssetLib.git?path=BlueBackAssetLib/Assets/UPM#0.0.37
 ### 開発
 * https://github.com/bluebackblue/AssetLib.git?path=BlueBackAssetLib/Assets/UPM
 
