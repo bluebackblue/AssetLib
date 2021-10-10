@@ -28,9 +28,9 @@ namespace BlueBack.AssetLib.Editor
 				DebugTool.EditorLogError("GetLastReleaseNameFromGitHub : connect error");
 				#endif
 			}else if(t_version.Length <= 0){
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM");
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/AssetLib.git?path=BlueBackAssetLib/Assets/UPM");
 			}else{
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#" + t_version);
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/AssetLib.git?path=BlueBackAssetLib/Assets/UPM#" + t_version);
 			}
 		}
 
