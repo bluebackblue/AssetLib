@@ -1,4 +1,33 @@
 {
+    "namespace_author":"BlueBack",
+    "namespace_package":"AssetLib",
+    "git_url":"https://github.com/bluebackblue/UpmAssetLib",
+    "git_api":"https://api.github.com/repos/bluebackblue/UpmAssetLib",
+    "git_path":"BlueBackAssetLib/Assets/UPM",
+    "discription_simple":"アセット操作",
+    "discription_detal":[
+        "アセット操作",
+        "* パッケージの作成",
+        "* アセットバンドルの作成",
+        "* プレハブ、アセット、テキストのセーブロード",
+        "* テキストのエンコードデコード",
+        "* ディレクトリの作成、削除",
+        "* ファイル名、ディレクトリ名の列挙、検索",
+        "* STLのセーブロード",
+    ],
+    "keyword":[
+        "asset",
+    ],
+    "changelog":[
+        "# Changelog",
+        "",
+        "## [0.0.0] - 2021-03-30",
+        "### Changes",
+        "- Init",
+        "",
+    ],
+    "root_readmemd_path":"../../README.md",
+    "need_unity_version":"2020.1",
     "asmdef_runtime":{
         "define_list":[
         ],
@@ -9,11 +38,14 @@
         "define_list":[
         ],
         "reference_list":[
+            {
+                "package_fullname":"BlueBack.AssetLib",
+                "url":"https://github.com/bluebackblue/UpmAssetLib",
+            },
         ]
     },
     "asmdef_sample":{
         "define_list":[
-            
         ],
         "reference_list":[
             {
@@ -30,36 +62,4 @@
             },
         ]
     },
-    "changelog":[
-        "# Changelog",
-        "",
-        "## [0.0.1] - 2021-10-11",
-        "### Changes",
-        "- Init",
-        "",
-    ],
-    "overview":[
-        "アセット操作"
-    ],
-    "keyword":[
-        "asset",
-    ],
-    "root_readmemd_path":"../../README.md",
-    "discription_readme":[
-        "アセット操作",
-        "* パッケージの作成",
-        "* アセットバンドルの作成",
-        "* プレハブ、アセット、テキストのセーブロード",
-        "* テキストのエンコードデコード",
-        "* ディレクトリの作成、削除",
-        "* ファイル名、ディレクトリ名の列挙、検索",
-        "* STLのセーブロード",
-    ],
-    "discription_package":"アセット操作",
-    "git_path":"BlueBackAssetLib/Assets/UPM",
-    "git_api":"https://api.github.com/repos/bluebackblue/UpmAssetLib",
-    "git_url":"https://github.com/bluebackblue/UpmAssetLib",
-    "need_unity_version":"2020.1",
-    "namespace_package":"AssetLib",
-    "namespace_author":"BlueBack",
 }

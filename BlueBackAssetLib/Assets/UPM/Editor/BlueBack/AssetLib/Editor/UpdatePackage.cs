@@ -1,7 +1,7 @@
 
 
 /**
- * Copyright (c) blueback
+ * Copyright (c) BlueBack
  * Released under the MIT License
  * @brief パッケージ更新。自動生成。
 */
@@ -17,20 +17,20 @@ namespace BlueBack.AssetLib.Editor
 	#if(!DEF_USER_BLUEBACK_ASSETLIB)
 	public static class UpdatePackage
 	{
-		/** MenuItem_BlueBack_AssetLib_UpdatePackage
+		/** MenuItem_BlueBack_AssetLib_UpdatePackage_" + Version.packageversion)]
 		*/
 		[UnityEditor.MenuItem("BlueBack/AssetLib/UpdatePackage")]
 		public static void MenuItem_BlueBack_AssetLib_UpdatePackage()
 		{
-			string t_version = GetLastReleaseNameFromGitHub("bluebackblue",Version.packagename);
+			string t_version = GetLastReleaseNameFromGitHub("<<gitauthor>>",Version.packagename);
 			if(t_version == null){
 				#if(UNITY_EDITOR)
 				DebugTool.EditorLogError("GetLastReleaseNameFromGitHub : connect error");
 				#endif
 			}else if(t_version.Length <= 0){
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/AssetLib.git?path=BlueBackAssetLib/Assets/UPM");
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UpmAssetLib.git?path=BlueBackAssetLib/Assets/UPM");
 			}else{
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/AssetLib.git?path=BlueBackAssetLib/Assets/UPM#" + t_version);
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UpmAssetLib.git?path=BlueBackAssetLib/Assets/UPM#" + t_version);
 			}
 		}
 

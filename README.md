@@ -15,7 +15,6 @@ MIT License
 ## 依存 / 使用ライセンス等
 ### ランタイム
 ### エディター
-* https://github.com/bluebackblue/UpmAssetLib
 ### サンプル
 * https://github.com/bluebackblue/UpmAssetLib
 * https://github.com/bluebackblue/UpmJsonItem
