@@ -17,6 +17,7 @@
    "git_path":"BlueBackAssetLib/Assets/UPM",
    "git_author":"bluebackblue",
    "git_url":"https://github.com/",
+   "git_repos":"UpmAssetLib",
    "author_name":"BlueBack",
    "need_unity_version":"2020.1",
    "package_name":"AssetLib"

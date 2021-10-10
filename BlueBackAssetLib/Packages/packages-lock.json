@@ -15,11 +15,11 @@
       "hash": "d6338d244497224f761ab9d14adabe0e25caf9d6"
     },
     "blueback.upmversionmanager": {
-      "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=BlueBackUpmVersionManager/Assets/UPM#0.0.33",
+      "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=BlueBackUpmVersionManager/Assets/UPM",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "aeb5a0a18f408eb71e1f24cee9f923c4df6b8da6"
+      "hash": "b8c78822c710e29b75ca50992f6731aafe541fc9"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
