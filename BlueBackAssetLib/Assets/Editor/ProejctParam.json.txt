@@ -13,10 +13,10 @@
         "* テキストのエンコードデコード",
         "* ディレクトリの作成、削除",
         "* ファイル名、ディレクトリ名の列挙、検索",
-        "* STLのセーブロード",
+        "* STLのセーブロード"
     ],
     "keyword":[
-        "asset",
+        "asset"
     ],
     "changelog":[
         "# Changelog",
@@ -24,7 +24,7 @@
         "## [0.0.0] - 2021-03-30",
         "### Changes",
         "- Init",
-        "",
+        ""
     ],
     "root_readmemd_path":"../../README.md",
     "need_unity_version":"2020.1",
@@ -41,8 +41,8 @@
             {
                 "use":"use",
                 "package_fullname":"BlueBack.AssetLib",
-                "url":"https://github.com/bluebackblue/UpmAssetLib",
-            },
+                "url":"https://github.com/bluebackblue/UpmAssetLib"
+            }
         ]
     },
     "asmdef_sample":{
@@ -52,18 +52,18 @@
             {
                 "use":"use",
                 "package_fullname":"BlueBack.AssetLib",
-                "url":"https://github.com/bluebackblue/UpmAssetLib",
+                "url":"https://github.com/bluebackblue/UpmAssetLib"
             },
             {
                 "use":"use",
                 "package_fullname":"BlueBack.AssetLib.Editor",
-                "url":"https://github.com/bluebackblue/UpmAssetLib",
+                "url":"https://github.com/bluebackblue/UpmAssetLib"
             },
             {
                 "use":"use",
                 "package_fullname":"BlueBack.JsonItem",
-                "url":"https://github.com/bluebackblue/UpmJsonItem",
-            },
+                "url":"https://github.com/bluebackblue/UpmJsonItem"
+            }
         ]
-    },
+    }
 }
