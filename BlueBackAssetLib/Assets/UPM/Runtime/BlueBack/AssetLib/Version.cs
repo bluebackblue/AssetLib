@@ -1,7 +1,7 @@
 
 
 /**
- * Copyright (c) BlueBack
+ * Copyright (c) blueback
  * Released under the MIT License
  * @brief バージョン。自動生成。
 */
@@ -21,7 +21,7 @@ namespace BlueBack.AssetLib
 
 		/** packageversion
 		*/
-		public const string packageversion = "0.0.39";
+		public const string packageversion = "0.0.40";
 
 		/** GetPackageVersion
 		*/
