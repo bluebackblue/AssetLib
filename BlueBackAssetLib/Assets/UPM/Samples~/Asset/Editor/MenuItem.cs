@@ -40,11 +40,11 @@ namespace Samples.AssetLib.Asset.Editor
 		{
 			//バイナリのセーブ。
 			{
-				BlueBack.AssetLib.Editor.SaveBinary.SaveBinaryToAssetsPath(new byte[]{0x01,0x02,0x03},"Samples/AssetLib/binary.dat");
+				BlueBack.AssetLib.Editor.SaveBinaryWithAssetsPath.Save(new byte[]{0x01,0x02,0x03},"Samples/AssetLib/binary.dat");
 				BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 			}
 
-			byte[] t_binary = BlueBack.AssetLib.Editor.LoadBinary.LoadBinaryFromAssetsPath("Samples/AssetLib/binary.dat");
+			byte[] t_binary = BlueBack.AssetLib.Editor.LoadBinaryWithAssetsPath.Load("Samples/AssetLib/binary.dat");
 			for(int ii=0;ii<t_binary.Length;ii++){
 				UnityEngine.Debug.Log(t_binary[ii].ToString("X2"));
 			}
@@ -137,7 +137,7 @@ namespace Samples.AssetLib.Asset.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/SaveAsStlMeshToAssetsPath")]
 		private static void MenuItem_CreateStl()
 		{
-			string t_path = BlueBack.AssetLib.Editor.FindFile.FindFileFistFromAssetsPath("Samples/AssetLib",".*","^cylinder\\.mesh$");
+			string t_path = BlueBack.AssetLib.Editor.FindFileWithAssetsPath.FindFirst("Samples/AssetLib",".*","^cylinder\\.mesh$");
 			UnityEngine.Mesh t_mesh = BlueBack.AssetLib.Editor.LoadMesh.LoadMeshFromAssetsPath(t_path);
 			BlueBack.AssetLib.Editor.SaveMesh.SaveAsStlMeshToAssetsPath(t_mesh,"Samples/AssetLib/cylinder.stl",new UnityEngine.Vector3(100.0f,100.0f,100.0f));
 			BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
@@ -164,7 +164,7 @@ namespace Samples.AssetLib.Asset.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Asset/Download")]
 		private static void MenuItem_Download()
 		{
-			byte[] t_data = BlueBack.AssetLib.Editor.LoadBinary.TryLoadBinaryFromUrl("https://raw.githubusercontent.com/bluebackblue/AssetLib/main/BlueBackAssetLib/Assets/UPM/package.json",null);
+			byte[] t_data = BlueBack.AssetLib.Editor.LoadBinaryWithUrl.Load("https://raw.githubusercontent.com/bluebackblue/AssetLib/main/BlueBackAssetLib/Assets/UPM/package.json",null);
 			string t_text = BlueBack.AssetLib.EncodeCheck.GetEncoding(t_data).encoding.GetString(t_data);
 
 			UnityEngine.Debug.Log(t_text);

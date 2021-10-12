@@ -14,7 +14,7 @@ namespace Samples.AssetLib.Package.Editor
 		[UnityEditor.MenuItem("サンプル/AssetLib/Package/CreatePackageFromAssetsPath")]
 		private static void MenuItem_Sample_AssetLib_CreatePackage_CreatePackageFromAssetsPath()
 		{
-			BlueBack.AssetLib.Editor.CreatePackage.CreatePackageFromAssetsPath("Samples/AssetLib","sample.unitypackage",UnityEditor.ExportPackageOptions.Recurse);
+			BlueBack.AssetLib.Editor.CreatePackageWithAssetsPath.Create("Samples/AssetLib","sample.unitypackage",UnityEditor.ExportPackageOptions.Recurse);
 		}
 
 		/** Asmdef列挙。
@@ -24,7 +24,7 @@ namespace Samples.AssetLib.Package.Editor
 		{
 			System.Collections.Generic.List<UnityEditor.PackageManager.PackageInfo> t_packagelist = BlueBack.AssetLib.Editor.PackageList.CreatePackageList(false,false);
 			foreach(UnityEditor.PackageManager.PackageInfo t_packageinfo in t_packagelist){
-				System.Collections.Generic.List<string> t_filenamelist = BlueBack.AssetLib.Editor.FindFile.FindFileListFromFullPath(t_packageinfo.resolvedPath,".*",".*\\.asmdef$");
+				System.Collections.Generic.List<string> t_filenamelist = BlueBack.AssetLib.Editor.FindFileWithAssetsPath.FindAll(t_packageinfo.resolvedPath,".*",".*\\.asmdef$");
 				foreach(string t_filename in t_filenamelist){
 
 					string t_asmdef_name;

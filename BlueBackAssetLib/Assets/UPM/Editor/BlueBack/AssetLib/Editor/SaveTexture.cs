@@ -25,7 +25,7 @@ namespace BlueBack.AssetLib.Editor
 		public static void SaveAsPngTexture2DToAssetsPath(UnityEngine.Texture2D a_texture,string a_assets_path_with_extention)
 		{
 			byte[] t_binary = UnityEngine.ImageConversion.EncodeToPNG(a_texture);
-			SaveBinary.SaveBinaryToAssetsPath(t_binary,a_assets_path_with_extention);
+			SaveBinaryWithAssetsPath.Save(t_binary,a_assets_path_with_extention);
 		}
 	}
 }

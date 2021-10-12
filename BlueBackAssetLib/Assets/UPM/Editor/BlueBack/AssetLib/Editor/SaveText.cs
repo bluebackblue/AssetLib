@@ -47,7 +47,7 @@ namespace BlueBack.AssetLib.Editor
 				}break;
 			}
 
-			using(System.IO.StreamWriter t_stream = new System.IO.StreamWriter(AssetLib.GetApplicationDataPath() + "/" + a_assets_path_with_extention,false,new System.Text.UTF8Encoding(a_bom))){
+			using(System.IO.StreamWriter t_stream = new System.IO.StreamWriter(AssetLib.GetApplicationDataPath() + '\\' + a_assets_path_with_extention,false,new System.Text.UTF8Encoding(a_bom))){
 				t_stream.Write(t_text);
 				t_stream.Flush();
 				t_stream.Close();

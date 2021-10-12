@@ -184,7 +184,7 @@ namespace BlueBack.AssetLib.Editor
 				t_binary[t_offset + 1] = 0x00;
 			}
 
-			SaveBinary.SaveBinaryToAssetsPath(t_binary,a_assets_path_with_extention);
+			SaveBinaryWithAssetsPath.Save(t_binary,a_assets_path_with_extention);
 		}
 	}
 }

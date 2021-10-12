@@ -33,7 +33,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static UnityEngine.Mesh LoadStlMeshFromAssetsPath(string a_assets_path_with_extention)
 		{
-			byte[] t_binary = BlueBack.AssetLib.Editor.LoadBinary.LoadBinaryFromAssetsPath(a_assets_path_with_extention);
+			byte[] t_binary = LoadBinaryWithAssetsPath.Load(a_assets_path_with_extention);
 
 			byte[] t_byte4 = new byte[4];
 

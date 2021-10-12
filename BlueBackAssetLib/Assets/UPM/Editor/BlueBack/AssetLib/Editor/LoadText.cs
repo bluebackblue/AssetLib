@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string LoadTextFromFullPath(string a_full_path_with_extention,System.Text.Encoding a_encoding)
 		{
-			byte[] t_data = LoadBinary.LoadBinaryFromFullPath(a_full_path_with_extention);
+			byte[] t_data = LoadBinaryWithFullPath.Load(a_full_path_with_extention);
 			int t_offset;
 
 			System.Text.Encoding t_encoding;
@@ -48,7 +48,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string LoadTextFromAssetsPath(string a_assets_path_with_extention,System.Text.Encoding a_encoding)
 		{
-			byte[] t_data = LoadBinary.LoadBinaryFromAssetsPath(a_assets_path_with_extention);
+			byte[] t_data = LoadBinaryWithAssetsPath.Load(a_assets_path_with_extention);
 			int t_offset;
 
 			System.Text.Encoding t_encoding;
@@ -73,7 +73,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string LoadTextFromUrl(string a_url,System.Collections.Generic.List<UnityEngine.Networking.IMultipartFormSection> a_post,System.Text.Encoding a_encoding)
 		{
-			byte[] t_data = LoadBinary.TryLoadBinaryFromUrl(a_url,a_post);
+			byte[] t_data = LoadBinaryWithUrl.TryLoad(a_url,a_post).value;
 			int t_offset;
 
 			System.Text.Encoding t_encoding;

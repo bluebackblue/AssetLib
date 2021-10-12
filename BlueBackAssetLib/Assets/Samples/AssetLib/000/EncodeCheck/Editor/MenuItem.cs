@@ -28,7 +28,7 @@ namespace Samples.AssetLib.EncodeCheck.Editor
 			};
 
 			for(int ii=0;ii<t_namelist.Length;ii++){
-				string t_path = BlueBack.AssetLib.Editor.FindFile.FindFileFistFromAssetsPath("Samples",".*",t_namelist[ii]);
+				string t_path = BlueBack.AssetLib.Editor.FindFileWithAssetsPath.FindFirst("Samples",".*",t_namelist[ii]);
 				string t_text = BlueBack.AssetLib.Editor.LoadText.LoadTextFromAssetsPath(t_path,null);
 				UnityEngine.Debug.Log(t_path + "\n" + "text[0] == " + (t_text[0]) + "\n" + t_text);
 			}

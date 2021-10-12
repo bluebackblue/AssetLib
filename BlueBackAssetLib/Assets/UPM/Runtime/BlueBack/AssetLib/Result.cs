@@ -23,5 +23,29 @@ namespace BlueBack.AssetLib
 		*/
 		public T value;
 	}
+
+	/** MultiResult
+	*/
+	public readonly struct MultiResult<R,V>
+	{
+		/** result
+		*/
+		public readonly R result;
+
+		/** value
+		*/
+		public readonly V value;
+
+		/** constructor
+		*/
+		public MultiResult(in R a_result,in V a_value)
+		{
+			//result
+			this.result = a_result;
+
+			//value
+			this.value = a_value;
+		}
+	}
 }
 

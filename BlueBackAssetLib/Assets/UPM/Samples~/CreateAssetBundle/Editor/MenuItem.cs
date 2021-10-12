@@ -33,7 +33,7 @@ namespace Samples.AssetLib.CreateAssetBundle.Editor
 				}	
 			};
 
-			BlueBack.AssetLib.Editor.CreateAssetBundle.CreateAssetBundleToAssetsPath("Samples/AssetLib",t_list,UnityEditor.BuildAssetBundleOptions.None,UnityEditor.EditorUserBuildSettings.activeBuildTarget);
+			BlueBack.AssetLib.Editor.CreateAssetBundleWithAssetsPath.Create("Samples/AssetLib",t_list,UnityEditor.BuildAssetBundleOptions.None,UnityEditor.EditorUserBuildSettings.activeBuildTarget);
 			BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
 		}
 	}
