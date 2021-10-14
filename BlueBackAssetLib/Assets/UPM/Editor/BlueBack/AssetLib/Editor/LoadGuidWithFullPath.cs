@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string Load(string a_full_path_with_extention,System.Text.Encoding a_encoding)
 		{
-			string t_string = LoadText.LoadTextFromFullPath(a_full_path_with_extention,a_encoding);
+			string t_string = LoadTextWithFullPath.LoadNoBomUtf8(a_full_path_with_extention);
 			return LoadGuidWithMetaString.Load(t_string);
 		}
 

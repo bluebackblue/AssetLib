@@ -14,7 +14,7 @@ namespace Samples.AssetLib.Guid.Editor
 		[UnityEditor.MenuItem("ƒTƒ“ƒvƒ‹/AssetLib/Guid/LoadGuidWithAssetsPath")]
 		private static void MenuItem_LoadGuidWithAssetsPath()
 		{
-			UnityEngine.Debug.Log(BlueBack.AssetLib.Editor.LoadGuidWithAssetsPath.Load("Samples.meta",System.Text.Encoding.UTF8));
+			UnityEngine.Debug.Log(BlueBack.AssetLib.Editor.LoadGuidWithAssetsPath.Load("Samples.meta"));
 		}
 	}
 	#endif

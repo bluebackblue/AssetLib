@@ -29,8 +29,8 @@ namespace BlueBack.AssetLib.Editor
 			System.Collections.Generic.List<string> t_list = FindFileWithAssetsPath.FindAll(a_assets_path,a_directory_regex,a_file_regex);
 			for(int ii=0;ii<t_list.Count;ii++){
 				string t_path = t_list[ii];
-				string t_text = LoadText.LoadTextFromAssetsPath(t_list[ii],null);
-				SaveText.SaveUtf8TextToAssetsPath(t_text,t_path,a_bom,a_linefeed_option);
+				string t_text = LoadTextWithAssetsPath.Load(t_list[ii]);
+				SaveTextWithAssetsPath.SaveUtf8(t_text,t_path,a_bom,a_linefeed_option);
 			}
 
 			RefreshAssetDatabase.Refresh();

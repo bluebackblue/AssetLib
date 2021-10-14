@@ -20,7 +20,7 @@ namespace Samples.AssetLib.AssetBundle.Editor
 				BlueBack.AssetLib.Editor.DeleteDirectoryWithAssetsPath.TryDelete("Out/AssetBundleOut");
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out/AssetBundleIn");
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out/AssetBundleOut");
-				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath("text","Out/AssetBundleIn/text.txt",false,BlueBack.AssetLib.LineFeedOption.CRLF);
+				BlueBack.AssetLib.Editor.SaveTextWithAssetsPath.SaveUtf8("text","Out/AssetBundleIn/text.txt",false,BlueBack.AssetLib.LineFeedOption.CRLF);
 				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
 			}
 

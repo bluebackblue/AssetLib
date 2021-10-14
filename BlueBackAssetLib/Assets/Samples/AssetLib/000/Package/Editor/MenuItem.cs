@@ -18,7 +18,7 @@ namespace Samples.AssetLib.Package.Editor
 			{
 				BlueBack.AssetLib.Editor.DeleteDirectoryWithAssetsPath.TryDelete("Out/PackageIn");
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out/PackageIn");
-				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath("text","Out/PackageIn/text.txt",false,BlueBack.AssetLib.LineFeedOption.CRLF);
+				BlueBack.AssetLib.Editor.SaveTextWithAssetsPath.SaveUtf8("text","Out/PackageIn/text.txt",false,BlueBack.AssetLib.LineFeedOption.CRLF);
 				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
 			}
 

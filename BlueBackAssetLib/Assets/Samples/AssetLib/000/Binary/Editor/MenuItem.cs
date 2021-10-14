@@ -17,7 +17,7 @@ namespace Samples.AssetLib.Binary.Editor
 			//éñëOèàóùÅB
 			{
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out");
-				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath("text","Out/text.txt",false,BlueBack.AssetLib.LineFeedOption.CRLF);
+				BlueBack.AssetLib.Editor.SaveTextWithAssetsPath.SaveUtf8("text","Out/text.txt",false,BlueBack.AssetLib.LineFeedOption.CRLF);
 			}
 
 			byte[] t_binary = BlueBack.AssetLib.Editor.LoadBinaryWithAssetsPath.Load("Out/text.txt");
