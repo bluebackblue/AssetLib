@@ -9,10 +9,10 @@ namespace Samples.AssetLib.Package.Editor
 	#if(UNITY_EDITOR)
 	public class MenuItem
 	{
-		/** CreateFileNameListWithAssetsPath
+		/** CreatePackageWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/AssetLib/Package/CreateFileNameListWithAssetsPath")]
-		private static void MenuItem_CreateFileNameListWithAssetsPath()
+		[UnityEditor.MenuItem("サンプル/AssetLib/Package/CreatePackageWithAssetsPath")]
+		private static void MenuItem_CreatePackageWithAssetsPath()
 		{
 			//事前処理。
 			{
@@ -22,9 +22,11 @@ namespace Samples.AssetLib.Package.Editor
 				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
 			}
 
-			//パッケージ作成。
-			BlueBack.AssetLib.Editor.CreatePackageWithAssetsPath.Create("Out/PackageIn","Out/test.unitypackage",UnityEditor.ExportPackageOptions.Recurse);
-			BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
+			//CreatePackageWithAssetsPath
+			{
+				BlueBack.AssetLib.Editor.CreatePackageWithAssetsPath.Create("Out/PackageIn","Out/test.unitypackage",UnityEditor.ExportPackageOptions.Recurse);
+				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
+			}
 		}
 	}
 	#endif

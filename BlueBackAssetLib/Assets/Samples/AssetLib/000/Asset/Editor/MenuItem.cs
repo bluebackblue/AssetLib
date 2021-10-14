@@ -14,6 +14,7 @@ namespace Samples.AssetLib.Asset.Editor
 		[UnityEditor.MenuItem("ƒTƒ“ƒvƒ‹/AssetLib/Asset/LoadAssetWithAssetsPath")]
 		private static void MenuItem_LoadAssetWithAssetsPath()
 		{
+			//SaveAssetWithAssetsPath
 			{
 				UnityEngine.Mesh t_mesh = new UnityEngine.Mesh();
 				{
@@ -44,6 +45,7 @@ namespace Samples.AssetLib.Asset.Editor
 				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
 			}
 
+			//LoadAssetWithAssetsPath
 			{
 				UnityEngine.Mesh t_mesh = BlueBack.AssetLib.Editor.LoadAssetWithAssetsPath.Load<UnityEngine.Mesh>("Out/test.mesh");
 				UnityEngine.Debug.Log(t_mesh.triangles.Length.ToString());

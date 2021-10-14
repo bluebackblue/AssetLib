@@ -1,18 +1,1 @@
-{
-    "name": "BlueBack.AssetLib.Editor",
-    "rootNamespace": "BlueBack.AssetLib.Editor",
-    "references": [
-        "GUID:d9fbbca419fceae48a338c806e9e3d07"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
-}
+{"noEngineReferences":false,"versionDefines":[],"defineConstraints":[],"autoReferenced":true,"precompiledReferences":[],"overrideReferences":false,"allowUnsafeCode":false,"excludePlatforms":[],"includePlatforms":[],"references":["GUID:d9fbbca419fceae48a338c806e9e3d07"],"rootNamespace":"BlueBack.AssetLib.Editor","name":"BlueBack.AssetLib.Editor"}
