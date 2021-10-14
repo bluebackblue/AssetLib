@@ -16,28 +16,9 @@ namespace BlueBack.AssetLib.Editor
 	*/
 	public static class CreateFileNameListWithFullPath
 	{
-		/** TODO:正規化。
-		
-			「/」を「\」変換。
-			最後に「\」を付けない。
-
-		*/
-		private static string Inner_Path_Normalize(string a_path)
-		{
-			string t_path = a_path.Replace('/','\\');
-			if(t_path.Length > 0){
-				if(t_path[t_path.Length - 1] == '\\'){
-					return t_path.Substring(0,t_path.Length - 1);
-				}else{
-					return t_path;
-				}
-			}
-			return "";
-		}
-
 		/** 作成。直下のみ。
 
-			a_full_path	: 絶対パス。
+			a_full_path						: フルパス。
 
 		*/
 		public static System.Collections.Generic.List<string> CreateTopOnly(string a_full_path)
@@ -57,7 +38,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** 作成。直下のみ。
 
-			a_full_path	: 絶対パス。
+			a_full_path						: フルパス。
 
 		*/
 		public static MultiResult<bool,System.Collections.Generic.List<string>> TryCreateTopOnly(string a_full_path)
@@ -81,7 +62,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** 作成。すべて。
 
-			a_full_path	: 絶対パス。
+			a_full_path						: フルパス。
 
 		*/
 		public static System.Collections.Generic.List<string> CreateAll(string a_full_path)
@@ -90,7 +71,7 @@ namespace BlueBack.AssetLib.Editor
 			{
 				System.Collections.Generic.List<string> t_full_path_directory_list;
 				{
-					string t_full_path = Inner_Path_Normalize(a_full_path);
+					string t_full_path = NormalizePath.NormalizeSeparateAndLast(a_full_path);
 					t_full_path_directory_list = CreateDirectoryNameListWithFullPath.CreateAll(t_full_path);
 					t_full_path_directory_list.Add(t_full_path);
 				}
@@ -108,7 +89,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** 作成。すべて。
 
-			a_full_path	: 絶対パス。
+			a_full_path						: フルパス。
 
 		*/
 		public static MultiResult<bool,System.Collections.Generic.List<string>> TryCreateAll(string a_full_path)

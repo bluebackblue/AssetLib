@@ -21,9 +21,9 @@ namespace BlueBack.AssetLib.Editor
 			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
 
 		*/
-		public static void Delete(string a_assets_path_with_extention)
+		public static bool Delete(string a_assets_path_with_extention)
 		{
-			DeleteFileWithFullPath.Delete(AssetLib.GetApplicationDataPath() + '\\' + a_assets_path_with_extention);
+			return DeleteFileWithFullPath.Delete(AssetLib.GetApplicationDataPath() + '\\' + a_assets_path_with_extention);
 		}
 
 		/** ファイル削除。
@@ -36,8 +36,7 @@ namespace BlueBack.AssetLib.Editor
 		{
 			#pragma warning disable 0168
 			try{
-				Delete(a_assets_path_with_extention);
-				return true;
+				return Delete(a_assets_path_with_extention);
 			}catch(System.IO.FileNotFoundException t_exception){
 				return false;
 			}catch(System.IO.IOException t_exception){

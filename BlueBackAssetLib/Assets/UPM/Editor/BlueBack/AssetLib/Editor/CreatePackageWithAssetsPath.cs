@@ -18,30 +18,30 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** パッケージ作成。
 
-			a_assets_path	: パッケージ化するパス。「Assets」からの相対パス。
-			a_package_name	: パッケージ名。
-			a_exportoption	: エクスポートオプション。
+			a_assets_path							: パッケージ化するパス。「Assets」からの相対パス。
+			a_assets_path_unitypackage_filename		: 「xxx.unitypackage」。
+			a_option								: オプション。
 
 		*/
-		public static void Create(string a_assets_path,string a_package_name,UnityEditor.ExportPackageOptions a_exportoption)
+		public static bool Create(string a_assets_path,string a_assets_path_unitypackage_filename,UnityEditor.ExportPackageOptions a_option)
 		{
-			UnityEditor.AssetDatabase.ExportPackage("Assets/" + a_assets_path,a_package_name,a_exportoption);
+			UnityEditor.AssetDatabase.ExportPackage("Assets/" + a_assets_path,"Assets/" + a_assets_path_unitypackage_filename,a_option);
+			return true;
 		}
 
 		/** パッケージ作成。
 
-			a_assets_path	: パッケージ化するパス。「Assets」からの相対パス。
-			a_package_name	: パッケージ名。
-			a_exportoption	: エクスポートオプション。
-			return == true	: 成功。
+			a_assets_path							: パッケージ化するパス。「Assets」からの相対パス。
+			a_assets_path_unitypackage_filename		: 「xxx.unitypackage」。
+			a_option								: オプション。
+			return == true							: 成功。
 
 		*/
-		public static bool TryCreate(string a_assets_path,string a_package_name,UnityEditor.ExportPackageOptions a_exportoption)
+		public static bool TryCreate(string a_assets_path,string a_assets_path_unitypackage_filename,UnityEditor.ExportPackageOptions a_option)
 		{
 			#pragma warning disable 0168
 			try{
-				Create(a_assets_path,a_package_name,a_exportoption);
-				return true;
+				return Create(a_assets_path,a_assets_path_unitypackage_filename,a_option);
 			}catch(System.Exception t_exception){
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
 				DebugTool.Assert(false,t_exception);

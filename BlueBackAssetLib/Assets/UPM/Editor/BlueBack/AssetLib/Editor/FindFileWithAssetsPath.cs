@@ -18,9 +18,9 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** 検索。すべて。
 
-			a_assets_path			: 「Assets」からの相対パス。
-			a_directory_pattern		: ディレクトリ名の正規表現パターン。
-			a_file_pattern			: ファイル名の正規表現パターン。
+			a_assets_path					: 「Assets」からの相対パス。
+			a_directory_pattern				: ディレクトリ名の正規表現パターン。
+			a_file_pattern					: ファイル名の正規表現パターン。
 
 		*/
 		public static System.Collections.Generic.List<string> FindAll(string a_assets_path,string a_directory_pattern,string a_file_pattern)
@@ -43,7 +43,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** 検索。すべて。
 
-			a_assets_path			: 「Assets」からの相対パス。
+			a_assets_path					: 「Assets」からの相対パス。
 
 		*/
 		public static MultiResult<bool,System.Collections.Generic.List<string>> TryFindAll(string a_assets_path,string a_directory_pattern,string a_file_pattern)
@@ -67,9 +67,9 @@ namespace BlueBack.AssetLib.Editor
 
 		/** 検索。初回ヒット。
 
-			a_assets_path			: 「Assets」からの相対パス。
-			a_directory_pattern		: ディレクトリ名の正規表現パターン。
-			a_file_pattern			: ファイル名の正規表現パターン。
+			a_assets_path					: 「Assets」からの相対パス。
+			a_directory_pattern				: ディレクトリ名の正規表現パターン。
+			a_file_pattern					: ファイル名の正規表現パターン。
 
 		*/
 		public static string FindFirst(string a_assets_path,string a_directory_pattern,string a_file_pattern)
@@ -84,13 +84,12 @@ namespace BlueBack.AssetLib.Editor
 					}
 				}
 			}
-
 			return null;
 		}
 
 		/** 検索。初回ヒット。
 
-			a_assets_path			: 「Assets」からの相対パス。
+			a_assets_path					: 「Assets」からの相対パス。
 
 		*/
 		public static MultiResult<bool,string> TryFindFirst(string a_assets_path,string a_directory_pattern,string a_file_pattern)

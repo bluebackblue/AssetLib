@@ -18,26 +18,25 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** 削除。
 
-			a_assets_path	: 「Assets」からの相対パス。
+			a_assets_path					: 「Assets」からの相対パス。
 
 		*/
-		public static void Delete(string a_assets_path)
+		public static bool Delete(string a_assets_path)
 		{
-			DeleteDirectoryWithFullPath.Delete(AssetLib.GetApplicationDataPath() + '\\' + a_assets_path);
+			return DeleteDirectoryWithFullPath.Delete(AssetLib.GetApplicationDataPath() + '\\' + a_assets_path);
 		}
 
 		/** 削除。
 
-			a_assets_path	: 「Assets」からの相対パス。
-			return == true	: 成功。
+			a_assets_path					: 「Assets」からの相対パス。
+			return == true					: 成功。
 
 		*/
 		public static bool TryDelete(string a_assets_path)
 		{
 			#pragma warning disable 0168
 			try{
-				Delete(a_assets_path);
-				return true;
+				return Delete(a_assets_path);
 			}catch(System.IO.DirectoryNotFoundException t_exception){
 				return false;
 			}catch(System.IO.IOException t_exception){

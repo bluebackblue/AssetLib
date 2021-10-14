@@ -18,10 +18,10 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** 作成。
 
-			a_assets_path	: 出力フォルダ。「Assets」からの相対パス。
-			a_list			: アセットバンドル化するリスト。
-			a_buildoption	: ビルドオプション。
-			a_buildtarget	: ビルドターゲット。
+			a_assets_path					: 出力フォルダ。「Assets」からの相対パス。
+			a_list							: アセットバンドル化するリスト。
+			a_buildoption					: ビルドオプション。
+			a_buildtarget					: ビルドターゲット。
 
 		*/
 		
@@ -32,11 +32,11 @@ namespace BlueBack.AssetLib.Editor
 
 		/** 作成。
 
-			a_assets_path			: 出力フォルダ。「Assets」からの相対パス。
-			a_list					: アセットバンドル化するリスト。
-			a_buildoption			: ビルドオプション。
-			a_buildtarget			: ビルドターゲット。
-			return.result == true	: 成功。
+			a_assets_path					: 出力フォルダ。「Assets」からの相対パス。
+			a_list							: アセットバンドル化するリスト。
+			a_buildoption					: ビルドオプション。
+			a_buildtarget					: ビルドターゲット。
+			return.result == true			: 成功。
 
 		*/
 		public static MultiResult<bool,UnityEngine.AssetBundleManifest> TryCreate(string a_assets_path,UnityEditor.AssetBundleBuild[] a_list,UnityEditor.BuildAssetBundleOptions a_buildoption,UnityEditor.BuildTarget a_buildtarget)

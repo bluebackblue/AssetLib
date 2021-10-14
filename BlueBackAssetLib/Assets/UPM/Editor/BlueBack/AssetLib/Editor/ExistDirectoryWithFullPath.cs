@@ -18,8 +18,8 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** チェック。
 
-			a_full_path		: 絶対パス。
-			return == true	: 存在する。
+			a_full_path						: フルパス。
+			return == true					: 存在する。
 
 		*/
 		public static bool Check(string a_full_path)

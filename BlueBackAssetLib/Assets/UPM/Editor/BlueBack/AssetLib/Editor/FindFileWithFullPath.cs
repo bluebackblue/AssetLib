@@ -18,9 +18,9 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** 検索。すべて。
 
-			a_full_path				: 絶対パス。
-			a_directory_pattern		: ディレクトリ名の正規表現パターン。
-			a_file_pattern			: ファイル名の正規表現パターン。
+			a_full_path						: フルパス。
+			a_directory_pattern				: ディレクトリ名の正規表現パターン。
+			a_file_pattern					: ファイル名の正規表現パターン。
 
 		*/
 		public static System.Collections.Generic.List<string> FindAll(string a_full_path,string a_directory_pattern,string a_file_pattern)
@@ -43,7 +43,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** 検索。すべて。
 
-			a_full_path	: 絶対パス。
+			a_full_path						: フルパス。
 
 		*/
 		public static MultiResult<bool,System.Collections.Generic.List<string>> TryFindAll(string a_full_path,string a_directory_pattern,string a_file_pattern)
@@ -67,9 +67,9 @@ namespace BlueBack.AssetLib.Editor
 
 		/** 検索。初回ヒット。
 
-			a_full_path				: 絶対パス。
-			a_directory_pattern		: ディレクトリ名の正規表現パターン。
-			a_file_pattern			: ファイル名の正規表現パターン。
+			a_full_path						: フルパス。
+			a_directory_pattern				: ディレクトリ名の正規表現パターン。
+			a_file_pattern					: ファイル名の正規表現パターン。
 
 		*/
 		public static string FindFirst(string a_full_path,string a_directory_pattern,string a_file_pattern)
@@ -89,7 +89,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** 検索。初回ヒット。
 
-			a_full_path	: 絶対パス。
+			a_full_path						: フルパス。
 
 		*/
 		public static MultiResult<bool,string> TryFindFirst(string a_full_path,string a_directory_pattern,string a_file_pattern)

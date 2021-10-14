@@ -16,9 +16,9 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** ロード。
 
-			a_url				: url
-			a_post == null		: GET
-			return				: バイナリ。
+			a_url							: URL
+			a_post == null					: GET
+			return							: バイナリ。
 
 		*/
 		public static byte[] Load(string a_url,System.Collections.Generic.List<UnityEngine.Networking.IMultipartFormSection> a_post)
@@ -57,9 +57,9 @@ namespace BlueBack.AssetLib.Editor
 
 		/** ロード。
 
-			a_url				: url
-			a_post == null		: GET
-			return				: バイナリ。
+			a_url							: URL
+			a_post == null					: GET
+			return							: バイナリ。
 
 		*/
 		public static MultiResult<bool,byte[]> TryLoad(string a_url,System.Collections.Generic.List<UnityEngine.Networking.IMultipartFormSection> a_post)
@@ -67,11 +67,6 @@ namespace BlueBack.AssetLib.Editor
 			#pragma warning disable 0168
 			try{
 				return new MultiResult<bool,byte[]>(true,Load(a_url,a_post));
-			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
-				DebugTool.Assert(false,t_exception);
-				#endif
-				return new MultiResult<bool,byte[]>(false,null);
 			}catch(System.Exception t_exception){
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
 				DebugTool.Assert(false,t_exception);

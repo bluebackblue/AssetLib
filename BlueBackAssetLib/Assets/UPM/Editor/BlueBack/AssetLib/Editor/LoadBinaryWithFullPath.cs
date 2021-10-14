@@ -18,7 +18,7 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** ロード。
 
-			a_full_path_with_extention		: 絶対バス。拡張子付き。
+			a_full_path_with_extention		: フルパス。拡張子付き。
 			return							: バイナリ。
 
 		*/
@@ -41,7 +41,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** ロード。
 
-			a_full_path_with_extention		: 絶対バス。拡張子付き。
+			a_full_path_with_extention		: フルパス。拡張子付き。
 			return							: バイナリ。
 
 		*/
@@ -66,7 +66,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** ロード。
 
-			a_full_path_with_extention		: 絶対バス。拡張子付き。
+			a_full_path_with_extention		: フルパス。拡張子付き。
 			a_buffer						: バッファ。
 
 			return.result == true			: 成功。
@@ -85,7 +85,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** ロード。
 
-			a_full_path_with_extention		: 絶対バス。拡張子付き。
+			a_full_path_with_extention		: フルパス。拡張子付き。
 			a_buffer						: バッファ。
 
 			return.result == true			: 成功。

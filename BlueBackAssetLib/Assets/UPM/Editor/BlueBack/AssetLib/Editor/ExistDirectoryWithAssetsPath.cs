@@ -18,8 +18,8 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** チェック。
 
-			a_assets_path	: 「Assets」からの相対パス。
-			return == true	: 存在する。
+			a_assets_path					: 「Assets」からの相対パス。
+			return == true					: 存在する。
 
 		*/
 		public static bool Check(string a_assets_path)

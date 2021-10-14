@@ -18,32 +18,32 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** セーブ。
 
-			a_binary							: バイナリー。
-			a_full_path_with_extention			: 絶対バス。拡張子付き。
+			a_binary						: バイナリー。
+			a_full_path_with_extention		: フルパス。拡張子付き。
 
 		*/
-		public static void Save(byte[] a_binary,string a_full_path_with_extention)
+		public static bool Save(byte[] a_binary,string a_full_path_with_extention)
 		{
 			using(System.IO.BinaryWriter t_stream = new System.IO.BinaryWriter(System.IO.File.Open(a_full_path_with_extention,System.IO.FileMode.Create))){
 				t_stream.Write(a_binary);
 				t_stream.Flush();
 				t_stream.Close();
 			}
+			return true;
 		}
 
 		/** セーブ。
 
-			a_binary							: バイナリー。
-			a_full_path_with_extention			: 絶対バス。拡張子付き。
-			return == true						: 成功。
+			a_binary						: バイナリー。
+			a_full_path_with_extention		: フルパス。拡張子付き。
+			return == true					: 成功。
 
 		*/
 		public static bool TrySave(byte[] a_binary,string a_full_path_with_extention)
 		{
 			#pragma warning disable 0168
 			try{
-				Save(a_binary,a_full_path_with_extention);
-				return true;
+				return Save(a_binary,a_full_path_with_extention);
 			}catch(System.IO.IOException t_exception){
 				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
 				DebugTool.Assert(false,t_exception);
