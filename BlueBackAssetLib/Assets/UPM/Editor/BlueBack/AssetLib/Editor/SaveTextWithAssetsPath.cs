@@ -36,7 +36,7 @@ namespace BlueBack.AssetLib.Editor
 			a_bom							: BOM
 			a_encoding						: エンコード。
 			a_linefeedoption				: 改行コード。
-			return == true					: 成功。
+			return.result == true			: 成功。
 
 		*/
 		public static MultiResult<bool,string> TrySave(string a_text,string a_assets_path_with_extention,System.Text.Encoding a_encoding,LineFeedOption a_linefeedoption)
@@ -79,7 +79,7 @@ namespace BlueBack.AssetLib.Editor
 			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
 			a_encoding						: エンコード。
 			a_linefeedoption				: 改行コード。
-			return == true					: 成功。
+			return.result == true			: 成功。
 
 		*/
 		public static MultiResult<bool,string> TrySaveNoBomUtf8(string a_text,string a_assets_path_with_extention,LineFeedOption a_linefeedoption)
