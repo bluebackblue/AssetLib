@@ -146,7 +146,7 @@ namespace Samples.UpmVersionManager.NewProject.Editor
 				string t_path = "Editor/UpmVersionManagerSetting.cs";
 
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create(System.IO.Path.GetDirectoryName(t_path));
-				BlueBack.AssetLib.Editor.SaveTextWithAssetsPath.SaveUtf8(t_stringbuilder.ToString(),"Editor/UpmVersionManagerSetting.cs",false,BlueBack.AssetLib.LineFeedOption.CRLF);
+				BlueBack.AssetLib.Editor.SaveTextWithAssetsPath.SaveNoBomUtf8(t_stringbuilder.ToString(),"Editor/UpmVersionManagerSetting.cs",BlueBack.AssetLib.LineFeedOption.CRLF);
 				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
 			}
 		}

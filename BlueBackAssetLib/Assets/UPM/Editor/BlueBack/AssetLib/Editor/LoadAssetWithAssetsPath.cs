@@ -18,7 +18,7 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** ロード。
 
-			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
+			a_assets_path_with_extention	:「Assets」からの相対パス。拡張子付き。
 
 		*/
 		public static T Load<T>(string a_assets_path_with_extention)
@@ -29,7 +29,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** ロード。
 
-			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
+			a_assets_path_with_extention	:「Assets」からの相対パス。拡張子付き。
 
 		*/
 		public static MultiResult<bool,T> TryLoad<T>(string a_assets_path_with_extention)
@@ -49,7 +49,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** ロード。すべて。
 
-			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
+			a_assets_path_with_extention	:「Assets」からの相対パス。拡張子付き。
 
 		*/
 		public static UnityEngine.Object[] LoadAll(string a_assets_path_with_extention)
@@ -59,7 +59,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** ロード。すべて。
 
-			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
+			a_assets_path_with_extention	:「Assets」からの相対パス。拡張子付き。
 
 		*/
 		public static MultiResult<bool,UnityEngine.Object[]> TryLoadAll(string a_assets_path_with_extention)
@@ -78,11 +78,11 @@ namespace BlueBack.AssetLib.Editor
 
 		/** ロード。すべて。指定型のみ。
 
-			a_assets_path_with_extention	: 「Assets」からの相対バス。拡張子付き。
+			a_assets_path_with_extention	:「Assets」からの相対バス。拡張子付き。
 
 		*/
 		public static System.Collections.Generic.List<T> LoadAll<T>(string a_assets_path_with_extention)
-			where T : class
+			where T : UnityEngine.Object
 		{
 			System.Collections.Generic.List<T> t_list = new System.Collections.Generic.List<T>();
 			UnityEngine.Object[] t_object_list = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/" + a_assets_path_with_extention);
@@ -99,11 +99,11 @@ namespace BlueBack.AssetLib.Editor
 
 		/** ロード。すべて。指定型のみ。
 
-			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
+			a_assets_path_with_extention	:「Assets」からの相対パス。拡張子付き。
 
 		*/
 		public static MultiResult<bool,System.Collections.Generic.List<T>> TryLoadAll<T>(string a_assets_path_with_extention)
-			where T : class
+			where T : UnityEngine.Object
 		{
 			#pragma warning disable 0168
 			try{
@@ -113,6 +113,39 @@ namespace BlueBack.AssetLib.Editor
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,System.Collections.Generic.List<T>>(false,null);
+			}
+			#pragma warning restore
+		}
+
+		/** ロード。コンバター。
+
+			a_converter						: コンバター。
+			a_assets_path_with_extention	:「Assets」からの相対バス。拡張子付き。
+
+		*/
+		public static T LoadConverter<T>(ConverterBinaryToAsset_Base<T> a_converter,string a_assets_path_with_extention)
+			where T : UnityEngine.Object
+		{
+			return a_converter.Convert(LoadBinaryWithAssetsPath.Load(a_assets_path_with_extention));
+		}
+
+		/** ロード。コンバター。
+
+			a_converter						: コンバター。
+			a_assets_path_with_extention	:「Assets」からの相対バス。拡張子付き。
+
+		*/
+		public static MultiResult<bool,T> TryLoadConverter<T>(ConverterBinaryToAsset_Base<T> a_converter,string a_assets_path_with_extention)
+			where T : UnityEngine.Object
+		{
+			#pragma warning disable 0168
+			try{
+				return new MultiResult<bool,T>(true,LoadConverter<T>(a_converter,a_assets_path_with_extention));
+			}catch(System.Exception t_exception){
+				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				DebugTool.Assert(false,t_exception);
+				#endif
+				return new MultiResult<bool,T>(false,null);
 			}
 			#pragma warning restore
 		}

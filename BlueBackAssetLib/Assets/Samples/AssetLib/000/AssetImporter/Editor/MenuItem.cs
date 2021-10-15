@@ -17,12 +17,13 @@ namespace Samples.AssetLib.AssetImporter.Editor
 			//éñëOèàóùÅB
 			{
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out");
-				BlueBack.AssetLib.Editor.SaveTexture.SaveAsPngTexture2DToAssetsPath(UnityEngine.Texture2D.whiteTexture,"Out/texture.png");
+				BlueBack.AssetLib.Editor.SaveAssetWithAssetsPath.SaveConverter(UnityEngine.Texture2D.whiteTexture,new BlueBack.AssetLib.PngConverterAssetToBinary(),"Out/test.png");
+				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
 			}
 
 			//GetAssetImporterWithAssetsPath
 			{
-				UnityEditor.TextureImporter t_textureimporter = BlueBack.AssetLib.Editor.GetAssetImporterWithAssetsPath.Get<UnityEditor.TextureImporter>("Out/texture.png");
+				UnityEditor.TextureImporter t_textureimporter = BlueBack.AssetLib.Editor.GetAssetImporterWithAssetsPath.Get<UnityEditor.TextureImporter>("Out/test.png");
 				UnityEngine.Debug.Log(t_textureimporter.filterMode.ToString());
 			}
 		}

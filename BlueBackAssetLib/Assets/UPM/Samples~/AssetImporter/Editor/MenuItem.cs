@@ -17,7 +17,9 @@ namespace Samples.AssetLib.AssetImporter.Editor
 			//éñëOèàóùÅB
 			{
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out");
-				BlueBack.AssetLib.Editor.SaveTexture.SaveAsPngTexture2DToAssetsPath(UnityEngine.Texture2D.whiteTexture,"Out/texture.png");
+				byte[] t_binary = BlueBack.AssetLib.Editor.PngConverter.TextureToBinary(UnityEngine.Texture2D.whiteTexture);
+				BlueBack.AssetLib.Editor.SaveBinaryWithAssetsPath.Save(t_binary,"Out/texture.png");
+				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
 			}
 
 			//GetAssetImporterWithAssetsPath

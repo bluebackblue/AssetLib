@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief ディレクトリ名リスト。
+ * @brief パッケージリスト作成。
 */
 
 
@@ -12,19 +12,19 @@
 #if(UNITY_EDITOR)
 namespace BlueBack.AssetLib.Editor
 {
-	/** PackageList
+	/** CreatePackageList
 	*/
-	public static class PackageList
+	public static class CreatePackageList
 	{
-		/** 直下のディレクトリ名を列挙。
+		/** 作成。
 
 			a_offlinemode					: オフラインモード
 			a_includeindirectdependencies	: 間接的機な依存関係も含める。
 
 		*/
-		#pragma warning disable 0162
-		public static System.Collections.Generic.List<UnityEditor.PackageManager.PackageInfo> CreatePackageList(bool a_offlinemode,bool a_includeindirectdependencies)
+		public static System.Collections.Generic.List<UnityEditor.PackageManager.PackageInfo> Create(bool a_offlinemode,bool a_includeindirectdependencies)
 		{
+			#pragma warning disable 0162
 			UnityEditor.PackageManager.Requests.ListRequest t_request = UnityEditor.PackageManager.Client.List(a_offlinemode,a_includeindirectdependencies);
 			while(true){
 				System.Threading.Thread.Sleep(1);
@@ -58,8 +58,8 @@ namespace BlueBack.AssetLib.Editor
 					}
 				}
 			}
+			#pragma warning restore
 		}
-		#pragma warning restore
 	}
 }
 #endif

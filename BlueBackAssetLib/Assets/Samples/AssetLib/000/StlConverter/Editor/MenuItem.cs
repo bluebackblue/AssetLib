@@ -52,16 +52,14 @@ namespace Samples.AssetLib.StlConverter.Editor
 					t_mesh.RecalculateTangents();
 				}
 
-				byte[] t_binary = BlueBack.AssetLib.Editor.StlConverter.MeshToBinary(t_mesh,new UnityEngine.Vector3(50.0f,50.0f,50.0f));
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out");
-				BlueBack.AssetLib.Editor.SaveBinaryWithAssetsPath.Save(t_binary,"Out/test.stl");
+				BlueBack.AssetLib.Editor.SaveAssetWithAssetsPath.SaveConverter(t_mesh,new BlueBack.AssetLib.StlConverterAssetToBinary(new UnityEngine.Vector3(50.0f,50.0f,50.0f)),"Out/test.stl");
 				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
 			}
 
 			//LoadBinaryWithAssetsPath
 			{
-				byte[] t_binary = BlueBack.AssetLib.Editor.LoadBinaryWithAssetsPath.Load("Out/test.stl");
-				UnityEngine.Mesh t_mesh = BlueBack.AssetLib.Editor.StlConverter.BinaryToMesh(t_binary);
+				UnityEngine.Mesh t_mesh = BlueBack.AssetLib.Editor.LoadAssetWithAssetsPath.LoadConverter(new BlueBack.AssetLib.StlConverterBinaryToAsset(new UnityEngine.Vector3(1.0f,1.0f,1.0f)),"Out/test.stl");
 				UnityEngine.Debug.Log(t_mesh.triangles.Length.ToString());
 			}
 		}
