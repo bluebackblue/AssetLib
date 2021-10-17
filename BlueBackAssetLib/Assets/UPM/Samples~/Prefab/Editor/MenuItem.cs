@@ -11,7 +11,7 @@ namespace Samples.AssetLib.Prefab
 	{
 		/** SavePrefabWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Prefab/SavePrefabWithAssetsPath")]
+		[UnityEditor.MenuItem("繧ｵ繝ｳ繝励Ν/BlueBack.AssetLib/Prefab/SavePrefabWithAssetsPath")]
 		private static void MenuItem_SavePrefabWithAssetsPath()
 		{
 			UnityEngine.GameObject t_gameobject = new UnityEngine.GameObject("new");
@@ -39,7 +39,7 @@ namespace Samples.AssetLib.Prefab
 
 		/** SaveBinaryWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Prefab/SavePrefabWithAssetsPath_SaveAs")]
+		[UnityEditor.MenuItem("繧ｵ繝ｳ繝励Ν/BlueBack.AssetLib/Prefab/SavePrefabWithAssetsPath_SaveAs")]
 		private static void MenuItem_SavePrefabWithAssetsPath_SaveAs()
 		{
 			UnityEngine.GameObject t_prefab;

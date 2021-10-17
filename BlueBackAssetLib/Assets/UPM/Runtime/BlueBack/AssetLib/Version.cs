@@ -21,7 +21,7 @@ namespace BlueBack.AssetLib
 
 		/** packageversion
 		*/
-		public const string packageversion = "0.0.44";
+		public const string packageversion = "0.0.45";
 
 		/** GetPackageVersion
 		*/

@@ -11,10 +11,10 @@ namespace Samples.AssetLib.Package
 	{
 		/** CreatePackageWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("ƒTƒ“ƒvƒ‹/BlueBack.AssetLib/Package/CreatePackageWithAssetsPath")]
+		[UnityEditor.MenuItem("ã‚µãƒ³ãƒ—ãƒ«/BlueBack.AssetLib/Package/CreatePackageWithAssetsPath")]
 		private static void MenuItem_CreatePackageWithAssetsPath()
 		{
-			//–‘Oˆ—B
+			//äº‹å‰å‡¦ç†ã€‚
 			{
 				BlueBack.AssetLib.Editor.DeleteDirectoryWithAssetsPath.TryDelete("Out/PackageIn");
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out/PackageIn");

@@ -11,10 +11,10 @@ namespace Samples.AssetLib.AssetBundle
 	{
 		/** CreateAssetBundleWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("ƒTƒ“ƒvƒ‹/BlueBack.AssetLib/AssetBundle/CreateAssetBundleWithAssetsPath")]
+		[UnityEditor.MenuItem("ã‚µãƒ³ãƒ—ãƒ«/BlueBack.AssetLib/AssetBundle/CreateAssetBundleWithAssetsPath")]
 		private static void MenuItem_CreateAssetBundleWithAssetsPath()
 		{
-			//–‘Oˆ—B
+			//äº‹å‰å‡¦ç†ã€‚
 			{
 				BlueBack.AssetLib.Editor.DeleteDirectoryWithAssetsPath.TryDelete("Out/AssetBundleIn");
 				BlueBack.AssetLib.Editor.DeleteDirectoryWithAssetsPath.TryDelete("Out/AssetBundleOut");
@@ -42,7 +42,7 @@ namespace Samples.AssetLib.AssetBundle
 				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
 			}
 
-			//ƒƒOB
+			//ãƒ­ã‚°ã€‚
 			{
 				UnityEngine.AssetBundle t_assetbundle = UnityEngine.AssetBundle.LoadFromFile("Assets/Out/AssetBundleOut/test.assetbundle");
 				UnityEngine.Debug.Log(t_assetbundle.LoadAsset<UnityEngine.TextAsset>("text").text);

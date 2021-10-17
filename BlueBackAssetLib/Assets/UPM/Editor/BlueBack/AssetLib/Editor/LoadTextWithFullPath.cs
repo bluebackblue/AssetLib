@@ -1,4 +1,4 @@
-﻿
+
 
 /**
  * Copyright (c) blueback
@@ -104,7 +104,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string LoadNoBomUtf8(string a_full_path_with_extention)
 		{
-			return Load(a_full_path_with_extention,System.Text.Encoding.UTF8,0);
+			return Load(a_full_path_with_extention,new System.Text.UTF8Encoding(false),0);
 		}
 
 		/** ロード。UTF8。BOMなし。

@@ -11,7 +11,7 @@ namespace Samples.AssetLib.FindFile
 	{
 		/** FindFileWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("ƒTƒ“ƒvƒ‹/BlueBack.AssetLib/FindFile/FindFileWithAssetsPath")]
+		[UnityEditor.MenuItem("ã‚µãƒ³ãƒ—ãƒ«/BlueBack.AssetLib/FindFile/FindFileWithAssetsPath")]
 		private static void MenuItem_FindFileWithAssetsPath()
 		{
 			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.Editor.FindFileWithAssetsPath.FindAll("",".*","^MenuItem\\.cs$");

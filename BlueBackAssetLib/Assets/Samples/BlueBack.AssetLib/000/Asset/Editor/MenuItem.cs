@@ -11,7 +11,7 @@ namespace Samples.AssetLib.Asset
 	{
 		/** LoadAssetWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("ƒTƒ“ƒvƒ‹/BlueBack.AssetLib/Asset/LoadAssetWithAssetsPath")]
+		[UnityEditor.MenuItem("ã‚µãƒ³ãƒ—ãƒ«/BlueBack.AssetLib/Asset/LoadAssetWithAssetsPath")]
 		private static void MenuItem_LoadAssetWithAssetsPath()
 		{
 			//SaveAssetWithAssetsPath

@@ -1,4 +1,4 @@
-﻿
+
 
 /**
  * Copyright (c) blueback
@@ -19,26 +19,23 @@ namespace BlueBack.AssetLib.Editor
 		/** ロード。
 
 			a_full_path_with_extention		: フルパス。拡張子付き。
-			a_encoding						: 文字列エンコード。
 
 		*/
-		public static string Load(string a_full_path_with_extention,System.Text.Encoding a_encoding)
+		public static string Load(string a_full_path_with_extention)
 		{
-			string t_string = LoadTextWithFullPath.LoadNoBomUtf8(a_full_path_with_extention);
-			return LoadGuidWithMetaString.Load(t_string);
+			return LoadGuidWithMetaString.Load(LoadTextWithFullPath.Load(a_full_path_with_extention));
 		}
 
 		/** ロード。
 
 			a_full_path_with_extention		: フルパス。拡張子付き。
-			a_encoding						: 文字列エンコード。
 
 		*/
-		public static MultiResult<bool,string> TryLoad(string a_full_path_with_extention,System.Text.Encoding a_encoding)
+		public static MultiResult<bool,string> TryLoad(string a_full_path_with_extention)
 		{
 			#pragma warning disable 0168
 			try{
-				return new MultiResult<bool,string>(true,Load(a_full_path_with_extention,a_encoding));
+				return new MultiResult<bool,string>(true,Load(a_full_path_with_extention));
 			}catch(System.IO.FileNotFoundException t_exception){
 				return new MultiResult<bool,string>(false,null);
 			}catch(System.IO.IOException t_exception){

@@ -1,4 +1,4 @@
-﻿
+
 
 /**
  * Copyright (c) blueback
@@ -109,7 +109,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string LoadNoBomUtf8(string a_url,System.Collections.Generic.List<UnityEngine.Networking.IMultipartFormSection> a_post)
 		{
-			return Load(a_url,a_post,System.Text.Encoding.UTF8,0);
+			return Load(a_url,a_post,new System.Text.UTF8Encoding(false),0);
 		}
 
 		/** ロード。UTF8。BOMなし。

@@ -11,7 +11,7 @@ namespace Samples.AssetLib.StlConverter
 	{
 		/** LoadBinaryWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("ƒTƒ“ƒvƒ‹/BlueBack.AssetLib/StlConverter/LoadBinaryWithAssetsPath")]
+		[UnityEditor.MenuItem("ã‚µãƒ³ãƒ—ãƒ«/BlueBack.AssetLib/StlConverter/LoadBinaryWithAssetsPath")]
 		private static void MenuItem_LoadBinaryWithAssetsPath()
 		{
 			//SaveBinaryWithAssetsPath

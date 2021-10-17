@@ -1,4 +1,4 @@
-﻿
+
 
 /**
  * Copyright (c) blueback
@@ -26,8 +26,7 @@ namespace BlueBack.AssetLib.Editor
 		{
 			//TODO:UnityEngine.Debug.Log(UnityEditor.AssetDatabase.GUIDFromAssetPath("Assets/" + a_assets_path_with_extention).ToString());
 
-			string t_string = LoadTextWithFullPath.Load(AssetLib.GetApplicationDataPath() + '\\' + a_assets_path_with_extention);
-			return LoadGuidWithMetaString.Load(t_string);
+			return LoadGuidWithFullPath.Load(AssetLib.GetApplicationDataPath() + '\\' + a_assets_path_with_extention);
 		}
 
 		/** ロード。

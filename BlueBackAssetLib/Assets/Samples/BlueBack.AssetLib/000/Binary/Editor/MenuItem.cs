@@ -11,10 +11,10 @@ namespace Samples.AssetLib.Binary
 	{
 		/** LoadBinaryWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("ƒTƒ“ƒvƒ‹/BlueBack.AssetLib/Binary/LoadBinaryWithAssetsPath")]
+		[UnityEditor.MenuItem("ã‚µãƒ³ãƒ—ãƒ«/BlueBack.AssetLib/Binary/LoadBinaryWithAssetsPath")]
 		private static void MenuItem_LoadBinaryWithAssetsPath()
 		{
-			//–‘Oˆ—B
+			//äº‹å‰å‡¦ç†ã€‚
 			{
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out");
 				BlueBack.AssetLib.Editor.SaveTextWithAssetsPath.SaveNoBomUtf8("text","Out/text.txt",BlueBack.AssetLib.LineFeedOption.CRLF);

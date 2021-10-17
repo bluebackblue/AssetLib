@@ -11,7 +11,7 @@ namespace Samples.AssetLib.PngConverter
 	{
 		/** SaveBinaryWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("ƒTƒ“ƒvƒ‹/BlueBack.AssetLib/PngConverter/SaveBinaryWithAssetsPath")]
+		[UnityEditor.MenuItem("ã‚µãƒ³ãƒ—ãƒ«/BlueBack.AssetLib/PngConverter/SaveBinaryWithAssetsPath")]
 		private static void MenuItem_xxxxx()
 		{
 			//texture

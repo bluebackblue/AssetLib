@@ -25,8 +25,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string Load(string a_url,System.Collections.Generic.List<UnityEngine.Networking.IMultipartFormSection> a_post)
 		{
-			string t_string = LoadTextWithUrl.Load(a_url,a_post);
-			return LoadGuidWithMetaString.Load(t_string);
+			return LoadGuidWithMetaString.Load(LoadTextWithUrl.Load(a_url,a_post));
 		}
 
 		/** ロード。

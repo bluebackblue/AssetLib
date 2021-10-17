@@ -11,10 +11,10 @@ namespace Samples.AssetLib.AssetImporter
 	{
 		/** GetAssetImporterWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("ƒTƒ“ƒvƒ‹/BlueBack.AssetLib/AssetImporter/GetAssetImporterWithAssetsPath")]
+		[UnityEditor.MenuItem("ã‚µãƒ³ãƒ—ãƒ«/BlueBack.AssetLib/AssetImporter/GetAssetImporterWithAssetsPath")]
 		private static void MenuItem_GetAssetImporterWithAssetsPath()
 		{
-			//–‘Oˆ—B
+			//äº‹å‰å‡¦ç†ã€‚
 			{
 				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out");
 				BlueBack.AssetLib.Editor.SaveAssetWithAssetsPath.SaveConverter(UnityEngine.Texture2D.whiteTexture,new BlueBack.AssetLib.PngConverterAssetToBinary(),"Out/test.png");
