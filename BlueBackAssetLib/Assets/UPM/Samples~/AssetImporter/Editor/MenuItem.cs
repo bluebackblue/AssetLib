@@ -1,8 +1,8 @@
 
 
-/** Samples.AssetImporter
+/** Samples.AssetLib.AssetImporter
 */
-namespace Samples.AssetImporter
+namespace Samples.AssetLib.AssetImporter
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.AssetImporter
 	{
 		/** GetAssetImporterWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/AssetLib/AssetImporter/GetAssetImporterWithAssetsPath")]
+		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/AssetImporter/GetAssetImporterWithAssetsPath")]
 		private static void MenuItem_GetAssetImporterWithAssetsPath()
 		{
 			//事前処理。

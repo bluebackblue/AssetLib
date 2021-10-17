@@ -1,8 +1,8 @@
 
 
-/** Samples.AssetBundle
+/** Samples.AssetLib.AssetBundle
 */
-namespace Samples.AssetBundle
+namespace Samples.AssetLib.AssetBundle
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.AssetBundle
 	{
 		/** CreateAssetBundleWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/AssetLib/AssetBundle/CreateAssetBundleWithAssetsPath")]
+		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/AssetBundle/CreateAssetBundleWithAssetsPath")]
 		private static void MenuItem_CreateAssetBundleWithAssetsPath()
 		{
 			//事前処理。

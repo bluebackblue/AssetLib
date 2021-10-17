@@ -1,8 +1,8 @@
 
 
-/** Samples.Binary
+/** Samples.AssetLib.Binary
 */
-namespace Samples.Binary
+namespace Samples.AssetLib.Binary
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.Binary
 	{
 		/** LoadBinaryWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/AssetLib/Binary/LoadBinaryWithAssetsPath")]
+		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Binary/LoadBinaryWithAssetsPath")]
 		private static void MenuItem_LoadBinaryWithAssetsPath()
 		{
 			//事前処理。

@@ -1,8 +1,8 @@
 
 
-/** Samples.Scene
+/** Samples.AssetLib.Scene
 */
-namespace Samples.Scene
+namespace Samples.AssetLib.Scene
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.Scene
 	{
 		/** OpenSceneFromAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/AssetLib/Scene/OpenSceneFromAssetsPath_1")]
+		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Scene/OpenSceneFromAssetsPath_1")]
 		private static void MenuItem_OpenSceneFromAssetsPath_1()
 		{
 			string t_path = BlueBack.AssetLib.Editor.FindFileWithAssetsPath.FindFirst("Samples",".*","^TestScene1\\.unity$");
@@ -20,7 +20,7 @@ namespace Samples.Scene
 
 		/** OpenSceneFromAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/AssetLib/Scene/OpenSceneFromAssetsPath_2")]
+		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Scene/OpenSceneFromAssetsPath_2")]
 		private static void MenuItem_OpenSceneFromAssetsPath_2()
 		{
 			string t_path = BlueBack.AssetLib.Editor.FindFileWithAssetsPath.FindFirst("Samples",".*","^TestScene2\\.unity$");
