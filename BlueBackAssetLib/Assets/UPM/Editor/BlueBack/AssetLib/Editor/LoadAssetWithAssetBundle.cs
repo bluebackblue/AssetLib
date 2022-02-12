@@ -3,7 +3,7 @@
 /**
  * Copyright (c) blueback
  * Released under the MIT License
- * @brief アセットロード。アセットパス。
+ * @brief アセットロード。アセットバンドル。
 */
 
 
@@ -12,9 +12,9 @@
 #if(UNITY_EDITOR)
 namespace BlueBack.AssetLib.Editor
 {
-	/** LoadAssetWithAssetsAssetBundle
+	/** LoadAssetWithAssetBundle
 	*/
-	public static class LoadAssetWithAssetsAssetBundle
+	public static class LoadAssetWithAssetBundle
 	{
 		/** ロード。
 
