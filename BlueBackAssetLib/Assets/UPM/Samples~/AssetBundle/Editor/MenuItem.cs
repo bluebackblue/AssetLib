@@ -36,7 +36,7 @@ namespace Samples.AssetLib.AssetBundle
 							addressableNames = null,
 						}
 					},
-					UnityEditor.BuildAssetBundleOptions.DeterministicAssetBundle,
+					UnityEditor.BuildAssetBundleOptions.None,
 					UnityEditor.EditorUserBuildSettings.activeBuildTarget
 				);
 				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
