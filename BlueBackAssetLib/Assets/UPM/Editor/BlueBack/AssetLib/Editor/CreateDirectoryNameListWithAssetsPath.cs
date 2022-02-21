@@ -1,9 +1,9 @@
 
 
 /**
- * Copyright (c) blueback
- * Released under the MIT License
- * @brief ディレクトリ名リスト作成。アセットパス。
+	Copyright (c) blueback
+	Released under the MIT License
+	@brief ディレクトリ名リスト作成。アセットパス。
 */
 
 

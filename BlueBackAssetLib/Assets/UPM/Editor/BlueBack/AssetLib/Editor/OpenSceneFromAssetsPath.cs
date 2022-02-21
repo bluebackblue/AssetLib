@@ -1,9 +1,9 @@
 
 
 /**
- * Copyright (c) blueback
- * Released under the MIT License
- * @brief オープンシーン。アセットパス。
+	Copyright (c) blueback
+	Released under the MIT License
+	@brief オープンシーン。アセットパス。
 */
 
 

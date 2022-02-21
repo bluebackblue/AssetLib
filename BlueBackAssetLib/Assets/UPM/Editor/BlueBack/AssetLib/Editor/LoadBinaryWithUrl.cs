@@ -1,7 +1,7 @@
 /**
- * Copyright (c) blueback
- * Released under the MIT License
- * @brief バイナリロード。ＵＲＬ。
+	Copyright (c) blueback
+	Released under the MIT License
+	@brief バイナリロード。ＵＲＬ。
 */
 
 

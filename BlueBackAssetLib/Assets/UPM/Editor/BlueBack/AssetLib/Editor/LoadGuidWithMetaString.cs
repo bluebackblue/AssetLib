@@ -1,9 +1,9 @@
 
 
 /**
- * Copyright (c) blueback
- * Released under the MIT License
- * @brief ＧＵＩＤロード。メタ文字列。
+	Copyright (c) blueback
+	Released under the MIT License
+	@brief ＧＵＩＤロード。メタ文字列。
 */
 
 

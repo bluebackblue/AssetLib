@@ -1,9 +1,9 @@
 
 
 /**
- * Copyright (c) blueback
- * Released under the MIT License
- * @brief ファイル名リスト作成。フルパス。
+	Copyright (c) blueback
+	Released under the MIT License
+	@brief ファイル名リスト作成。フルパス。
 */
 
 
