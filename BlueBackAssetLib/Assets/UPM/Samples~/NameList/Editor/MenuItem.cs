@@ -1,8 +1,8 @@
 
 
-/**Samples.AssetLib.NameList
+/** BlueBack.AssetLib.Samples.NameList.Editor
 */
-namespace Samples.AssetLib.NameList
+namespace BlueBack.AssetLib.Samples.NameList.Editor
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.AssetLib.NameList
 	{
 		/** CreateFileNameListWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/NameList/CreateFileNameListWithAssetsPath")]
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/NameList/CreateFileNameListWithAssetsPath")]
 		private static void MenuItem_CreateFileNameListWithAssetsPath()
 		{
 			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.Editor.CreateFileNameListWithAssetsPath.CreateAll("");
@@ -22,7 +22,7 @@ namespace Samples.AssetLib.NameList
 
 		/** CreateDirectoryNameListWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/NameList/CreateDirectoryNameListWithAssetsPath")]
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/NameList/CreateDirectoryNameListWithAssetsPath")]
 		private static void MenuItem_CreateDirectoryNameListWithAssetsPath()
 		{
 			System.Collections.Generic.List<string> t_list = BlueBack.AssetLib.Editor.CreateDirectoryNameListWithAssetsPath.CreateAll("");

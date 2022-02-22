@@ -1,8 +1,8 @@
 
 
-/** Samples.AssetLib.Directory
+/** BlueBack.AssetLib.Samples.Directory.Editor
 */
-namespace Samples.AssetLib.Directory
+namespace BlueBack.AssetLib.Samples.Directory.Editor
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.AssetLib.Directory
 	{
 		/** CreateDirectoryWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Directory/CreateDirectoryWithAssetsPath")]
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/Directory/CreateDirectoryWithAssetsPath")]
 		private static void MenuItem_CreateAssetBundleWithAssetsPath()
 		{
 			BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out/Directory");
@@ -20,7 +20,7 @@ namespace Samples.AssetLib.Directory
 
 		/** DeleteDirectoryWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Directory/DeleteDirectoryWithAssetsPath")]
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/Directory/DeleteDirectoryWithAssetsPath")]
 		private static void MenuItem_DeleteDirectoryWithAssetsPath()
 		{
 			BlueBack.AssetLib.Editor.DeleteDirectoryWithAssetsPath.TryDelete("Out/Directory");

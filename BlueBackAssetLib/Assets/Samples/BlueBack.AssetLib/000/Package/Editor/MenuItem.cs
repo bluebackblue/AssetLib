@@ -1,8 +1,8 @@
 
 
-/** Samples.AssetLib.Package
+/** BlueBack.AssetLib.Samples.Package.Editor
 */
-namespace Samples.AssetLib.Package
+namespace BlueBack.AssetLib.Samples.Package.Editor
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.AssetLib.Package
 	{
 		/** CreatePackageWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Package/CreatePackageWithAssetsPath")]
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/Package/CreatePackageWithAssetsPath")]
 		private static void MenuItem_CreatePackageWithAssetsPath()
 		{
 			//事前処理。

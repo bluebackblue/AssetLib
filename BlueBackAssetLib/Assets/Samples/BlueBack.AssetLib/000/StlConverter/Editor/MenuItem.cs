@@ -1,8 +1,8 @@
 
 
-/** Samples.AssetLib.StlConverter
+/** BlueBack.AssetLib.Samples.StlConverter.Editor
 */
-namespace Samples.AssetLib.StlConverter
+namespace BlueBack.AssetLib.Samples.StlConverter.Editor
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.AssetLib.StlConverter
 	{
 		/** LoadBinaryWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/StlConverter/LoadBinaryWithAssetsPath")]
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/StlConverter/LoadBinaryWithAssetsPath")]
 		private static void MenuItem_LoadBinaryWithAssetsPath()
 		{
 			//SaveBinaryWithAssetsPath

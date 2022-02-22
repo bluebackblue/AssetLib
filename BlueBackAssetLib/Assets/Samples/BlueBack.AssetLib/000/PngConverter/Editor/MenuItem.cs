@@ -1,8 +1,8 @@
 
 
-/** Samples.AssetLib.PngConverter
+/** BlueBack.AssetLib.Samples.PngConverter.Editor
 */
-namespace Samples.AssetLib.PngConverter
+namespace BlueBack.AssetLib.Samples.PngConverter.Editor
 {
 	/** MenuItem
 	*/
@@ -11,8 +11,8 @@ namespace Samples.AssetLib.PngConverter
 	{
 		/** SaveBinaryWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/PngConverter/SaveBinaryWithAssetsPath")]
-		private static void MenuItem_xxxxx()
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/PngConverter/SaveBinaryWithAssetsPath")]
+		private static void MenuItem_SaveBinaryWithAssetsPath()
 		{
 			//texture
 			UnityEngine.Texture2D t_texture;

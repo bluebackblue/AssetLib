@@ -1,8 +1,8 @@
 
 
-/** Samples.AssetLib.Exist
+/** BlueBack.AssetLib.Samples.Exist.Editor
 */
-namespace Samples.AssetLib.Exist
+namespace BlueBack.AssetLib.Samples.Exist.Editor
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.AssetLib.Exist
 	{
 		/** ExistDirectoryWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Exist/ExistDirectoryWithAssetsPath")]
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/Exist/ExistDirectoryWithAssetsPath")]
 		private static void MenuItem_ExistDirectoryWithAssetsPath()
 		{
 			UnityEngine.Debug.Log("Samples : " + BlueBack.AssetLib.Editor.ExistDirectoryWithAssetsPath.Check("Samples").ToString());
@@ -19,7 +19,7 @@ namespace Samples.AssetLib.Exist
 
 		/** ExistFileWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Exist/ExistFileWithAssetsPath")]
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/Exist/ExistFileWithAssetsPath")]
 		private static void MenuItem_ExistFileWithAssetsPath()
 		{
 			UnityEngine.Debug.Log("Samples.meta : " + BlueBack.AssetLib.Editor.ExistFileWithAssetsPath.Check("Samples.meta").ToString());

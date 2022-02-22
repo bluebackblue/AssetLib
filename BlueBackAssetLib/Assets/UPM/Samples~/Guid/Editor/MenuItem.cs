@@ -1,8 +1,8 @@
 
 
-/** Samples.AssetLib.Guid
+/** BlueBack.AssetLib.Samples.Guid.Editor
 */
-namespace Samples.AssetLib.Guid
+namespace BlueBack.AssetLib.Samples.Guid.Editor
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.AssetLib.Guid
 	{
 		/** LoadGuidWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Guid/LoadGuidWithAssetsPath")]
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/Guid/LoadGuidWithAssetsPath")]
 		private static void MenuItem_LoadGuidWithAssetsPath()
 		{
 			UnityEngine.Debug.Log(BlueBack.AssetLib.Editor.LoadGuidWithAssetsPath.Load("Samples.meta"));

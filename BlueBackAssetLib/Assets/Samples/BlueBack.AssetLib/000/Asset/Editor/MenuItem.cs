@@ -1,8 +1,8 @@
 
 
-/** Samples.AssetLib.Asset
+/** BlueBack.AssetLib.Samples.Asset.Editor
 */
-namespace Samples.AssetLib.Asset
+namespace BlueBack.AssetLib.Samples.Asset.Editor
 {
 	/** MenuItem
 	*/
@@ -11,7 +11,7 @@ namespace Samples.AssetLib.Asset
 	{
 		/** LoadAssetWithAssetsPath
 		*/
-		[UnityEditor.MenuItem("サンプル/BlueBack.AssetLib/Asset/LoadAssetWithAssetsPath")]
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/Asset/LoadAssetWithAssetsPath")]
 		private static void MenuItem_LoadAssetWithAssetsPath()
 		{
 			//SaveAssetWithAssetsPath
