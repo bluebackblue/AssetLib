@@ -21,11 +21,11 @@ MIT License
 * https://github.com/bluebackblue/UpmJsonItem
 
 ## 動作確認
-Unity 2022.1.0b12
+Unity 2022.1.0b16
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/UpmAssetLib.git?path=BlueBackAssetLib/Assets/UPM#0.0.50
+* https://github.com/bluebackblue/UpmAssetLib.git?path=BlueBackAssetLib/Assets/UPM#0.0.51
 ### 開発
 * https://github.com/bluebackblue/UpmAssetLib.git?path=BlueBackAssetLib/Assets/UPM
 

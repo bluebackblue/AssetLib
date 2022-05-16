@@ -22,7 +22,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** MenuItem_UpdatePackage_Develop
 		*/
-		#if(!DEF_USER_BLUEBACK_ASSETLIB)
+		#if(!USERDEF_BLUEBACK_ASSETLIB)
 		[UnityEditor.MenuItem("BlueBack/AssetLib/UpdatePackage/Develop")]
 		#endif
 		public static void MenuItem_UpdatePackage_Develop()
@@ -40,7 +40,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** MenuItem_UpdatePackage_Last
 		*/
-		#if(!DEF_USER_BLUEBACK_ASSETLIB)
+		#if(!USERDEF_BLUEBACK_ASSETLIB)
 		[UnityEditor.MenuItem("BlueBack/AssetLib/UpdatePackage/Last " + Version.packageversion)]
 		#endif
 		public static void MenuItem_UpdatePackage_Last()
