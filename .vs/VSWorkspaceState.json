@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BlueBackAssetLib",
+    "\\BlueBackAssetLib\\Assets",
+    "\\BlueBackAssetLib\\Assets\\UPM",
+    "\\BlueBackAssetLib\\Assets\\UPM\\Editor",
+    "\\BlueBackAssetLib\\Assets\\UPM\\Editor\\BlueBack",
+    "\\BlueBackAssetLib\\Assets\\UPM\\Editor\\BlueBack\\AssetLib",
+    "\\BlueBackAssetLib\\Assets\\UPM\\Editor\\BlueBack\\AssetLib\\Editor",
+    "\\BlueBackAssetLib\\Assets\\UPM\\Runtime",
+    "\\BlueBackAssetLib\\Assets\\UPM\\Runtime\\BlueBack",
+    "\\BlueBackAssetLib\\Assets\\UPM\\Runtime\\BlueBack\\AssetLib"
+  ],
+  "SelectedNode": "\\BlueBackAssetLib\\Assets\\UPM\\Editor\\BlueBack\\AssetLib\\Editor\\SavePrefabWithAssetsPath.cs",
+  "PreviewInSolutionExplorer": false
+}

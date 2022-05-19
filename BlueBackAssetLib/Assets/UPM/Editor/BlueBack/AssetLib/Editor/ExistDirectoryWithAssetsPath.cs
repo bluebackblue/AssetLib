@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static bool Check(string a_assets_path)
 		{
-			return System.IO.Directory.Exists(AssetLib.GetApplicationDataPath() + '\\' + a_assets_path);
+			return System.IO.Directory.Exists(AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path);
 		}
 	}
 }

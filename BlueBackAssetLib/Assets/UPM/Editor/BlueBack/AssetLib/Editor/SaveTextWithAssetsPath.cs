@@ -26,7 +26,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string Save(string a_text,string a_assets_path_with_extention,System.Text.Encoding a_encoding,LineFeedOption a_linefeedoption)
 		{
-			return SaveTextWithFullPath.Save(a_text,AssetLib.GetApplicationDataPath() + '\\' + a_assets_path_with_extention,a_encoding,a_linefeedoption);
+			return SaveTextWithFullPath.Save(a_text,AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path_with_extention,a_encoding,a_linefeedoption);
 		}
 
 		/** セーブ。
@@ -70,7 +70,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string SaveNoBomUtf8(string a_text,string a_assets_path_with_extention,LineFeedOption a_linefeedoption)
 		{
-			return SaveTextWithFullPath.SaveNoBomUtf8(a_text,AssetLib.GetApplicationDataPath() + '\\' + a_assets_path_with_extention,a_linefeedoption);
+			return SaveTextWithFullPath.SaveNoBomUtf8(a_text,AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path_with_extention,a_linefeedoption);
 		}
 
 		/** セーブ。BOMなし。UTF8。

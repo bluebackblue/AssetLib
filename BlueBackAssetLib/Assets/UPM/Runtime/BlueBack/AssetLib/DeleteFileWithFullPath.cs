@@ -7,10 +7,9 @@
 */
 
 
-/** BlueBack.AssetLib.Editor
+/** BlueBack.AssetLib
 */
-#if(UNITY_EDITOR)
-namespace BlueBack.AssetLib.Editor
+namespace BlueBack.AssetLib
 {
 	/** DeleteFileWithFullPath
 	*/
@@ -55,5 +54,4 @@ namespace BlueBack.AssetLib.Editor
 		}
 	}
 }
-#endif
 

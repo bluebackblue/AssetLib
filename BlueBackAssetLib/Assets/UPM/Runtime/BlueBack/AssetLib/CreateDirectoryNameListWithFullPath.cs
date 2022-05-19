@@ -7,10 +7,9 @@
 */
 
 
-/** BlueBack.AssetLib.Editor
+/** BlueBack.AssetLib
 */
-#if(UNITY_EDITOR)
-namespace BlueBack.AssetLib.Editor
+namespace BlueBack.AssetLib
 {
 	/** CreateDirectoryNameListWithFullPath
 	*/
@@ -114,5 +113,4 @@ namespace BlueBack.AssetLib.Editor
 		}
 	}
 }
-#endif
 

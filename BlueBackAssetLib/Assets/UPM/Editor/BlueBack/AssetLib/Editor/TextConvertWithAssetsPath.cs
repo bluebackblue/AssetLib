@@ -12,9 +12,9 @@
 #if(UNITY_EDITOR)
 namespace BlueBack.AssetLib.Editor
 {
-	/** TextConvertTool
+	/** TextConvertWithAssetsPath
 	*/
-	public static class TextConvertTool
+	public static class TextConvertWithAssetsPath
 	{
 		/** テキストコンバート。
 

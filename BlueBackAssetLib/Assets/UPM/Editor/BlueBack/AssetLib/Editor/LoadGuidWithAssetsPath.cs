@@ -24,9 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string Load(string a_assets_path_with_extention)
 		{
-			//TODO:UnityEngine.Debug.Log(UnityEditor.AssetDatabase.GUIDFromAssetPath("Assets/" + a_assets_path_with_extention).ToString());
-
-			return LoadGuidWithFullPath.Load(AssetLib.GetApplicationDataPath() + '\\' + a_assets_path_with_extention);
+			return LoadGuidWithFullPath.Load(AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path_with_extention);
 		}
 
 		/** ロード。

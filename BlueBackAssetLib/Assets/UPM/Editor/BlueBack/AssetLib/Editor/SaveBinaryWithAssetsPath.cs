@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static bool Save(byte[] a_binary,string a_full_path_with_extention)
 		{
-			return SaveBinaryWithFullPath.Save(a_binary,AssetLib.GetApplicationDataPath() + '\\' + a_full_path_with_extention);
+			return SaveBinaryWithFullPath.Save(a_binary,AssetLib_Editor.GetApplicationDataPath() + '\\' + a_full_path_with_extention);
 		}
 
 		/** セーブ。
