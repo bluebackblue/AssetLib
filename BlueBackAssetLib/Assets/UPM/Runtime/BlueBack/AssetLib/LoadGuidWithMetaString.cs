@@ -15,15 +15,15 @@ namespace BlueBack.AssetLib
 	*/
 	public static class LoadGuidWithMetaString
 	{
-		/** s_regex
+		/** regex
 		*/
-		private static System.Text.RegularExpressions.Regex s_regex;
+		private static System.Text.RegularExpressions.Regex regex;
 
 		/** LoadGuidWithString
 		*/
 		static LoadGuidWithMetaString()
 		{
-			s_regex = new System.Text.RegularExpressions.Regex("^([\\d\\D\\n]*\nguid\\: )(?<guid>[a-zA-Z0-9]*)([\\d\\D\\n]*)$",System.Text.RegularExpressions.RegexOptions.Multiline);
+			LoadGuidWithMetaString.regex = new System.Text.RegularExpressions.Regex("^([\\d\\D\\n]*\nguid\\: )(?<guid>[a-zA-Z0-9]*)([\\d\\D\\n]*)$",System.Text.RegularExpressions.RegexOptions.Multiline);
 		}
 
 		/** ロード。
@@ -33,7 +33,7 @@ namespace BlueBack.AssetLib
 		*/
 		public static string Load(string a_meta_string)
 		{
-			System.Text.RegularExpressions.Match t_match = s_regex.Match(a_meta_string);
+			System.Text.RegularExpressions.Match t_match = LoadGuidWithMetaString.regex.Match(a_meta_string);
 			if(t_match.Success == true){
 				return t_match.Groups["guid"].Value;
 			}
