@@ -63,7 +63,7 @@ namespace BlueBack.AssetLib
 
 					for(int ii=0;ii<t_count;ii++){
 						int t_offset = 84 + ii * 50;
-						
+
 						//nomal
 						{
 							System.Array.Copy(a_binary,t_offset,t_byte4,0,t_byte4.Length);

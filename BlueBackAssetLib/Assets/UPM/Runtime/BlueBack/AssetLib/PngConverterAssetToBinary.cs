@@ -19,11 +19,11 @@ namespace BlueBack.AssetLib
 		*/
 		public bool getpixel;
 		public UnityEngine.TextureFormat getpixel_textureformat;
-		
+
 		/** copytexture
 		*/
 		bool copytexture;
-		
+
 		/** ConverterAssetToPngBinary
 		*/
 		public PngConverterAssetToBinary(bool a_copytexture = false,bool a_getpixel = false,UnityEngine.TextureFormat a_getpixel_textureformat = UnityEngine.TextureFormat.RGBA32)

@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 			a_buildtarget					: ビルドターゲット。
 
 		*/
-		
+
 		public static UnityEngine.AssetBundleManifest Create(string a_packages_path,UnityEditor.AssetBundleBuild[] a_list,UnityEditor.BuildAssetBundleOptions a_buildoption,UnityEditor.BuildTarget a_buildtarget)
 		{
 			return UnityEditor.BuildPipeline.BuildAssetBundles("Packages/" + a_packages_path,a_list,a_buildoption,a_buildtarget);
