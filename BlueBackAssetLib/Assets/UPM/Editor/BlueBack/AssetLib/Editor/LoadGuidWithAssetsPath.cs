@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string Load(string a_assets_path_with_extention)
 		{
-			return LoadGuidWithFullPath.Load(AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path_with_extention);
+			return LoadGuidWithFullPath.Load(AssetLib.application_data_path + '\\' + a_assets_path_with_extention);
 		}
 
 		/** ロード。

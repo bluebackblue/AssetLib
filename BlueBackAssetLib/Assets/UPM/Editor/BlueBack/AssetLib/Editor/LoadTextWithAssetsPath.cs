@@ -23,7 +23,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string Load(string a_assets_path_with_extention)
 		{
-			byte[] t_binary = LoadBinaryWithFullPath.Load(AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path_with_extention);
+			byte[] t_binary = LoadBinaryWithFullPath.Load(AssetLib.application_data_path + '\\' + a_assets_path_with_extention);
 			EncodeCheck.Result t_result = EncodeCheck.GetEncoding(t_binary);
 			return t_result.encoding.GetString(t_binary,t_result.bomsize,t_binary.Length - t_result.bomsize);
 		}
@@ -64,7 +64,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static string Load(string a_assets_path_with_extention,System.Text.Encoding a_encoding,int a_offset)
 		{
-			byte[] t_binary = LoadBinaryWithFullPath.Load(AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path_with_extention);
+			byte[] t_binary = LoadBinaryWithFullPath.Load(AssetLib.application_data_path + '\\' + a_assets_path_with_extention);
 			return a_encoding.GetString(t_binary,a_offset,t_binary.Length - a_offset);
 		}
 

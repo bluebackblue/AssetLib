@@ -23,7 +23,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static System.IO.DirectoryInfo Create(string a_assets_path)
 		{
-			return CreateDirectoryWithFullPath.Create(AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path);
+			return CreateDirectoryWithFullPath.Create(AssetLib.application_data_path + '\\' + a_assets_path);
 		}
 
 		/** 作成。

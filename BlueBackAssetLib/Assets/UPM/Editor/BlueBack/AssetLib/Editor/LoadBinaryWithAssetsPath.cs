@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static byte[] Load(string a_assets_path_with_extention)
 		{
-			return LoadBinaryWithFullPath.Load(AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path_with_extention);
+			return LoadBinaryWithFullPath.Load(AssetLib.application_data_path + '\\' + a_assets_path_with_extention);
 		}
 
 		/** ロード。
@@ -63,7 +63,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static MultiResult<bool,int> LoadToBuffer(string a_assets_path_with_extention,byte[] a_buffer)
 		{
-			return LoadBinaryWithFullPath.LoadToBuffer(AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path_with_extention,a_buffer);
+			return LoadBinaryWithFullPath.LoadToBuffer(AssetLib.application_data_path + '\\' + a_assets_path_with_extention,a_buffer);
 		}
 
 		/** ロード。

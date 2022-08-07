@@ -22,7 +22,7 @@ namespace BlueBack.AssetLib
 		*/
 		public static UnityEngine.AssetBundle Load(string a_streamingassets_path_with_extention)
 		{
-			return LoadAssetBundleWithFullPath.Load(AssetLib.GetApplicationStreamingAssetsPath() + '\\' + a_streamingassets_path_with_extention);
+			return LoadAssetBundleWithFullPath.Load(AssetLib.application_streamingassets_path + '\\' + a_streamingassets_path_with_extention);
 		}
 
 		/** ロード。

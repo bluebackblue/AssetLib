@@ -23,7 +23,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static System.Collections.Generic.List<string> CreateTopOnly(string a_assets_path)
 		{
-			return CreateDirectoryNameListWithFullPath.CreateTopOnly(AssetLib_Editor.GetApplicationDataPath() + '\\' + a_assets_path);
+			return CreateDirectoryNameListWithFullPath.CreateTopOnly(AssetLib.application_data_path + '\\' + a_assets_path);
 		}
 
 		/** 作成。直下のみ。

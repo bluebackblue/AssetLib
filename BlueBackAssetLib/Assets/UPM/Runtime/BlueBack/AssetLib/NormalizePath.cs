@@ -15,7 +15,7 @@ namespace BlueBack.AssetLib
 	*/
 	public static class NormalizePath
 	{
-		/** 正規化。セパレート。最後。
+		/** 正規化。
 
 			「/」を「\」に変換。
 			最後に「\」を付けない。

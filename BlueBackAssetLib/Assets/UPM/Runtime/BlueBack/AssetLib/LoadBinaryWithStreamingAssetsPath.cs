@@ -23,7 +23,7 @@ namespace BlueBack.AssetLib
 		*/
 		public static byte[] Load(string a_streamingassets_path_with_extention)
 		{
-			return LoadBinaryWithFullPath.Load(AssetLib.GetApplicationStreamingAssetsPath() + '\\' + a_streamingassets_path_with_extention);
+			return LoadBinaryWithFullPath.Load(AssetLib.application_streamingassets_path + '\\' + a_streamingassets_path_with_extention);
 		}
 
 		/** ロード。
@@ -62,7 +62,7 @@ namespace BlueBack.AssetLib
 		*/
 		public static MultiResult<bool,int> LoadToBuffer(string a_streamingassets_path_with_extention,byte[] a_buffer)
 		{
-			return LoadBinaryWithFullPath.LoadToBuffer(AssetLib.GetApplicationStreamingAssetsPath() + '\\' + a_streamingassets_path_with_extention,a_buffer);
+			return LoadBinaryWithFullPath.LoadToBuffer(AssetLib.application_streamingassets_path + '\\' + a_streamingassets_path_with_extention,a_buffer);
 		}
 
 		/** ロード。
