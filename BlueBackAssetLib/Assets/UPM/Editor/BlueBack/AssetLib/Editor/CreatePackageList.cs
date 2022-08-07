@@ -35,7 +35,7 @@ namespace BlueBack.AssetLib.Editor
 						}break;
 					case UnityEditor.PackageManager.StatusCode.Failure:
 						{
-							#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+							#if(DEF_BLUEBACK_ASSERT)
 							DebugTool.Assert(false,t_request.Error.message);
 							#endif
 							return null;
@@ -50,7 +50,7 @@ namespace BlueBack.AssetLib.Editor
 						}break;;
 					default:
 						{
-							#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+							#if(DEF_BLUEBACK_ASSERT)
 							DebugTool.Assert(false,"error");
 							#endif
 							return null;

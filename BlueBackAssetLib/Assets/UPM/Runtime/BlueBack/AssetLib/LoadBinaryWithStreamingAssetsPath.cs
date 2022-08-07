@@ -38,12 +38,12 @@ namespace BlueBack.AssetLib
 			try{
 				return new MultiResult<bool,byte[]>(true,Load(a_streamingassets_path_with_extention));
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,byte[]>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,byte[]>(false,null);
@@ -80,12 +80,12 @@ namespace BlueBack.AssetLib
 			try{
 				return LoadToBuffer(a_streamingassets_path_with_extention,a_buffer);
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,int>(false,0);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,int>(false,0);

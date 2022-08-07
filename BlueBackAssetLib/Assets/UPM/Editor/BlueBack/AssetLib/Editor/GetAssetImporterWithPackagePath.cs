@@ -39,12 +39,12 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,T>(true,Get<T>(a_packagess_path_with_extention));
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,T>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,T>(false,null);

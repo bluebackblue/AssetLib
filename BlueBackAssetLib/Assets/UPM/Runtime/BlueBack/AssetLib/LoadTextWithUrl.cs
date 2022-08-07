@@ -42,13 +42,13 @@ namespace BlueBack.AssetLib
 				return new MultiResult<bool,string>(true,Load(a_url,a_post));
 			}catch(System.IO.IOException t_exception){
 				//ＩＯエラー。
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,string>(false,null);
 			}catch(System.Exception t_exception){
 				//エラー。
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,string>(false,null);
@@ -86,13 +86,13 @@ namespace BlueBack.AssetLib
 				return new MultiResult<bool,string>(true,Load(a_url,a_post));
 			}catch(System.IO.IOException t_exception){
 				//ＩＯエラー。
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,string>(false,null);
 			}catch(System.Exception t_exception){
 				//エラー。
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,string>(false,null);
@@ -125,13 +125,13 @@ namespace BlueBack.AssetLib
 				return new MultiResult<bool,string>(true,LoadNoBomUtf8(a_url,a_post));
 			}catch(System.IO.IOException t_exception){
 				//ＩＯエラー。
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,string>(false,null);
 			}catch(System.Exception t_exception){
 				//エラー。
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,string>(false,null);

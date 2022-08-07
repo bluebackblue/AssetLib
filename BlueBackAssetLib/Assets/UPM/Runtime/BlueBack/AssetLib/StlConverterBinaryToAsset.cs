@@ -39,14 +39,14 @@ namespace BlueBack.AssetLib
 					System.Array.Copy(a_binary,80,t_byte4,0,t_byte4.Length);
 					t_count = System.BitConverter.ToUInt32(t_byte4,0);
 				}else{
-					#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+					#if(DEF_BLUEBACK_ASSERT)
 					DebugTool.Assert(false,"format error");
 					#endif
 					return null;
 				}
 
 				if(t_count <= 0){
-					#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+					#if(DEF_BLUEBACK_ASSERT)
 					DebugTool.Assert(false,"format error");
 					#endif
 					return null;
@@ -108,7 +108,7 @@ namespace BlueBack.AssetLib
 						t_mesh.normals = t_nomal_list.ToArray();
 					}
 				}else{
-					#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+					#if(DEF_BLUEBACK_ASSERT)
 					DebugTool.Assert(false,"format error");
 					#endif
 					return null;

@@ -39,7 +39,7 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,T>(true,Load<T>(a_assets_path_with_extention));
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,T>(false,null);
@@ -68,7 +68,7 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,UnityEngine.Object[]>(true,LoadAll(a_assets_path_with_extention));
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,UnityEngine.Object[]>(false,null);
@@ -109,7 +109,7 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,System.Collections.Generic.List<T>>(true,LoadAll<T>(a_assets_path_with_extention));
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,System.Collections.Generic.List<T>>(false,null);
@@ -142,7 +142,7 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,T>(true,LoadConverter<T>(a_converter,a_assets_path_with_extention));
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,T>(false,null);

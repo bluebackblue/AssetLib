@@ -44,12 +44,12 @@ namespace BlueBack.AssetLib
 			try{
 				return Save(a_binary,a_full_path_with_extention);
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return false;
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return false;

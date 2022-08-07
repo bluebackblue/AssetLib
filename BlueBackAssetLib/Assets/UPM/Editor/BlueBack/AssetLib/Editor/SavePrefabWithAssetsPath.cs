@@ -42,12 +42,12 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,UnityEngine.GameObject>(true,Save(a_gameobject_instance,a_assets_path_with_extention));
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,UnityEngine.GameObject>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,UnityEngine.GameObject>(false,null);
@@ -84,12 +84,12 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,UnityEngine.GameObject>(true,SaveAs(a_prefab,a_assets_path_with_extention));
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,UnityEngine.GameObject>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,UnityEngine.GameObject>(false,null);

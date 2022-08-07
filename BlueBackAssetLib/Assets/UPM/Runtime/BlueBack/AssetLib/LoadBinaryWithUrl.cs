@@ -36,14 +36,14 @@ namespace BlueBack.AssetLib
 					System.Threading.Thread.Sleep(1);
 					if(t_async.isDone == true){
 						if(t_webrequest.error != null){
-							#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+							#if(DEF_BLUEBACK_ASSERT)
 							DebugTool.Assert(false,t_webrequest.error);
 							#endif
 							return null;
 						}else{
 							byte[] t_binary = t_webrequest.downloadHandler.data;
 							if(t_binary == null){
-								#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+								#if(DEF_BLUEBACK_ASSERT)
 								DebugTool.Assert(false,t_webrequest.error);
 								#endif
 								return null;
@@ -69,7 +69,7 @@ namespace BlueBack.AssetLib
 			try{
 				return new MultiResult<bool,byte[]>(true,Load(a_url,a_post));
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,byte[]>(false,null);

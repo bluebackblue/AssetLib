@@ -40,12 +40,12 @@ namespace BlueBack.AssetLib.Editor
 			}catch(System.IO.FileNotFoundException t_exception){
 				return false;
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return false;
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return false;

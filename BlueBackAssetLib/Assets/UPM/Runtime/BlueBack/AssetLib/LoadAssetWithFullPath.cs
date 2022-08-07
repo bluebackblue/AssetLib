@@ -40,7 +40,7 @@ namespace BlueBack.AssetLib
 			try{
 				return new MultiResult<bool,T>(true,LoadConverter<T>(a_converter,a_full_path_with_extention));
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSETLIB_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,T>(false,null);
