@@ -13,9 +13,9 @@ namespace BlueBack.AssetLib
 {
 	/** PngConverterAssetToBinary
 	*/
-	public class PngConverterAssetToBinary : ConverterAssetToBinary_Base<UnityEngine.Texture2D>
+	public sealed class PngConverterAssetToBinary : ConverterAssetToBinary_Base<UnityEngine.Texture2D>
 	{
-		/**getpixel
+		/** getpixel
 		*/
 		public bool getpixel;
 		public UnityEngine.TextureFormat getpixel_textureformat;
@@ -28,7 +28,10 @@ namespace BlueBack.AssetLib
 		*/
 		public PngConverterAssetToBinary(bool a_copytexture = false,bool a_getpixel = false,UnityEngine.TextureFormat a_getpixel_textureformat = UnityEngine.TextureFormat.RGBA32)
 		{
+			//copytexture
 			this.copytexture = a_copytexture;
+
+			//getpixel
 			this.getpixel = a_getpixel;
 			this.getpixel_textureformat = a_getpixel_textureformat;
 		}

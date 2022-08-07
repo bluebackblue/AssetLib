@@ -13,7 +13,7 @@ namespace BlueBack.AssetLib
 {
 	/** PngConverterBinaryToAsset
 	*/
-	public class PngConverterBinaryToAsset : ConverterBinaryToAsset_Base<UnityEngine.Texture2D>
+	public sealed class PngConverterBinaryToAsset : ConverterBinaryToAsset_Base<UnityEngine.Texture2D>
 	{
 		/** ConverterPngBinaryToAsset
 		*/

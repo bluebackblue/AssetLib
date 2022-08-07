@@ -13,7 +13,7 @@ namespace BlueBack.AssetLib
 {
 	/** StlConverterAssetToBinary
 	*/
-	public class StlConverterAssetToBinary : ConverterAssetToBinary_Base<UnityEngine.Mesh>
+	public sealed class StlConverterAssetToBinary : ConverterAssetToBinary_Base<UnityEngine.Mesh>
 	{
 		/** scale
 		*/
@@ -23,6 +23,7 @@ namespace BlueBack.AssetLib
 		*/
 		public StlConverterAssetToBinary(in UnityEngine.Vector3 a_scale)
 		{
+			//scale
 			this.scale = a_scale;
 		}
 

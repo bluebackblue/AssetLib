@@ -7,7 +7,7 @@ namespace BlueBack.AssetLib.Samples.AssetImporter.Editor
 	/** MenuItem
 	*/
 	#if(UNITY_EDITOR)
-	public class MenuItem
+	public static class MenuItem
 	{
 		/** GetAssetImporterWithAssetsPath
 		*/
