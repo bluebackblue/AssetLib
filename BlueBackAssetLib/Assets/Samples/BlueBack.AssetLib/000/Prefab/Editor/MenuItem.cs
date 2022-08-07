@@ -7,7 +7,7 @@ namespace BlueBack.AssetLib.Samples.Prefab.Editor
 	/** MenuItem
 	*/
 	#if(UNITY_EDITOR)
-	public class MenuItem
+	public static class MenuItem
 	{
 		/** SavePrefabWithAssetsPath
 		*/

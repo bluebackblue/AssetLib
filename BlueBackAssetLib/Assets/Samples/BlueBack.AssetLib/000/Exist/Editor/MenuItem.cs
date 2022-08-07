@@ -7,7 +7,7 @@ namespace BlueBack.AssetLib.Samples.Exist.Editor
 	/** MenuItem
 	*/
 	#if(UNITY_EDITOR)
-	public class MenuItem
+	public static class MenuItem
 	{
 		/** ExistDirectoryWithAssetsPath
 		*/
