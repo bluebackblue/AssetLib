@@ -27,7 +27,7 @@ namespace BlueBack.AssetLib.Editor
 
 		public static UnityEngine.AssetBundleManifest Create(string a_assets_path,UnityEditor.AssetBundleBuild[] a_list,UnityEditor.BuildAssetBundleOptions a_buildoption,UnityEditor.BuildTarget a_buildtarget)
 		{
-			return UnityEditor.BuildPipeline.BuildAssetBundles("Assets/" + a_assets_path,a_list,a_buildoption,a_buildtarget);
+			return UnityEditor.BuildPipeline.BuildAssetBundles("Assets\\" + a_assets_path,a_list,a_buildoption,a_buildtarget);
 		}
 
 		/** 作成。

@@ -25,7 +25,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static UnityEngine.GameObject Save(UnityEngine.GameObject a_gameobject_instance,string a_assets_path_with_extention)
 		{
-			return UnityEditor.PrefabUtility.SaveAsPrefabAsset(a_gameobject_instance,"Assets/" + a_assets_path_with_extention);
+			return UnityEditor.PrefabUtility.SaveAsPrefabAsset(a_gameobject_instance,"Assets\\" + a_assets_path_with_extention);
 		}
 
 		/** セーブ。

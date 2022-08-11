@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		public static T Get<T>(string a_packages_path_with_extention)
 			where T : UnityEditor.AssetImporter
 		{
-			return UnityEditor.AssetImporter.GetAtPath("Packages/" + a_packages_path_with_extention) as T;
+			return UnityEditor.AssetImporter.GetAtPath("Packages\\" + a_packages_path_with_extention) as T;
 		}
 
 		/** 取得。

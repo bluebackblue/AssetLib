@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		public static T Load<T>(string a_assets_path_with_extention)
 			where T : UnityEngine.Object
 		{
-			return UnityEditor.AssetDatabase.LoadAssetAtPath<T>("Assets/" + a_assets_path_with_extention);
+			return UnityEditor.AssetDatabase.LoadAssetAtPath<T>("Assets\\" + a_assets_path_with_extention);
 		}
 
 		/** ロード。
@@ -54,7 +54,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static UnityEngine.Object[] LoadAll(string a_assets_path_with_extention)
 		{
-			return UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/" + a_assets_path_with_extention);
+			return UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets\\" + a_assets_path_with_extention);
 		}
 
 		/** ロード。すべて。
@@ -85,7 +85,7 @@ namespace BlueBack.AssetLib.Editor
 			where T : UnityEngine.Object
 		{
 			System.Collections.Generic.List<T> t_list = new System.Collections.Generic.List<T>();
-			UnityEngine.Object[] t_object_list = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/" + a_assets_path_with_extention);
+			UnityEngine.Object[] t_object_list = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets\\" + a_assets_path_with_extention);
 			if(t_object_list != null){
 				for(int ii=0;ii<t_object_list.Length;ii++){
 					T t_load_asset = t_object_list[ii] as T;

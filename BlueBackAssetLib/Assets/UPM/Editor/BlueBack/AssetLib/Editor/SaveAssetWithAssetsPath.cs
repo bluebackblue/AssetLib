@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		public static bool Save<T>(T a_asset,string a_assets_path_with_extention)
 			where T : UnityEngine.Object
 		{
-			UnityEditor.AssetDatabase.CreateAsset(a_asset,"Assets/" + a_assets_path_with_extention);
+			UnityEditor.AssetDatabase.CreateAsset(a_asset,"Assets\\" + a_assets_path_with_extention);
 			return true;
 		}
 

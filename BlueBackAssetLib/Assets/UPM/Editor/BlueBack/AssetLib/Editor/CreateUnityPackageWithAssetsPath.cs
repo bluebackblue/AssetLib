@@ -12,9 +12,9 @@
 #if(UNITY_EDITOR)
 namespace BlueBack.AssetLib.Editor
 {
-	/** CreatePackageWithAssetsPath
+	/** CreateUnityPackageWithAssetsPath
 	*/
-	public static class CreatePackageWithAssetsPath
+	public static class CreateUnityPackageWithAssetsPath
 	{
 		/** パッケージ作成。
 
@@ -25,7 +25,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static bool Create(string a_assets_path,string a_assets_path_unitypackage_filename,UnityEditor.ExportPackageOptions a_option)
 		{
-			UnityEditor.AssetDatabase.ExportPackage("Assets/" + a_assets_path,"Assets/" + a_assets_path_unitypackage_filename,a_option);
+			UnityEditor.AssetDatabase.ExportPackage("Assets\\" + a_assets_path,"Assets\\" + a_assets_path_unitypackage_filename,a_option);
 			return true;
 		}
 

@@ -9,23 +9,14 @@ namespace BlueBack.AssetLib.Samples.Package.Editor
 	#if(UNITY_EDITOR)
 	public static class MenuItem
 	{
-		/** CreatePackageWithAssetsPath
+		/** ListUp
 		*/
-		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/Package/CreatePackageWithAssetsPath")]
-		private static void MenuItem_CreatePackageWithAssetsPath()
+		[UnityEditor.MenuItem("Samples/BlueBack.AssetLib/Package/ListUp")]
+		private static void MenuItem_ListUp()
 		{
-			//事前処理。
-			{
-				BlueBack.AssetLib.Editor.DeleteDirectoryWithAssetsPath.TryDelete("Out/PackageIn");
-				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create("Out/PackageIn");
-				BlueBack.AssetLib.Editor.SaveTextWithAssetsPath.SaveNoBomUtf8("text","Out/PackageIn/text.txt",BlueBack.AssetLib.LineFeedOption.CRLF);
-				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
-			}
-
-			//CreatePackageWithAssetsPath
-			{
-				BlueBack.AssetLib.Editor.CreatePackageWithAssetsPath.Create("Out/PackageIn","Out/test.unitypackage",UnityEditor.ExportPackageOptions.Recurse);
-				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
+			System.Collections.Generic.List<UnityEditor.PackageManager.PackageInfo> t_list = BlueBack.AssetLib.Editor.CreatePackageList.Create(true,true);
+			for(int ii=0;ii<t_list.Count;ii++){
+				UnityEngine.Debug.Log(string.Format("{0}\n{1}\n{2}\n{3}",t_list[ii].name,t_list[ii].assetPath,t_list[ii].resolvedPath,t_list[ii].datePublished.ToString()));
 			}
 		}
 	}

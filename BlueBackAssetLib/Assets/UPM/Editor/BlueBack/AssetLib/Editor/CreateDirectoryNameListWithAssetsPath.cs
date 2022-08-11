@@ -71,7 +71,7 @@ namespace BlueBack.AssetLib.Editor
 						}
 					}else{
 						foreach(string t_directoryname in t_directory_name_list){
-							string t_assets_path = t_assets_path_root + "\\" + t_directoryname;
+							string t_assets_path = t_assets_path_root + '\\' + t_directoryname;
 							t_list.Add(t_assets_path);
 							t_work.Push(t_assets_path);
 						}
@@ -82,7 +82,7 @@ namespace BlueBack.AssetLib.Editor
 						string t_assets_path_current = t_work.Pop();
 						System.Collections.Generic.List<string> t_directory_name_list = CreateTopOnly(t_assets_path_current);
 						foreach(string t_directoryname in t_directory_name_list){
-							string t_assets_path = t_assets_path_current + "\\" + t_directoryname;
+							string t_assets_path = t_assets_path_current + '\\' + t_directoryname;
 							t_list.Add(t_assets_path);
 							t_work.Push(t_assets_path);
 						}

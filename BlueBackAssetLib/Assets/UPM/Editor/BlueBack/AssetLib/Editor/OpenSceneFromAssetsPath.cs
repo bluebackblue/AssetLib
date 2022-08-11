@@ -24,7 +24,7 @@ namespace BlueBack.AssetLib.Editor
 		*/
 		public static UnityEngine.SceneManagement.Scene Open(string a_assets_path_with_extention,UnityEditor.SceneManagement.OpenSceneMode a_mode)
 		{
-			return UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/" + a_assets_path_with_extention,a_mode);
+			return UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets\\" + a_assets_path_with_extention,a_mode);
 		}
 	}
 }
