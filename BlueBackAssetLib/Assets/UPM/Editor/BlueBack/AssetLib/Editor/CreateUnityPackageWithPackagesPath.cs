@@ -3,7 +3,7 @@
 /**
 	Copyright (c) blueback
 	Released under the MIT License
-	@brief パッケージ作成。アセットパス。
+	@brief パッケージ作成。パッケージパス。
 */
 
 
@@ -12,9 +12,9 @@
 #if(UNITY_EDITOR)
 namespace BlueBack.AssetLib.Editor
 {
-	/** CreateUnityPackageWithPackagePath
+	/** CreateUnityPackageWithPackagesPath
 	*/
-	public static class CreateUnityPackageWithPackagePath
+	public static class CreateUnityPackageWithPackagesPath
 	{
 		/** パッケージ作成。
 

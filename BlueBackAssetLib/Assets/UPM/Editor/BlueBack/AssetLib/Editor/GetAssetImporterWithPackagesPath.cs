@@ -12,9 +12,9 @@
 #if(UNITY_EDITOR)
 namespace BlueBack.AssetLib.Editor
 {
-	/** GetAssetImporterWithPackagePath
+	/** GetAssetImporterWithPackagesPath
 	*/
-	public static class GetAssetImporterWithPackagePath
+	public static class GetAssetImporterWithPackagesPath
 	{
 		/** 取得。
 
