@@ -40,12 +40,12 @@ namespace BlueBack.AssetLib
 			}catch(System.IO.DirectoryNotFoundException t_exception){
 				return false;
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return false;
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return false;

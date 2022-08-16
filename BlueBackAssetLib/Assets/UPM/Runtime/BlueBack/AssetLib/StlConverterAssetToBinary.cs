@@ -58,7 +58,7 @@ namespace BlueBack.AssetLib
 					t_binary[82] = t_byte4[2];
 					t_binary[83] = t_byte4[3];
 				}else{
-					#if(DEF_BLUEBACK_ASSERT)
+					#if(DEF_BLUEBACK_DEBUG_ASSERT)
 					DebugTool.Assert(false);
 					#endif
 					return null;
@@ -80,7 +80,7 @@ namespace BlueBack.AssetLib
 						t_binary[t_offset + 3] = t_byte4[3];
 						t_offset += 4;
 					}else{
-						#if(DEF_BLUEBACK_ASSERT)
+						#if(DEF_BLUEBACK_DEBUG_ASSERT)
 						DebugTool.Assert(false);
 						#endif
 						return null;
@@ -98,7 +98,7 @@ namespace BlueBack.AssetLib
 						t_binary[t_offset + 3] = t_byte4[3];
 						t_offset += 4;
 					}else{
-						#if(DEF_BLUEBACK_ASSERT)
+						#if(DEF_BLUEBACK_DEBUG_ASSERT)
 						DebugTool.Assert(false);
 						#endif
 						return null;
@@ -115,7 +115,7 @@ namespace BlueBack.AssetLib
 						t_binary[t_offset + 3] = t_byte4[3];
 						t_offset += 4;
 					}else{
-						#if(DEF_BLUEBACK_ASSERT)
+						#if(DEF_BLUEBACK_DEBUG_ASSERT)
 						DebugTool.Assert(false);
 						#endif
 						return null;
@@ -133,7 +133,7 @@ namespace BlueBack.AssetLib
 							t_binary[t_offset + 3] = t_byte4[3];
 							t_offset += 4;
 						}else{
-							#if(DEF_BLUEBACK_ASSERT)
+							#if(DEF_BLUEBACK_DEBUG_ASSERT)
 							DebugTool.Assert(false);
 							#endif
 							return null;
@@ -150,7 +150,7 @@ namespace BlueBack.AssetLib
 							t_binary[t_offset + 3] = t_byte4[3];
 							t_offset += 4;
 						}else{
-							#if(DEF_BLUEBACK_ASSERT)
+							#if(DEF_BLUEBACK_DEBUG_ASSERT)
 							DebugTool.Assert(false);
 							#endif
 							return null;
@@ -167,7 +167,7 @@ namespace BlueBack.AssetLib
 							t_binary[t_offset + 3] = t_byte4[3];
 							t_offset += 4;
 						}else{
-							#if(DEF_BLUEBACK_ASSERT)
+							#if(DEF_BLUEBACK_DEBUG_ASSERT)
 							DebugTool.Assert(false);
 							#endif
 							return null;

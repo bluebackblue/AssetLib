@@ -52,12 +52,12 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,System.Collections.Generic.List<string>>(true,FindAll(a_assets_path,a_directory_pattern,a_file_pattern));
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,System.Collections.Generic.List<string>>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,System.Collections.Generic.List<string>>(false,null);
@@ -98,12 +98,12 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,string>(true,FindFirst(a_assets_path,a_directory_pattern,a_file_pattern));
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,string>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,string>(false,null);

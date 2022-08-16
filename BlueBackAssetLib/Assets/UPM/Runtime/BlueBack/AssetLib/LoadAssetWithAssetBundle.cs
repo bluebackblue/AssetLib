@@ -40,7 +40,7 @@ namespace BlueBack.AssetLib
 			try{
 				return new MultiResult<bool,T>(true,Load<T>(a_assetbundle,a_assetbundle_path));
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,T>(false,null);
@@ -69,7 +69,7 @@ namespace BlueBack.AssetLib
 			try{
 				return new MultiResult<bool,UnityEngine.Object[]>(true,LoadAll(a_assetbundle));
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,UnityEngine.Object[]>(false,null);
@@ -110,7 +110,7 @@ namespace BlueBack.AssetLib
 			try{
 				return new MultiResult<bool,System.Collections.Generic.List<T>>(true,LoadAll<T>(a_assetbundle));
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,System.Collections.Generic.List<T>>(false,null);

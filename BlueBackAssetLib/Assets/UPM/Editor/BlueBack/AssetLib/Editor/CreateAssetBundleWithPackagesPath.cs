@@ -45,7 +45,7 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,UnityEngine.AssetBundleManifest>(true,Create(a_packages_path,a_list,a_buildoption,a_buildtarget));
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,UnityEngine.AssetBundleManifest>(false,null);

@@ -38,12 +38,12 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,System.Collections.Generic.List<string>>(true,CreateTopOnly(a_assets_path));
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,System.Collections.Generic.List<string>>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,System.Collections.Generic.List<string>>(false,null);
@@ -104,12 +104,12 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,System.Collections.Generic.List<string>>(true,CreateAll(a_assets_path));
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,System.Collections.Generic.List<string>>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,t_exception);
 				#endif
 				return new MultiResult<bool,System.Collections.Generic.List<string>>(false,null);
