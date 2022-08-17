@@ -437,14 +437,14 @@
 			"dependence":null,
 			"info":""
 		},
-		"Unity.Mathematics"{
+		"Unity.Mathematics":{
 			"domain":"com.unity.mathematics",
 			"rootnamespace":"Unity.Mathematics",
 			"url":"https://docs.unity3d.com/Packages/com.unity.mathematics@latest/index.html",
 			"dependence":null,
 			"info":""
 		},
-		"Maou.Audio"{
+		"Maou.Audio":{
 			"domain":"maou.audio",
 			"rootnamespace":"Maou.Audio",
 			"url":"https://maou.audio/rule/",
@@ -454,7 +454,7 @@
 		"Vosk":{
 			"domain":"vosk",
 			"rootnamespace":"Vosk",
-			"url"::"https://github.com/alphacep/vosk-api",
+			"url":"https://github.com/alphacep/vosk-api",
 			"dependence":null,
 			"info":""
 		}
