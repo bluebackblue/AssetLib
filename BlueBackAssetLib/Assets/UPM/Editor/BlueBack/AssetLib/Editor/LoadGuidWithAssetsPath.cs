@@ -18,7 +18,7 @@ namespace BlueBack.AssetLib.Editor
 	{
 		/** ロード。
 
-			a_assets_path_with_extention	:  「Assets」からの相対パス。拡張子付き。
+			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
 			a_encoding						: 文字列エンコード。
 
 		*/
@@ -29,7 +29,7 @@ namespace BlueBack.AssetLib.Editor
 
 		/** ロード。
 
-			a_assets_path_with_extention	:  「Assets」からの相対パス。拡張子付き。
+			a_assets_path_with_extention	: 「Assets」からの相対パス。拡張子付き。
 			a_encoding						: 文字列エンコード。
 
 		*/

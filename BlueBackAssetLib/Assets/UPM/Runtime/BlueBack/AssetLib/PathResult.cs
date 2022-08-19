@@ -11,13 +11,13 @@
 */
 namespace BlueBack.AssetLib
 {
-	/** Result
+	/** PathResult
 	*/
-	public struct Result<VALUE>
+	public struct PathResult<VALUE>
 	{
-		/** success
+		/** path
 		*/
-		public bool success;
+		public string path;
 
 		/** value
 		*/
@@ -25,10 +25,10 @@ namespace BlueBack.AssetLib
 
 		/** constructor
 		*/
-		public Result(bool a_success,in VALUE a_value)
+		public PathResult(in string a_path,in VALUE a_value)
 		{
-			//success
-			this.success = a_success;
+			//path
+			this.path = a_path;
 
 			//value
 			this.value = a_value;

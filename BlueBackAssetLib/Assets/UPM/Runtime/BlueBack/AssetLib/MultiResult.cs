@@ -11,24 +11,24 @@
 */
 namespace BlueBack.AssetLib
 {
-	/** Result
+	/** MultiResult
 	*/
-	public struct Result<VALUE>
+	public readonly struct MultiResult<RESULT,VALUE>
 	{
-		/** success
+		/** result
 		*/
-		public bool success;
+		public readonly RESULT result;
 
 		/** value
 		*/
-		public VALUE value;
+		public readonly VALUE value;
 
 		/** constructor
 		*/
-		public Result(bool a_success,in VALUE a_value)
+		public MultiResult(in RESULT a_result,in VALUE a_value)
 		{
-			//success
-			this.success = a_success;
+			//result
+			this.result = a_result;
 
 			//value
 			this.value = a_value;

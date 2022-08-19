@@ -34,7 +34,12 @@ namespace BlueBack.AssetLib
 		{
 			#pragma warning disable 0168
 			try{
-				return new MultiResult<bool,string>(true,Load(a_full_path_with_extention));
+				string t_guid = Load(a_full_path_with_extention);
+				if(t_guid != null){
+					return new MultiResult<bool,string>(true,t_guid);
+				}else{
+					return new MultiResult<bool,string>(false,null);
+				}
 			}catch(System.IO.FileNotFoundException t_exception){
 				return new MultiResult<bool,string>(false,null);
 			}catch(System.IO.IOException t_exception){
