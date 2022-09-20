@@ -53,8 +53,8 @@ namespace BlueBack.AssetLib.Editor
 				return ConvertAll(a_assets_path,a_directory_pattern,a_file_pattern,a_encoding,a_linefeed_option);
 			}catch(System.Exception t_exception){
 				//エラー。
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return false;
 			}

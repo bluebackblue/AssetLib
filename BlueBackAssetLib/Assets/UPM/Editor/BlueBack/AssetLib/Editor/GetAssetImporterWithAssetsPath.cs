@@ -39,13 +39,15 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return new MultiResult<bool,T>(true,Get<T>(a_assets_path_with_extention));
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//ＩＯエラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,T>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//エラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,T>(false,null);
 			}

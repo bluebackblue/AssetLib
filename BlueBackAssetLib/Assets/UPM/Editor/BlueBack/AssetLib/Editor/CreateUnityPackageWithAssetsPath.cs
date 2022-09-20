@@ -43,8 +43,9 @@ namespace BlueBack.AssetLib.Editor
 			try{
 				return Create(a_assets_path,a_assets_path_unitypackage_filename,a_option);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//エラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return false;
 			}

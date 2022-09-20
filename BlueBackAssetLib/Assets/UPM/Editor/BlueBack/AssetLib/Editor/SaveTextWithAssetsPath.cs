@@ -46,14 +46,14 @@ namespace BlueBack.AssetLib.Editor
 				return new MultiResult<bool,string>(true,Save(a_text,a_assets_path_with_extention,a_encoding,a_linefeedoption));
 			}catch(System.IO.IOException t_exception){
 				//ＩＯエラー。
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,string>(false,null);
 			}catch(System.Exception t_exception){
 				//エラー。
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,string>(false,null);
 			}
@@ -89,14 +89,14 @@ namespace BlueBack.AssetLib.Editor
 				return new MultiResult<bool,string>(true,SaveNoBomUtf8(a_text,a_assets_path_with_extention,a_linefeedoption));
 			}catch(System.IO.IOException t_exception){
 				//ＩＯエラー。
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,string>(false,null);
 			}catch(System.Exception t_exception){
 				//エラー。
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,string>(false,null);
 			}

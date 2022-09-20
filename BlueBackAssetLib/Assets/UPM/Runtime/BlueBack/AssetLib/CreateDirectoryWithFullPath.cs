@@ -37,13 +37,15 @@ namespace BlueBack.AssetLib
 			try{
 				return new MultiResult<bool,System.IO.DirectoryInfo>(true,Create(a_full_path));
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//ＩＯエラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,System.IO.DirectoryInfo>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//エラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,System.IO.DirectoryInfo>(false,null);
 			}

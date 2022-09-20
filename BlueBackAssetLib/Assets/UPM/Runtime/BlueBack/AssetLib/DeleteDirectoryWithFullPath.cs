@@ -38,15 +38,21 @@ namespace BlueBack.AssetLib
 			try{
 				return Delete(a_full_path);
 			}catch(System.IO.DirectoryNotFoundException t_exception){
+				//ディレクトリーなし。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
+				#endif
 				return false;
 			}catch(System.IO.IOException t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//ＩＯエラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return false;
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//エラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return false;
 			}

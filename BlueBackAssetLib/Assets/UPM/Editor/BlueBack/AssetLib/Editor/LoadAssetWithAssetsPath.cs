@@ -38,9 +38,16 @@ namespace BlueBack.AssetLib.Editor
 			#pragma warning disable 0168
 			try{
 				return new MultiResult<bool,T>(true,Load<T>(a_assets_path_with_extention));
+			}catch(System.IO.FileNotFoundException t_exception){
+				//ファイルなし。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
+				#endif
+				return new MultiResult<bool,T>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//エラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,T>(false,null);
 			}
@@ -67,9 +74,16 @@ namespace BlueBack.AssetLib.Editor
 			#pragma warning disable 0168
 			try{
 				return new MultiResult<bool,UnityEngine.Object[]>(true,LoadAll(a_assets_path_with_extention));
+			}catch(System.IO.FileNotFoundException t_exception){
+				//ファイルなし。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
+				#endif
+				return new MultiResult<bool,UnityEngine.Object[]>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//エラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,UnityEngine.Object[]>(false,null);
 			}
@@ -108,9 +122,16 @@ namespace BlueBack.AssetLib.Editor
 			#pragma warning disable 0168
 			try{
 				return new MultiResult<bool,System.Collections.Generic.List<T>>(true,LoadAll<T>(a_assets_path_with_extention));
+			}catch(System.IO.FileNotFoundException t_exception){
+				//ファイルなし。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
+				#endif
+				return new MultiResult<bool,System.Collections.Generic.List<T>>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//エラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,System.Collections.Generic.List<T>>(false,null);
 			}
@@ -141,9 +162,16 @@ namespace BlueBack.AssetLib.Editor
 			#pragma warning disable 0168
 			try{
 				return new MultiResult<bool,T>(true,LoadConverter<T>(a_converter,a_assets_path_with_extention));
+			}catch(System.IO.FileNotFoundException t_exception){
+				//ファイルなし。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
+				#endif
+				return new MultiResult<bool,T>(false,null);
 			}catch(System.Exception t_exception){
-				#if(DEF_BLUEBACK_DEBUG_ASSERT)
-				DebugTool.Assert(false,t_exception);
+				//エラー。
+				#if(DEF_BLUEBACK_DEBUG_LOG)
+				DebugTool.Log(string.Format("exception : {0}",t_exception));
 				#endif
 				return new MultiResult<bool,T>(false,null);
 			}
